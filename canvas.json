@@ -1,0 +1,596 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4300,
+      "title": "Home",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Roofing.dc.html",
+      "x": 1552,
+      "y": 27,
+      "w": 1440,
+      "h": 5600,
+      "title": "Roofing (Main Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "RoofRepair.dc.html",
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 4300,
+      "title": "Roof Repair (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "RoofReplacement.dc.html",
+      "x": 6080,
+      "y": 0,
+      "w": 1440,
+      "h": 5600,
+      "title": "Roof Replacement (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "RoofInspection.dc.html",
+      "x": 7600,
+      "y": 0,
+      "w": 1440,
+      "h": 4800,
+      "title": "Roof Inspection (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "SolarRoofing.dc.html",
+      "x": 9120,
+      "y": 0,
+      "w": 1440,
+      "h": 4700,
+      "title": "Solar Roofing (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Asphalt.dc.html",
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 3900,
+      "title": "Asphalt Roofing (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "MetalRoofing.dc.html",
+      "x": 10640,
+      "y": 0,
+      "w": 1440,
+      "h": 4600,
+      "title": "Metal Roofing (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "ClayTileRoofing.dc.html",
+      "x": 12160,
+      "y": 0,
+      "w": 1440,
+      "h": 4900,
+      "title": "Clay Tile Roofing (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Calculator.dc.html",
+      "x": 0,
+      "y": 6100,
+      "w": 1440,
+      "h": 6200,
+      "title": "Roof Cost Calculator",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Financing.dc.html",
+      "x": 1520,
+      "y": 6100,
+      "w": 1440,
+      "h": 4400,
+      "title": "Financing",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "ServiceAreas.dc.html",
+      "x": 3040,
+      "y": 6100,
+      "w": 1440,
+      "h": 2300,
+      "title": "Service Areas",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Estimate.dc.html",
+      "x": 0,
+      "y": 12500,
+      "w": 1440,
+      "h": 2500,
+      "title": "Free Estimate",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "CustomerService.dc.html",
+      "x": 1520,
+      "y": 12500,
+      "w": 1440,
+      "h": 2500,
+      "title": "Customer Service",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Warranty.dc.html",
+      "x": 3040,
+      "y": 12500,
+      "w": 1440,
+      "h": 2000,
+      "title": "Warranty",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Blog.dc.html",
+      "x": 4560,
+      "y": 12500,
+      "w": 1440,
+      "h": 2600,
+      "title": "Blog",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Siding.dc.html",
+      "x": 0,
+      "y": 17300,
+      "w": 1440,
+      "h": 6400,
+      "title": "Siding (Main Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "SidingInspection.dc.html",
+      "x": 1520,
+      "y": 17300,
+      "w": 1440,
+      "h": 4600,
+      "title": "Siding Inspection (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "VinylSiding.dc.html",
+      "x": 3040,
+      "y": 17300,
+      "w": 1440,
+      "h": 3700,
+      "title": "Vinyl Siding (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "FiberCementSiding.dc.html",
+      "x": 4560,
+      "y": 17300,
+      "w": 1440,
+      "h": 3800,
+      "title": "Fiber Cement Siding (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "CompositeSiding.dc.html",
+      "x": 6080,
+      "y": 17300,
+      "w": 1440,
+      "h": 3800,
+      "title": "Composite Siding (Material Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Windows.dc.html",
+      "x": 0,
+      "y": 24500,
+      "w": 1440,
+      "h": 6900,
+      "title": "Windows (Main Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "WindowInspection.dc.html",
+      "x": 1520,
+      "y": 24500,
+      "w": 1440,
+      "h": 4600,
+      "title": "Window Inspection (Sub-Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Gutters.dc.html",
+      "x": 0,
+      "y": 31900,
+      "w": 1440,
+      "h": 5200,
+      "title": "Gutters (Main Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Doors.dc.html",
+      "x": 1520,
+      "y": 31900,
+      "w": 1440,
+      "h": 4700,
+      "title": "Doors (Main Service Template)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Licensing.dc.html",
+      "x": 6080,
+      "y": 12500,
+      "w": 1440,
+      "h": 2900,
+      "title": "Licenses & Certifications",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Gallery.dc.html",
+      "x": 7600,
+      "y": 12500,
+      "w": 1440,
+      "h": 2700,
+      "title": "Project Gallery",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "PrivacyPolicy.dc.html",
+      "x": 9120,
+      "y": 12500,
+      "w": 1440,
+      "h": 3300,
+      "title": "Privacy Policy",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-houston.dc.html",
+      "x": 0,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Houston, TX  (/tx/houston)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-katy.dc.html",
+      "x": 1520,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Katy, TX  (/tx/katy)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-sugar-land.dc.html",
+      "x": 3040,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Sugar Land, TX  (/tx/sugar-land)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-pearland.dc.html",
+      "x": 4560,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Pearland, TX  (/tx/pearland)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-cypress.dc.html",
+      "x": 6080,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Cypress, TX  (/tx/cypress)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-spring.dc.html",
+      "x": 7600,
+      "y": 37700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Spring, TX  (/tx/spring)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-the-woodlands.dc.html",
+      "x": 0,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "The Woodlands, TX  (/tx/the-woodlands)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-tomball.dc.html",
+      "x": 1520,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Tomball, TX  (/tx/tomball)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-missouri-city.dc.html",
+      "x": 3040,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Missouri City, TX  (/tx/missouri-city)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-richmond.dc.html",
+      "x": 4560,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Richmond, TX  (/tx/richmond)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-fulshear.dc.html",
+      "x": 6080,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Fulshear, TX  (/tx/fulshear)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-humble.dc.html",
+      "x": 7600,
+      "y": 42700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Humble, TX  (/tx/humble)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-kingwood.dc.html",
+      "x": 0,
+      "y": 47700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Kingwood, TX  (/tx/kingwood)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-league-city.dc.html",
+      "x": 1520,
+      "y": 47700,
+      "w": 1440,
+      "h": 4600,
+      "title": "League City, TX  (/tx/league-city)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-friendswood.dc.html",
+      "x": 3040,
+      "y": 47700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Friendswood, TX  (/tx/friendswood)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-bellaire.dc.html",
+      "x": 4560,
+      "y": 47700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Bellaire, TX  (/tx/bellaire)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "City-pasadena.dc.html",
+      "x": 6080,
+      "y": 47700,
+      "w": 1440,
+      "h": 4600,
+      "title": "Pasadena, TX  (/tx/pasadena)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Header.dc.html",
+      "x": 0,
+      "y": 15600,
+      "w": 1440,
+      "h": 230,
+      "title": "Global Header (component)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Footer.dc.html",
+      "x": 1520,
+      "y": 15600,
+      "w": 1440,
+      "h": 640,
+      "title": "Global Footer (component)",
+      "expand": "fill"
+    },
+    {
+      "file": "City.dc.html",
+      "x": 4560,
+      "y": 6100,
+      "w": 1440,
+      "h": 5000,
+      "title": "City Service Area Hub (all cities)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "CityService.dc.html",
+      "x": 6080,
+      "y": 6100,
+      "w": 1440,
+      "h": 4600,
+      "title": "City Service Page (city × service)",
+      "expand": "fill",
+      "is_interactive": true
+    }
+  ],
+  "annotations": [
+    {
+      "id": "t1",
+      "x": 0,
+      "y": -330,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Home & Service Templates",
+      "kind": "title1"
+    },
+    {
+      "id": "t2",
+      "x": 0,
+      "y": 5770,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Pricing, Financing & Local Pages",
+      "kind": "title1"
+    },
+    {
+      "id": "t3",
+      "x": 0,
+      "y": 12170,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Conversion, Support & Content Pages",
+      "kind": "title1"
+    },
+    {
+      "id": "t4",
+      "x": 0,
+      "y": 15270,
+      "w": 240,
+      "maxW": 2960,
+      "text": "Shared Components",
+      "kind": "title1"
+    },
+    {
+      "id": "n1",
+      "x": 3100,
+      "y": 15600,
+      "w": 420,
+      "text": "All [BRACKETED] text and grey photo blocks are placeholders for Crescent Builders' real content, photos, stats and reviews. Siding, Windows, Gutters and Doors reuse the Roofing template.",
+      "fill": "orange"
+    },
+    {
+      "id": "t5",
+      "x": 0,
+      "y": 16970,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Siding Templates",
+      "kind": "title1"
+    },
+    {
+      "id": "t6",
+      "x": 0,
+      "y": 24170,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Window Templates",
+      "kind": "title1"
+    },
+    {
+      "id": "t7",
+      "x": 0,
+      "y": 31570,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Gutter & Door Templates",
+      "kind": "title1"
+    },
+    {
+      "id": "t8",
+      "x": 0,
+      "y": 37370,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Service Area City Pages",
+      "kind": "title1"
+    },
+    {
+      "id": "calc_dev",
+      "x": -760,
+      "y": 6100,
+      "w": 640,
+      "text": "DEV NOTE: Roof Cost Calculator: Google integration\n\nFlow: address autocomplete → loading → satellite \"Is this your house?\" → roof size, steepest pitch + Asphalt/Metal price ranges → quote form (pre-filled) → thank you. If no roof data: fallback screen → free inspection.\n\nAll outside calls live in 5 SERVICE functions at the top of this page's script (marked). Replace their mock bodies:\n1. Places API (New) Autocomplete\n2. Place Details / Geocoding\n3. Solar API buildingInsights:findClosest (area + pitch)\n4. Maps Static API satellite image (or Maps JS map)\n5. CRM / lead endpoint\n\nPricing per sq ft is in pricing(). Keep the API key server-side. Google does not return roof material; add an imagery/AI provider if needed. Show 'powered by Google' with Places results.",
+      "size": 24,
+      "fill": "orange"
+    },
+    {
+      "id": "sa_dev",
+      "x": -760,
+      "y": 37700,
+      "w": 640,
+      "text": "DEV NOTE: City pages (local SEO)\n\nOne page per city, all built from the same layout. Live URL for each: /tx/{city}, e.g. /tx/katy, /tx/sugar-land, /tx/pearland.\n\nEach city page links to the real service pages (Roofing, Siding, Windows, Gutters, Doors and every sub-service and material page).\n\nTo add a city: duplicate a City page, change its Service Area setting, and add its entry in cities(). Give each live page a unique title and meta description, e.g. 'Roofing, Siding & Windows in Katy, TX | The Crescent Builders'.",
+      "size": 24,
+      "fill": "orange"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

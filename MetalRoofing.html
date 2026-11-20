@@ -1,0 +1,195 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Metal Roofing</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.18)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.tc .tc-dark{opacity:0;transition:opacity .3s}.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s}.tc:hover .tc-desc,.tc:focus-visible .tc-desc{max-height:180px;opacity:1}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .pm{transform:rotate(45deg)}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc{max-height:180px;opacity:1}.tc .tc-dark{opacity:1}}
+@media (max-width:860px){.g2,.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
+/* card-motion: dark overlay fades in, title slides up, description rises in */
+.tc .tc-dark{opacity:0;transition:opacity .45s ease}
+.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc,.hc .hc-txt{display:block;max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height .55s cubic-bezier(.22,.61,.36,1),opacity .4s ease .1s,transform .55s cubic-bezier(.22,.61,.36,1) .05s}
+.tc:hover .tc-desc,.tc:focus-visible .tc-desc,.hc:hover .hc-txt,.hc:focus-visible .hc-txt{max-height:240px;opacity:1;transform:none}
+.hc .hc-ov{transition:background .45s ease!important}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc,.hc .hc-txt{max-height:240px;opacity:1;transform:none}.tc .tc-dark{opacity:1}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section style="position: relative; background: #2a2a2a url(./assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(12,12,12,.74)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 110px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-size: 58px; font-weight: 800; text-transform: uppercase; line-height: 1.08">Metal Roofing Contractor</h1>
+<span style="font-size: 20px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #e3d26a">In Greater Houston</span>
+<p style="margin: 0 auto; font-size: 18px; line-height: 1.65; max-width: 940px; color: #f2f2f2; text-align: center">Metal roofs stand up to Houston heat, high winds and heavy rain while reflecting sunlight to help keep your home cooler. From standing seam to metal shingles, our team installs metal roofing built to last for decades. Get your free metal roofing quote today!</p>
+<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 16px 32px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em">Get A Roofing Estimate</a>
+</div>
+</section>
+
+<section style="padding: 96px 24px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Metal Roofing Styles</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4a4a4a; max-width: 860px">Metal roofing comes in more than one style. Panel profile, fastening method, seam height and finish all affect how your roof looks and performs, and we’ll help you compare the options for your home.</p>
+</div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{styles}}" as="s" hint-placeholder-count="3">
+<div class="tc" tabindex="0" style="position: relative; height: 380px; border-radius: 6px; overflow: hidden; color: #ffffff">
+<div class="ph" style="position: absolute; inset: 0"></div>
+<sc-if value="{{s.img}}" hint-placeholder-val="{{true}}"><img src="{{s.img}}" alt="{{s.name}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.8) 100%)"></div>
+<div class="tc-dark" style="position: absolute; inset: 0; background: rgba(10,10,10,.84)"></div>
+<div style="position: absolute; left: 28px; right: 28px; bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px"><span style="font-size: 24px; font-weight: 600">{{s.name}}</span><span class="tc-desc" style="font-size: 14px; line-height: 1.6; color: #f0f0f0">{{s.desc}}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 24px; background: #f7f5ee">
+<div class="g2" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Metal Roofing Colors</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">Metal roofing comes in a wide range of factory finishes, from quiet neutrals to bold colors that make your roof a standout feature. Available colors depend on the metal, manufacturer and coating you choose.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{colors}}" as="c" hint-placeholder-count="8"><span style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; background: #ffffff; border: 1px solid #e3dfcf; border-radius: 30px; padding: 7px 14px 7px 7px"><span style="width: 20px; height: 20px; border-radius: 50%; background: {{c.hex}}"></span>{{c.n}}</span></sc-for>
+</div>
+<h3 style="margin: 12px 0 0; font-size: 22px; font-weight: 800; color: #343434">Dark Vs. Light-Colored Metal Roofs</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">Dark metal creates strong contrast and a classic look, while lighter finishes can make a large roof feel less heavy and reflect more of Houston’s intense sun. Modern reflective coatings help both stay cooler, so choose the color that suits your home’s style and your energy goals.</p>
+</div>
+<div style="display: flex; gap: 6px; height: 380px; align-items: stretch; padding: 10px 0; perspective: 900px" aria-label="Metal roof panel color samples">
+<sc-for list="{{colors}}" as="c" hint-placeholder-count="8"><div style="flex: 1; border-radius: 3px; background: linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(255,255,255,.18) 14%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 80%, rgba(0,0,0,.25) 100%), {{c.hex}}; box-shadow: 0 18px 30px rgba(0,0,0,.18); transform: rotateY(-14deg)"></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 24px">
+<div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434; text-align: center">Types Of Metal Roofs</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 28px">
+<sc-for list="{{types}}" as="t" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<b style="font-size: 19px; text-align: center; color: #343434">{{t.name}}</b>
+<div style="border-radius: 6px; overflow: hidden; border: 1px solid #e3dfcf; background: #f7f5ee">
+<div style="display: grid; grid-template-columns: 1fr 1fr; background: #262626; color: #ffffff; font-weight: 800; font-size: 14px"><span style="padding: 10px 16px">Pros:</span><span style="padding: 10px 16px">Cons:</span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 0">
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 8px"><sc-for list="{{t.pros}}" as="p" hint-placeholder-count="4"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 1.45"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b49609" stroke-width="3" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><path d="M5 12l5 5 9-10"></path></svg>{{p}}</div></sc-for></div>
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 8px; border-left: 1px solid #e3dfcf"><sc-for list="{{t.cons}}" as="p" hint-placeholder-count="2"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 1.45"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="3" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><path d="M6 12h12"></path></svg>{{p}}</div></sc-for></div>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #f7f5ee">
+<div style="padding: 88px 56px; display: flex; flex-direction: column; gap: 20px; justify-content: center; max-width: 640px; margin-left: auto; box-sizing: border-box">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Why Choose Metal Roofing?</h2>
+<sc-for list="{{why}}" as="w" hint-placeholder-count="4"><div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 30px; height: 30px; border-radius: 50%; background: #b49609; display: flex; align-items: center; justify-content: center; margin-top: 2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 17px; color: #343434">{{w.t}}</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">{{w.d}}</span></div></div></sc-for>
+</div>
+<div style="min-height: 500px; background: #2a2a2a url(./assets/466707f5ff39d70e7e43411205aa2cb2.jpg) center/cover no-repeat"></div>
+</section>
+
+<section style="padding: 88px 24px; background: #262626; color: #ffffff">
+<div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase; text-align: center">Metal Roofing Vs. Asphalt Shingle Roofing</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{vs}}" as="v" hint-placeholder-count="2">
+<div style="background: #ffffff; color: #2b2b2b; border-radius: 6px; overflow: hidden">
+<div style="position: relative; height: 130px; background: #2a2a2a url({{v.img}}) center/cover no-repeat; display: flex; align-items: center; justify-content: center"><div style="position: absolute; inset: 0; background: rgba(0,0,0,.55)"></div><b style="position: relative; color: #ffffff; font-size: 20px">{{v.name}}</b></div>
+<div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; text-align: center"><sc-for list="{{v.rows}}" as="r" hint-placeholder-count="5"><div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 15px">{{r.k}}</b><span style="font-size: 14px; line-height: 1.55; color: #4a4a4a">{{r.v}}</span></div></sc-for></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="g2" style="display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 320px">
+<div style="min-height: 320px; background: #2a2a2a url(./assets/175c5abfbc0ca6718c24bb41cdd87475.jpg) center/cover no-repeat"></div>
+<div style="background: #343434; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px 24px; text-align: center"><h2 style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase">Ready To Get Started?</h2><span style="font-size: 16px; color: #e8e8e8">Get a free metal roofing quote today!</span><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em; margin-top: 6px">Get A FREE Roofing Quote</a></div>
+<div style="min-height: 320px; background: #2a2a2a url(./assets/ffa362c8c26329b8043624e3b3cb078d.jpg) center/cover no-repeat"></div>
+</section>
+
+<details style="background: #1d1d1d; color: #ffffff">
+<summary style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 800; text-transform: uppercase; border-left: 4px solid #b49609">Metal Roofers Near Greater Houston<span class="pm" style="font-size: 28px; color: #e3d26a; transition: transform .2s">+</span></summary>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 28px; display: flex; flex-wrap: wrap; gap: 10px 28px"><sc-for list="{{towns}}" as="t" hint-placeholder-count="8"><a href="ServiceAreas.html" style="color: #d6d6d6">{{t}}</a></sc-for></div>
+</details>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      styles: [
+        { name: 'Standing Seam', img: './assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg', desc: 'Long panels with raised seams and concealed fasteners for a clean, modern look and excellent wind and water resistance.' },
+        { name: 'Exposed Fastener', img: '', desc: 'Panels screwed through the face of the metal. A budget-friendly option that needs periodic fastener checks and maintenance.' },
+        { name: 'Metal Shingles', img: './assets/466707f5ff39d70e7e43411205aa2cb2.jpg', desc: 'Smaller interlocking pieces that mimic the look of shingles, slate or shake while keeping the strength of metal.' }
+      ],
+      colors: [{ n: 'Coastal Blue', hex: '#4e6a83' }, { n: 'Forest Green', hex: '#2f4a36' }, { n: 'Matte Black', hex: '#1c1c1c' }, { n: 'Charcoal', hex: '#3b3d40' }, { n: 'Medium Gray', hex: '#7c8186' }, { n: 'Bronze', hex: '#5a4632' }, { n: 'Deep Red', hex: '#6e2a24' }, { n: 'Aged Copper', hex: '#5f8a7a' }],
+      types: [
+        { name: 'Aluminum', pros: ['Naturally corrosion-resistant', 'Lightweight roofing material', 'Available in standing seam and other profiles', 'Good choice for humid, coastal climates'], cons: ['Usually costs more than coated steel', 'Softer metal can dent from strong impact'] },
+        { name: 'Steel', pros: ['Wide color and finish selection', 'Strong, durable residential roofing', 'Works well for standing seam and panels', 'Widely available and cost-effective'], cons: ['Can corrode if coatings are damaged', 'Protective coatings need proper detailing'] },
+        { name: 'Copper', pros: ['Natural corrosion resistance', 'Very long service life', 'Distinctive, high-end appearance', 'Great for accents and architectural details'], cons: ['Color changes as it develops a patina', 'Premium material cost'] },
+        { name: 'Zinc', pros: ['Naturally corrosion-resistant', 'Distinctive natural finish', 'Highly workable for custom details', 'Develops a protective patina'], cons: ['Finish changes over time', 'Higher material and fabrication cost'] }
+      ],
+      why: [
+        { t: 'Long-Term Roofing Option', d: 'Metal roofs often last 40 to 70 years, so you may never need to replace your roof again.' },
+        { t: 'Low Routine Upkeep', d: 'No granule loss, curling or cracking like asphalt shingles, just simple periodic checks.' },
+        { t: 'Weather Performance', d: 'Properly installed metal sheds heavy rain fast and can be rated for high winds common on the Gulf Coast.' },
+        { t: 'Energy Efficient', d: 'Reflective finishes bounce back sunlight, helping keep your attic cooler during long Houston summers.' }
+      ],
+      vs: [
+        { name: 'Metal Roofing', img: './assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg', rows: [
+          { k: 'Lifespan', v: 'Often 40–70 years, depending on metal, coating and installation.' },
+          { k: 'Durability', v: 'Excellent wind and weather resistance when properly installed.' },
+          { k: 'Maintenance', v: 'Periodic checks of seams, fasteners and flashing.' },
+          { k: 'Energy Efficiency', v: 'Reflective finishes can reduce heat gain and cooling costs.' },
+          { k: 'Weight', v: 'Lightweight for the coverage it provides.' } ] },
+        { name: 'Asphalt Shingle Roofing', img: './assets/c30e2b2ad658df3ed6a72590a294cdba.jpg', rows: [
+          { k: 'Lifespan', v: 'Typically 15–25 years in the Houston climate.' },
+          { k: 'Durability', v: 'Reliable protection, varying by shingle grade and installation.' },
+          { k: 'Maintenance', v: 'Easy, affordable repairs for isolated damage.' },
+          { k: 'Energy Efficiency', v: 'Varies by color; reflective shingles are available.' },
+          { k: 'Weight', v: 'Light to moderate, depending on shingle type.' } ] }
+      ],
+      towns: ['Houston','Katy','Sugar Land','Pearland','Cypress','Spring','The Woodlands','Tomball','Missouri City','Richmond','Fulshear','Humble','Kingwood','League City','Friendswood','Bellaire']
+    };
+  }
+}
+</script>
+</body>
+</html>

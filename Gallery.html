@@ -1,0 +1,193 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Project Gallery</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.18)}
+.qcard{transition:border-color .2s,box-shadow .2s,transform .2s}.qcard:hover{border-color:#b49609!important;box-shadow:0 10px 26px rgba(0,0,0,.1);transform:translateY(-2px)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.tc .tc-dark{opacity:0;transition:opacity .3s}.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s}.tc:hover .tc-desc,.tc:focus-visible .tc-desc{max-height:200px;opacity:1}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .pm{transform:rotate(45deg)}
+details[open] > summary.fq{color:#b49609}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc{max-height:200px;opacity:1}.tc .tc-dark{opacity:1}}
+@media (max-width:860px){.sty{flex-direction:column!important}.sty img{width:100%!important;height:200px!important}.g2,.g3,.g4,.g5{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
+/* card-motion: dark overlay fades in, title slides up, description rises in */
+.tc .tc-dark{opacity:0;transition:opacity .45s ease}
+.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc,.hc .hc-txt{display:block;max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height .55s cubic-bezier(.22,.61,.36,1),opacity .4s ease .1s,transform .55s cubic-bezier(.22,.61,.36,1) .05s}
+.tc:hover .tc-desc,.tc:focus-visible .tc-desc,.hc:hover .hc-txt,.hc:focus-visible .hc-txt{max-height:240px;opacity:1;transform:none}
+.hc .hc-ov{transition:background .45s ease!important}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc,.hc .hc-txt{max-height:240px;opacity:1;transform:none}.tc .tc-dark{opacity:1}}
+.tcard{transition:background .2s,box-shadow .2s,transform .2s}.tcard:hover,.tcard:focus-visible{background:#faf6e4!important;box-shadow:0 10px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
+@media (max-width:860px){.tstrip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.gcat{background:none;border:0;padding:0;cursor:pointer;font:inherit;display:flex;flex-direction:column;align-items:center;gap:10px;color:#343434}
+.gcat .ring{width:112px;height:112px;border-radius:50%;padding:4px;border:3px solid transparent;transition:border-color .25s,transform .25s;box-sizing:border-box}
+.gcat:hover .ring{transform:translateY(-3px);border-color:#d9c75a}
+.gcat.on .ring{border-color:#b49609}.gcat.on b{color:#8c7406}
+.gtile{border:0;padding:0;margin:0;cursor:zoom-in;position:relative;overflow:hidden;background:#2a2a2a;display:block;width:100%;aspect-ratio:4/3}
+.gtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gtile:hover img,.gtile:focus-visible img{transform:scale(1.06)}
+.gtile .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.75));color:#fff;font-size:13px;font-weight:600;text-align:left;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.gtile:hover .cap,.gtile:focus-visible .cap{opacity:1;transform:none}
+.pg{min-width:40px;height:40px;border-radius:50%;border:1px solid #d7d2bd;background:#fff;color:#343434;font:inherit;font-weight:700;cursor:pointer}
+.pg.on{background:#b49609;border-color:#b49609;color:#fff}.pg:disabled{opacity:.35;cursor:default}
+.lbx{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.92);display:flex;align-items:center;justify-content:center;padding:40px 80px;box-sizing:border-box}
+.lbb{position:absolute;width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lbb:hover{background:#b49609}
+@media (max-width:860px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.gcats{gap:18px!important}.gcat .ring{width:84px;height:84px}.lbx{padding:20px 10px}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section style="position: relative; background: #2a2a2a url(./assets/fb71d0ccfd95c12b3f825de79f061b27.jpg) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(12,12,12,.74)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 100px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-size: 56px; font-weight: 800; text-transform: uppercase; line-height: 1.08">Greater Houston</h1>
+<span style="font-size: 22px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #e3d26a">{{bannerTitle}}</span>
+<p style="margin: 0 auto; font-size: 18px; line-height: 1.65; max-width: 570px; color: #f2f2f2; text-align: center">Explore the roofing, siding, window, gutter and door projects our team has completed across Greater Houston, and get inspired for your own home improvement.</p>
+<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 16px 32px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em">Get An Estimate</a>
+</div>
+</section>
+
+<section style="background: #f7f5ee; padding: 40px 24px; border-bottom: 1px solid #e6e3d6">
+<div class="gcats" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 36px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+<button type="button" class="{{c.cls}}" onClick="{{c.pick}}" aria-pressed="{{c.on}}"><span class="ring"><img src="{{c.img}}" alt="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block"></span><b style="font-size: 16px">{{c.label}}</b></button>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 64px 0 72px">
+<div style="display: flex; flex-direction: column; gap: 28px; align-items: center">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434; text-align: center">{{galleryTitle}}</h2>
+<div class="ggrid" style="width: 100%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px">
+<sc-for list="{{shown}}" as="p" hint-placeholder-count="12">
+<button type="button" class="gtile" onClick="{{p.open}}" aria-label="Open photo: {{p.caption}}"><img src="{{p.image}}" alt="{{p.caption}}"><span class="cap">{{p.caption}}</span></button>
+</sc-for>
+</div>
+<sc-if value="{{multi}}" hint-placeholder-val="{{true}}">
+<nav aria-label="Gallery pages" style="display: flex; gap: 8px; align-items: center">
+<button type="button" class="pg" onClick="{{prevPage}}" disabled="{{atFirst}}" aria-label="Previous page">‹</button>
+<sc-for list="{{pages}}" as="n" hint-placeholder-count="2"><button type="button" class="{{n.cls}}" onClick="{{n.go}}" aria-label="Page {{n.num}}">{{n.num}}</button></sc-for>
+<button type="button" class="pg" onClick="{{nextPage}}" disabled="{{atLast}}" aria-label="Next page">›</button>
+</nav>
+</sc-if>
+</div>
+</section>
+
+<section class="g3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 320px; background: #1f1f1f">
+<div style="min-height: 320px; background: #2a2a2a url(./assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg) center/cover no-repeat"></div>
+<div style="background: #262626; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px 24px; text-align: center"><h2 style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase">Like What You See?</h2><span style="font-size: 16px; color: #e8e8e8">Get a free estimate for your next project today!</span><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em; margin-top: 6px">Get A Free Estimate</a></div>
+<div style="min-height: 320px; background: #2a2a2a url(./assets/175c5abfbc0ca6718c24bb41cdd87475.jpg) center/cover no-repeat"></div>
+</section>
+
+<sc-if value="{{lbOpen}}" hint-placeholder-val="{{false}}">
+<div class="lbx" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+<img src="{{lb.image}}" alt="{{lb.caption}}" style="max-width: 100%; max-height: 82vh; object-fit: contain; display: block; border-radius: 4px">
+<span style="position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: #e8e8e8; font-size: 15px">{{lb.caption}} · {{lbCount}}</span>
+<button type="button" class="lbb" onClick="{{lbPrev}}" aria-label="Previous photo" style="left: 18px; top: 50%; margin-top: -26px">‹</button>
+<button type="button" class="lbb" onClick="{{lbNext}}" aria-label="Next photo" style="right: 18px; top: 50%; margin-top: -26px">›</button>
+<button type="button" class="lbb" onClick="{{lbClose}}" aria-label="Close" style="right: 18px; top: 18px; font-size: 22px">✕</button>
+</div>
+</sc-if>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"perPage":{"editor":"int","default":12,"min":4,"max":40,"section":"Gallery"},"$preview":{"width":1440,"height":2700}}'>
+class Component extends DCLogic {
+/* =====================================================================
+   HOW TO ADD A NEW PROJECT PHOTO
+   1. Upload the photo to the canvas and copy its /_blob/ link.
+   2. Add one line to the projects() list below, e.g.
+      { category: 'roofing', image: '/_blob/xxxx', caption: 'Roof Replacement, Katy, TX', featured: true },
+   category: roofing | siding | windows | gutters | doors
+   featured: true  -> also shows in the Featured gallery
+   Newest photos go at the TOP of the list.
+   ===================================================================== */
+  projects() { return [
+    { category: 'roofing', image: './assets/fb71d0ccfd95c12b3f825de79f061b27.jpg', caption: 'Roof Replacement, [City], TX', featured: true },
+    { category: 'roofing', image: './assets/c0637a1574fc7cde862a601331a177e6.jpg', caption: 'Roof Replacement, [City], TX', featured: true },
+    { category: 'roofing', image: './assets/90861f66e2bc88885539c9f79851f623.jpg', caption: 'Roof Replacement, [City], TX', featured: true },
+    { category: 'roofing', image: './assets/ab6361268ba8f1e8e7eb0ab98dd8e831.jpg', caption: 'Roof Replacement, [City], TX', featured: true },
+    { category: 'roofing', image: './assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg', caption: 'Metal Roofing, [City], TX' },
+    { category: 'roofing', image: './assets/466707f5ff39d70e7e43411205aa2cb2.jpg', caption: 'Metal Roofing, [City], TX' },
+    { category: 'siding', image: './assets/f5a79bd0200644079da12da535e1835d.jpg', caption: 'Siding Replacement, [City], TX', featured: true },
+    { category: 'siding', image: './assets/c73ccc1956a658edc2acac16f34e1e9d.jpg', caption: 'Siding Installation, [City], TX' },
+    { category: 'siding', image: './assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg', caption: 'Siding & Trim, [City], TX', featured: true },
+    { category: 'siding', image: './assets/aa3706c85629c42196987a8559334356.jpg', caption: 'Lap Siding, [City], TX' },
+    { category: 'windows', image: './assets/655c1aac3e3690f90bac249b5793ab59.jpg', caption: 'Window Replacement, [City], TX', featured: true },
+    { category: 'windows', image: './assets/ffa362c8c26329b8043624e3b3cb078d.jpg', caption: 'Window Replacement, [City], TX' },
+    { category: 'windows', image: './assets/175c5abfbc0ca6718c24bb41cdd87475.jpg', caption: 'Windows & Exterior, [City], TX' },
+    { category: 'gutters', image: './assets/65a8c459cb7c88b46e70a176c991e83f.jpg', caption: 'Seamless Gutters, [City], TX', featured: true },
+    { category: 'doors', image: './assets/0579ebf62cabf612a8d460d7742cb62a.jpg', caption: 'Entry Door Installation, [City], TX', featured: true },
+    { category: 'doors', image: './assets/1bd7864cd063d4602aa7c53cd1f2a890.jpg', caption: 'Front Door Replacement, [City], TX' }
+  ]; }
+  categories() { return [
+    { id: 'featured', label: 'Featured', img: './assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg' },
+    { id: 'roofing', label: 'Roofing', img: './assets/fb71d0ccfd95c12b3f825de79f061b27.jpg' },
+    { id: 'siding', label: 'Siding', img: './assets/c73ccc1956a658edc2acac16f34e1e9d.jpg' },
+    { id: 'windows', label: 'Windows', img: './assets/655c1aac3e3690f90bac249b5793ab59.jpg' },
+    { id: 'gutters', label: 'Gutters', img: './assets/65a8c459cb7c88b46e70a176c991e83f.jpg' },
+    { id: 'doors', label: 'Doors', img: './assets/0579ebf62cabf612a8d460d7742cb62a.jpg' }
+  ]; }
+
+  constructor(p) { super(p); this.state = { cat: 'featured', page: 0, lb: -1 }; }
+  renderVals() {
+    const { cat, page, lb } = this.state;
+    const PROJECTS = this.projects(), CATEGORIES = this.categories();
+    const per = Math.max(1, this.props.perPage ?? 12);
+    const list = cat === 'featured' ? PROJECTS.filter(p => p.featured) : PROJECTS.filter(p => p.category === cat);
+    const pageCount = Math.max(1, Math.ceil(list.length / per));
+    const pg = Math.min(page, pageCount - 1);
+    const label = CATEGORIES.find(c => c.id === cat).label;
+    const go = (n) => this.setState({ page: n });
+    const shown = list.slice(pg * per, pg * per + per).map((p, i) => ({ ...p, open: () => this.setState({ lb: pg * per + i }) }));
+    const cur = lb >= 0 && lb < list.length ? list[lb] : null;
+    return {
+      cats: CATEGORIES.map(c => ({ ...c, on: c.id === cat, cls: c.id === cat ? 'gcat on' : 'gcat', pick: () => this.setState({ cat: c.id, page: 0, lb: -1 }) })),
+      bannerTitle: cat === 'featured' ? 'Exterior Remodeling Project Gallery' : label + ' Project Gallery',
+      galleryTitle: label + ' Gallery',
+      shown,
+      multi: pageCount > 1,
+      pages: Array.from({ length: pageCount }, (_, n) => ({ num: n + 1, cls: n === pg ? 'pg on' : 'pg', go: () => go(n) })),
+      atFirst: pg === 0, atLast: pg === pageCount - 1,
+      prevPage: () => go(Math.max(0, pg - 1)), nextPage: () => go(Math.min(pageCount - 1, pg + 1)),
+      lbOpen: !!cur, lb: cur || { image: '', caption: '' },
+      lbCount: (lb + 1) + ' / ' + list.length,
+      lbPrev: () => this.setState({ lb: (lb - 1 + list.length) % list.length }),
+      lbNext: () => this.setState({ lb: (lb + 1) % list.length }),
+      lbClose: () => this.setState({ lb: -1 })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Clay Tile Roofing</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.18)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.tc .tc-dark{opacity:0;transition:opacity .3s}.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s}.tc:hover .tc-desc,.tc:focus-visible .tc-desc{max-height:180px;opacity:1}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .pm{transform:rotate(45deg)}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc{max-height:180px;opacity:1}.tc .tc-dark{opacity:1}}
+@media (max-width:860px){.g2,.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
+/* card-motion: dark overlay fades in, title slides up, description rises in */
+.tc .tc-dark{opacity:0;transition:opacity .45s ease}
+.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc,.hc .hc-txt{display:block;max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height .55s cubic-bezier(.22,.61,.36,1),opacity .4s ease .1s,transform .55s cubic-bezier(.22,.61,.36,1) .05s}
+.tc:hover .tc-desc,.tc:focus-visible .tc-desc,.hc:hover .hc-txt,.hc:focus-visible .hc-txt{max-height:240px;opacity:1;transform:none}
+.hc .hc-ov{transition:background .45s ease!important}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc,.hc .hc-txt{max-height:240px;opacity:1;transform:none}.tc .tc-dark{opacity:1}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section style="position: relative; background: #2a2a2a url(./assets/2d56d99a028ac4666800918423cd5a6b.jpg) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(12,12,12,.74)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 110px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-size: 58px; font-weight: 800; text-transform: uppercase; line-height: 1.08">Clay Tile Roofing Contractor</h1>
+<span style="font-size: 20px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #e3d26a">In Greater Houston</span>
+<p style="margin: 0 auto; font-size: 18px; line-height: 1.65; max-width: 980px; color: #f2f2f2; text-align: center">Clay tile is one of the longest-lasting roofs you can put on a home. It shrugs off Houston heat, won’t rot or burn, and keeps its rich color for decades. Our team installs clay tile roofs built and fastened for Gulf Coast weather. Get your free clay tile roofing quote today!</p>
+<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 16px 32px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em">Get A Roofing Estimate</a>
+</div>
+</section>
+
+<section style="padding: 96px 24px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Clay Tile Roofing Styles</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4a4a4a; max-width: 860px">Clay tiles come in several profiles, each with its own look and performance. The shape you choose affects curb appeal, weight, airflow under the tiles and cost, and we’ll help you find the right fit for your home’s architecture.</p>
+</div>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{styles}}" as="s" hint-placeholder-count="3">
+<div class="tc" tabindex="0" style="position: relative; height: 380px; border-radius: 6px; overflow: hidden; color: #ffffff">
+<div class="ph" style="position: absolute; inset: 0"></div>
+<sc-if value="{{s.img}}" hint-placeholder-val="{{true}}"><img src="{{s.img}}" alt="{{s.name}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></sc-if>
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.8) 100%)"></div>
+<div class="tc-dark" style="position: absolute; inset: 0; background: rgba(10,10,10,.84)"></div>
+<div style="position: absolute; left: 28px; right: 28px; bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px"><span style="font-size: 24px; font-weight: 600">{{s.name}}</span><span class="tc-desc" style="font-size: 14px; line-height: 1.6; color: #f0f0f0">{{s.desc}}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 24px; background: #f7f5ee">
+<div class="g2" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Clay Tile Colors</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">Clay tile color comes from the natural clay and the kiln firing itself, not a surface coating, so it won’t peel and resists fading for decades. Options range from classic terracotta to warm earth-tone blends and glazed finishes.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{colors}}" as="c" hint-placeholder-count="8"><span style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; background: #ffffff; border: 1px solid #e3dfcf; border-radius: 30px; padding: 7px 14px 7px 7px"><span style="width: 20px; height: 20px; border-radius: 50%; background: {{c.hex}}"></span>{{c.n}}</span></sc-for>
+</div>
+<h3 style="margin: 12px 0 0; font-size: 22px; font-weight: 800; color: #343434">Natural Vs. Glazed Clay Tile</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">Natural (unglazed) tile has a soft, matte, earthy look that weathers gracefully. Glazed tile adds a glass-like finish that comes in brighter colors, sheds dirt and moisture more easily, and holds its sheen for years. Lighter terracotta and buff tones also reflect more of Houston’s sun.</p>
+</div>
+<div style="display: flex; gap: 6px; height: 380px; align-items: stretch; padding: 10px 0; perspective: 900px" aria-label="Clay tile color samples">
+<sc-for list="{{colors}}" as="c" hint-placeholder-count="8"><div style="flex: 1; border-radius: 3px; background: linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(255,255,255,.18) 14%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 80%, rgba(0,0,0,.25) 100%), {{c.hex}}; box-shadow: 0 18px 30px rgba(0,0,0,.18); transform: rotateY(-14deg)"></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 96px 24px">
+<div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434; text-align: center">Clay Tile Vs. Other Tile Options</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 28px">
+<sc-for list="{{types}}" as="t" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<b style="font-size: 19px; text-align: center; color: #343434">{{t.name}}</b>
+<div style="border-radius: 6px; overflow: hidden; border: 1px solid #e3dfcf; background: #f7f5ee">
+<div style="display: grid; grid-template-columns: 1fr 1fr; background: #262626; color: #ffffff; font-weight: 800; font-size: 14px"><span style="padding: 10px 16px">Pros:</span><span style="padding: 10px 16px">Cons:</span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 0">
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 8px"><sc-for list="{{t.pros}}" as="p" hint-placeholder-count="4"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 1.45"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b49609" stroke-width="3" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><path d="M5 12l5 5 9-10"></path></svg>{{p}}</div></sc-for></div>
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 8px; border-left: 1px solid #e3dfcf"><sc-for list="{{t.cons}}" as="p" hint-placeholder-count="2"><div style="display: flex; gap: 8px; font-size: 13px; line-height: 1.45"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="3" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><path d="M6 12h12"></path></svg>{{p}}</div></sc-for></div>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 0 24px 96px">
+<div style="max-width: 1000px; margin: 0 auto; background: #262626; color: #ffffff; border-radius: 10px; padding: 36px 40px; display: flex; flex-direction: column; gap: 18px; border-left: 6px solid #b49609">
+<h3 style="margin: 0; font-size: 26px; font-weight: 800; text-transform: uppercase">Before You Choose Clay Tile</h3>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 32px">
+<sc-for list="{{before}}" as="b" hint-placeholder-count="4"><div style="display: flex; flex-direction: column; gap: 6px"><b style="font-size: 17px; color: #e3d26a">{{b.t}}</b><span style="font-size: 15px; line-height: 1.6; color: #d6d6d6">{{b.d}}</span></div></sc-for>
+</div>
+</div>
+</section>
+
+<section class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #f7f5ee">
+<div style="padding: 88px 56px; display: flex; flex-direction: column; gap: 20px; justify-content: center; max-width: 640px; margin-left: auto; box-sizing: border-box">
+<h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434">Why Choose Clay Tile Roofing?</h2>
+<sc-for list="{{why}}" as="w" hint-placeholder-count="4"><div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 30px; height: 30px; border-radius: 50%; background: #b49609; display: flex; align-items: center; justify-content: center; margin-top: 2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 17px; color: #343434">{{w.t}}</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">{{w.d}}</span></div></div></sc-for>
+</div>
+<div style="min-height: 500px; background: #2a2a2a url(./assets/1bd7864cd063d4602aa7c53cd1f2a890.jpg) center 20%/cover no-repeat"></div>
+</section>
+
+<section style="padding: 88px 24px; background: #262626; color: #ffffff">
+<div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<h2 class="h2" style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase; text-align: center">Clay Tile Vs. Asphalt Shingle Roofing</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{vs}}" as="v" hint-placeholder-count="2">
+<div style="background: #ffffff; color: #2b2b2b; border-radius: 6px; overflow: hidden">
+<div style="position: relative; height: 130px; background: #2a2a2a url({{v.img}}) center/cover no-repeat; display: flex; align-items: center; justify-content: center"><div style="position: absolute; inset: 0; background: rgba(0,0,0,.55)"></div><b style="position: relative; color: #ffffff; font-size: 20px">{{v.name}}</b></div>
+<div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; text-align: center"><sc-for list="{{v.rows}}" as="r" hint-placeholder-count="5"><div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 15px">{{r.k}}</b><span style="font-size: 14px; line-height: 1.55; color: #4a4a4a">{{r.v}}</span></div></sc-for></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="g2" style="display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 320px">
+<div style="min-height: 320px; background: #2a2a2a url(./assets/175c5abfbc0ca6718c24bb41cdd87475.jpg) center/cover no-repeat"></div>
+<div style="background: #343434; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px 24px; text-align: center"><h2 style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase">Ready To Get Started?</h2><span style="font-size: 16px; color: #e8e8e8">Get a free clay tile roofing quote today!</span><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em; margin-top: 6px">Get A FREE Roofing Quote</a></div>
+<div style="min-height: 320px; background: #2a2a2a url(./assets/1bd7864cd063d4602aa7c53cd1f2a890.jpg) center/cover no-repeat"></div>
+</section>
+
+<details style="background: #1d1d1d; color: #ffffff">
+<summary style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 800; text-transform: uppercase; border-left: 4px solid #b49609">Clay Tile Roofers Near Greater Houston<span class="pm" style="font-size: 28px; color: #e3d26a; transition: transform .2s">+</span></summary>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 28px; display: flex; flex-wrap: wrap; gap: 10px 28px"><sc-for list="{{towns}}" as="t" hint-placeholder-count="8"><a href="ServiceAreas.html" style="color: #d6d6d6">{{t}}</a></sc-for></div>
+</details>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const BARREL = './assets/2d56d99a028ac4666800918423cd5a6b.jpg', SPAN = './assets/e75812496cb759bb973f1c1e53bdacd5.jpg', ASPH = './assets/c30e2b2ad658df3ed6a72590a294cdba.jpg';
+    return {
+      styles: [
+        { name: 'Spanish (S-Tile)', img: SPAN, desc: 'The classic wave-shaped “S” profile seen on Spanish and Mediterranean homes. Each tile combines a pan and cover in one piece for a lighter, faster install.' },
+        { name: 'Mission (Barrel)', img: BARREL, desc: 'Half-cylinder tiles laid in alternating rows for a deep, traditional look. The curved shape creates air channels that help vent heat away from the roof deck.' },
+        { name: 'Flat & Interlocking', img: './assets/facf0ba764fac12fb727a5a5f0b2c23b.jpg', desc: 'Low-profile clay tiles with a clean, modern or slate-like look. Interlocking edges add wind resistance and fit contemporary and French-style homes.' }
+      ],
+      colors: [{ n: 'Classic Terracotta', hex: '#b5532c' }, { n: 'Burnt Orange', hex: '#c46a2f' }, { n: 'Sandstone Buff', hex: '#d2a679' }, { n: 'Desert Blend', hex: '#a8643f' }, { n: 'Chocolate Brown', hex: '#5c3a26' }, { n: 'Antique Red', hex: '#8a3a2a' }, { n: 'Slate Gray', hex: '#5f6366' }, { n: 'Glazed Blue', hex: '#2f5873' }],
+      types: [
+        { name: 'Natural Clay Tile', pros: ['Lifespan of 50–100+ years', 'Kiln-fired color that resists fading', 'Class A fire rating and won’t rot', 'Matte, timeless Mediterranean look'], cons: ['Heavy: roughly 8–12 lbs per sq. ft.', 'Can crack from impact or foot traffic'] },
+        { name: 'Glazed Clay Tile', pros: ['Wide range of bold, lasting colors', 'Glossy surface sheds dirt and moisture', 'Same long lifespan as natural clay', 'Great for statement or historic homes'], cons: ['Higher cost than natural tile', 'Glossy look isn’t right for every style'] },
+        { name: 'Concrete Tile', pros: ['Lower cost than clay', 'Similar shapes and profiles', 'Strong and fire-resistant'], cons: ['Even heavier than clay', 'Color can fade; shorter life (often 30–50 years)'] },
+        { name: 'Synthetic / Composite Tile', pros: ['Much lighter weight', 'Good impact resistance', 'Easier for older structures'], cons: ['Doesn’t match clay’s authenticity', 'Shorter track record and lifespan'] }
+      ],
+      before: [
+        { t: 'Weight Matters', d: 'Clay tile weighs about three times more than asphalt shingles. If you’re switching from shingles, we’ll check that your roof framing can carry the load or recommend reinforcement.' },
+        { t: 'Underlayment Is Key', d: 'The tiles can last a century, but the underlayment beneath them typically needs replacing every 20–30 years. We use high-quality underlayment and can reuse sound tiles when it’s time.' },
+        { t: 'Wind & Hail In Houston', d: 'We fasten tiles with screws, clips or approved adhesives to meet high-wind requirements. Clay can crack from large hail, so damaged tiles should be replaced promptly.' },
+        { t: 'Hire A Tile Specialist', d: 'Tile roofs are easy to damage by walking on them incorrectly. Choose a team experienced with tile for repairs, inspections and gutter or solar work.' }
+      ],
+      why: [
+        { t: 'Exceptional Lifespan', d: 'With proper installation and underlayment care, clay tile can last 50 to 100 years or more, often outliving the home’s mortgage several times over.' },
+        { t: 'Beats The Houston Heat', d: 'Clay’s thermal mass and the air gap under curved tiles slow heat transfer into your attic, helping lower cooling costs in summer.' },
+        { t: 'Fire, Rot & Pest Resistant', d: 'Clay won’t burn, rot or attract termites, and carries a Class A fire rating, the highest available.' },
+        { t: 'Color That Lasts', d: 'Because color is fired into the tile, clay keeps its rich look for decades without painting or coatings.' }
+      ],
+      vs: [
+        { name: 'Clay Tile Roofing', img: BARREL, rows: [
+          { k: 'Lifespan', v: '50–100+ years with proper underlayment maintenance.' },
+          { k: 'Durability', v: 'Resists fire, rot, insects and heat; individual tiles can crack from heavy impact.' },
+          { k: 'Maintenance', v: 'Replace cracked tiles and refresh underlayment every 20–30 years.' },
+          { k: 'Energy Efficiency', v: 'Natural thermal mass and airflow help keep attics cooler.' },
+          { k: 'Weight', v: 'Heavy, about 8–12 lbs per sq. ft.; framing may need evaluation.' } ] },
+        { name: 'Asphalt Shingle Roofing', img: ASPH, rows: [
+          { k: 'Lifespan', v: 'Typically 15–25 years in the Houston climate.' },
+          { k: 'Durability', v: 'Reliable protection, varying by shingle grade and installation.' },
+          { k: 'Maintenance', v: 'Easy, affordable repairs for isolated damage.' },
+          { k: 'Energy Efficiency', v: 'Varies by color; reflective shingles are available.' },
+          { k: 'Weight', v: 'Light, about 2–4 lbs per sq. ft.' } ] }
+      ],
+      towns: ['Houston','Katy','Sugar Land','Pearland','Cypress','Spring','The Woodlands','Tomball','Missouri City','Richmond','Fulshear','Humble','Kingwood','League City','Friendswood','Bellaire']
+    };
+  }
+}
+</script>
+</body>
+</html>

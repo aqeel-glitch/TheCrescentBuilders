@@ -1,0 +1,424 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Roof Cost Calculator</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.img-hero,.img-roof,.img-siding{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.15)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .pm{transform:rotate(45deg)}
+input,select,textarea{font:inherit}
+button:disabled{opacity:.45;cursor:not-allowed}
+@media (max-width:860px){.g2,.g3,.g4{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}}
+.spin{width:22px;height:22px;border:3px solid #e6e3d6;border-top-color:#b49609;border-radius:50%;animation:spin .8s linear infinite;flex:0 0 auto;margin-right:8px}@keyframes spin{to{transform:rotate(360deg)}}
+.sug:hover,.sug:focus-visible{background:#f7f5ee!important}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section style="position: relative; background: #2a2a2a url(./assets/c30e2b2ad658df3ed6a72590a294cdba.jpg) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(18,18,18,.74)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 100px 24px; display: flex; flex-direction: column; gap: 18px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 58px; text-transform: uppercase; line-height: 1.05">Greater Houston Roof Cost Calculator</h1>
+<span style="font-family: Montserrat, sans-serif; font-size: 22px; color: #d9c75a; text-transform: uppercase">Free Roofing Price Estimates</span>
+<div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap"><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 16px 30px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em">Get A FREE Roofing Estimate</a><a href="Financing.html" style="color: #ffffff; font-weight: 600">Roof Financing</a></div>
+</div>
+</section>
+
+<details style="background: #f7f5ee; border-bottom: 1px solid #e6e3d6">
+<summary style="max-width: 1240px; margin: 0 auto; padding: 16px 24px; font-weight: 700; display: flex; gap: 8px">In This Article <span class="pm" style="color: #b49609; transition: transform .2s">›</span></summary>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 18px; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 15px">
+<a href="#calc">Calculate Your Roof Costs</a><a href="#factors">What Affects Roof Cost</a><a href="#area">Costs In Your Area</a><a href="#sqft">Cost By Square Footage</a><a href="#history">Historical Costs</a><a href="#insurance">Insurance</a><a href="#faq">FAQs</a>
+</div>
+</details>
+
+<section id="calc" style="padding: 80px 24px; background: #ffffff">
+<div style="max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,.12); padding: 40px; display: flex; flex-direction: column; gap: 18px; border-top: 5px solid #b49609">
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; text-transform: uppercase; color: #343434; text-align: center">Calculate Your Roof Costs</h2>
+<p style="margin: 0; text-align: center; color: #343434; font-size: 16px; font-weight: 700">Enter Your Address To Estimate The Size Of Your Roof:</p>
+<div style="position: relative">
+<label for="addr" style="position: absolute; left: -9999px">Enter Your Address</label>
+<div style="display: flex; align-items: center; gap: 10px; border: 2px solid #d7d2bd; border-radius: 6px; padding: 6px 6px 6px 14px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b49609" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+<input id="addr" data-integration="google-places-autocomplete" value="{{addr}}" onInput="{{typeAddr}}" placeholder="Enter Your Address" autocomplete="off" role="combobox" aria-expanded="{{showSug}}" aria-controls="addr-list" style="flex: 1; border: 0; outline: none; font-size: 17px; padding: 10px 0; min-width: 0">
+<sc-if value="{{loading}}" hint-placeholder-val="{{false}}"><span class="spin" role="status" aria-label="Measuring your roof"></span></sc-if>
+</div>
+<sc-if value="{{showSug}}" hint-placeholder-val="{{false}}">
+<div id="addr-list" role="listbox" style="position: absolute; left: 0; right: 0; top: 100%; margin-top: 4px; background: #ffffff; border: 1px solid #e6e3d6; border-radius: 6px; box-shadow: 0 10px 24px rgba(0,0,0,.12); z-index: 5; display: flex; flex-direction: column; overflow: hidden">
+<sc-for list="{{sugs}}" as="g" hint-placeholder-count="5"><button type="button" role="option" onClick="{{g.pick}}" class="sug" style="text-align: left; background: #ffffff; border: 0; border-bottom: 1px solid #f0ede2; padding: 11px 16px; cursor: pointer; font-size: 15px; display: flex; gap: 8px; align-items: baseline"><b>{{g.main}}</b><span style="font-size: 13px; color: #6b6b6b">{{g.secondary}}</span></button></sc-for>
+<span style="align-self: flex-end; padding: 6px 12px; font-size: 11px; color: #6b6b6b">powered by Google</span>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{hasErr}}" hint-placeholder-val="{{false}}"><p role="alert" style="margin: 0; font-size: 14px; color: #8a2a12; text-align: center">{{err}}</p></sc-if>
+<span style="font-size: 12px; color: #6b6b6b; text-align: center">Prototype: address suggestions, satellite view and roof measurements are simulated until the Google services are connected.</span>
+</div>
+</section>
+
+<sc-if value="{{modal}}" hint-placeholder-val="{{false}}">
+<div style="position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 90; display: flex; align-items: center; justify-content: center; padding: 20px; overflow-y: auto">
+<div role="dialog" aria-modal="true" aria-label="Roof cost estimate" style="background: #ffffff; border-radius: 10px; width: 100%; max-width: 620px; position: relative; overflow: hidden">
+<button type="button" onClick="{{closeModal}}" aria-label="Close" style="position: absolute; top: 8px; right: 10px; width: 44px; height: 44px; border: 0; background: rgba(255,255,255,.85); border-radius: 50%; font-size: 26px; cursor: pointer; color: #343434; z-index: 2">×</button>
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{true}}">
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center">
+<div data-integration="google-satellite-view" style="position: relative; width: 100%; height: 300px; border-radius: 8px; overflow: hidden; background: #2a2a2a">
+<img src="{{satUrl}}" alt="Satellite view of {{place.formatted}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<div style="position: absolute; left: 10px; top: 10px; display: flex; background: #ffffff; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.3); font-size: 13px"><span style="padding: 7px 12px">Map</span><b style="padding: 7px 12px; border-left: 1px solid #e6e3d6">Satellite</b></div>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="#b49609" stroke="#ffffff" stroke-width="1.5" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; margin: -38px 0 0 -20px"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5" fill="#ffffff"></circle></svg>
+</div>
+<p style="margin: 0; font-size: 16px; color: #343434">Your address is <b>{{place.formatted}}</b></p>
+<button type="button" onClick="{{confirm}}" class="btn" style="background: #b49609; color: #ffffff; border: 0; border-radius: 4px; padding: 15px 30px; font-weight: 700; font-size: 16px; cursor: pointer">Yes, This Is My House!</button>
+<span style="font-size: 14px; color: #4a4a4a">Not your house? <button type="button" onClick="{{change}}" style="background: none; border: 0; color: #8c7406; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 14px; padding: 4px">Change</button> or <a href="Estimate.html" style="font-weight: 700">contact The Crescent Builders</a> for a FREE in-person quote.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{s2}}" hint-placeholder-val="{{false}}">
+<div style="background: #f3f1ea; padding: 18px 56px 16px 28px; display: flex; flex-direction: column; gap: 6px; text-align: center; font-size: 14px; color: #343434">
+<span>Your address is <b>{{place.formatted}}</b> <button type="button" onClick="{{change}}" style="background: none; border: 0; color: #8c7406; font-weight: 700; cursor: pointer; text-decoration: underline; font-size: 14px; padding: 2px">(Change)</button></span>
+<span>Your roof is <b>{{roof.areaLabel}} sq. ft.</b> | Your roof’s steepest section is <b>{{roof.pitch}} degrees</b> steep.</span>
+</div>
+<div style="padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 18px; align-items: center">
+<h3 style="margin: 0; font-size: 20px; font-weight: 800; color: #343434">Based Off The Size Of Your Home…</h3>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; width: 100%">
+<sc-for list="{{quotes}}" as="q" hint-placeholder-count="2"><div style="display: flex; gap: 14px; align-items: center"><img src="{{q.img}}" alt="" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: 0 0 auto"><span style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px">{{q.name}}</b><span style="font-size: 17px; font-weight: 800; color: #8c7406">{{q.range}}</span></span></div></sc-for>
+</div>
+<button type="button" onClick="{{toForm}}" class="btn" style="background: #b49609; color: #ffffff; border: 0; border-radius: 4px; padding: 15px 34px; font-weight: 700; font-size: 16px; cursor: pointer">Get Your Free Quote</button>
+<a href="Financing.html" style="font-weight: 700; font-size: 14px">Payment Plans Available</a>
+<button type="button" onClick="{{back}}" style="background: none; border: 0; color: #4a4a4a; cursor: pointer; text-decoration: underline; font-size: 13px; padding: 4px">Go Back</button>
+</div>
+</sc-if>
+
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #343434; text-align: center">Request Your Roof Quote</h3>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{fields}}" as="fl" hint-placeholder-count="4"><label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">{{fl.label}} <span style="font-size: 11px; font-weight: 500; color: #6b6b6b">(Required)</span><input value="{{fl.value}}" onInput="{{fl.set}}" type="{{fl.type}}" name="{{fl.name}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; font-size: 15px"></label></sc-for>
+</div>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">Street Address<input name="street" value="{{place.street}}" readonly="readonly" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; font-size: 15px; background: #f1efe7; color: #4a4a4a"></label>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">City<input name="city" value="{{place.city}}" readonly="readonly" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; background: #f1efe7"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">State<input name="state" value="{{place.state}}" readonly="readonly" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; background: #f1efe7"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">Zip<input name="zip" value="{{place.zip}}" readonly="readonly" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; background: #f1efe7"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">Notes<textarea name="notes" rows="3" value="{{notes}}" readonly="readonly" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 11px 12px; resize: vertical; font: inherit; font-size: 14px; background: #fbfaf6"></textarea></label>
+<button type="button" onClick="{{submit}}" disabled="{{notReady}}" class="btn" style="background: #b49609; color: #ffffff; border: 0; border-radius: 4px; padding: 15px; font-weight: 700; font-size: 16px; cursor: pointer">{{submitLabel}}</button>
+<span style="font-size: 12px; color: #6b6b6b; text-align: center">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
+<button type="button" onClick="{{back}}" style="align-self: center; background: none; border: 0; color: #4a4a4a; cursor: pointer; text-decoration: underline; font-size: 13px; padding: 4px">Go Back</button>
+</div>
+</sc-if>
+
+<sc-if value="{{s4}}" hint-placeholder-val="{{false}}">
+<div style="padding: 40px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #b49609; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+<h3 style="margin: 0; font-size: 26px; font-weight: 800; color: #343434">Thank You!</h3>
+<p style="margin: 0; font-size: 16px; color: #4a4a4a">A Crescent Builders roofing specialist will contact you shortly to schedule your free quote.</p>
+<button type="button" onClick="{{closeModal}}" style="background: #343434; color: #ffffff; border: 0; border-radius: 4px; padding: 12px 24px; font-weight: 700; cursor: pointer">Close</button>
+</div>
+</sc-if>
+
+<sc-if value="{{s5}}" hint-placeholder-val="{{false}}">
+<div style="padding: 40px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<h3 style="margin: 0; font-size: 22px; font-weight: 800; color: #343434">We Couldn’t Measure This Roof Automatically</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4a4a4a">Satellite data isn’t available for every address. No problem: we’ll measure it in person and give you a free, exact quote.</p>
+<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; border-radius: 4px; padding: 14px 28px; font-weight: 700">Request A Free Inspection</a>
+<button type="button" onClick="{{change}}" style="background: none; border: 0; color: #4a4a4a; cursor: pointer; text-decoration: underline; font-size: 13px; padding: 4px">Try A Different Address</button>
+</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<section id="factors" style="position: relative; padding: 80px 24px 0; background: #e9f0f6 url(./assets/bae45d35145df55aa1af94615559195f.jpg) center bottom/100% auto no-repeat; min-height: 560px">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center; text-align: center">
+<h2 class="h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; color: #343434">How Much Does A New Roof Cost In Houston?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #343434">A new roof in Greater Houston will cost between <b>$7,850 and $19,300 on average</b>. The cost of a roof replacement on your home will depend on:</p>
+<div class="g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 820px">
+<sc-for list="{{factors}}" as="f" hint-placeholder-count="4"><div style="background: #ffffff; border-radius: 8px; padding: 22px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.08)"><img src="{{f.icon}}" alt="" style="height: 62px; max-width: 100%; object-fit: contain"><b style="font-size: 14px; color: #343434">{{f.t}}</b></div></sc-for>
+</div>
+</div>
+</section>
+
+<section id="area" style="padding: 88px 24px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
+<h2 class="h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; color: #343434">Average Roof Replacement Costs In Your Area</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">The table below shows a price range for roof replacement projects based on each city’s average-sized home. Use the roof cost calculator above or contact The Crescent Builders for a detailed estimate based on your home’s exact specifications.</p>
+<details open="open" style="background: #f7f5ee; border-radius: 8px; border: 1px solid #e6e3d6">
+<summary style="padding: 18px 22px; font-weight: 700; color: #8c7406; display: flex; gap: 8px; align-items: center">Cost Per City <span class="pm" style="transition: transform .2s">⌄</span></summary>
+<div class="g2" style="padding: 0 22px 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start">
+<sc-for list="{{cityCols}}" as="col" hint-placeholder-count="2">
+<table style="width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 6px; overflow: hidden; font-size: 15px">
+<thead><tr style="background: #262626; color: #ffffff"><th scope="col" style="text-align: left; padding: 14px 16px">City</th><th scope="col" style="text-align: left; padding: 14px 16px">Average Roof Cost</th></tr></thead>
+<tbody><sc-for list="{{col.rows}}" as="r" hint-placeholder-count="9"><tr style="border-bottom: 1px solid #efece1"><td style="padding: 11px 16px">{{r.city}}</td><td style="padding: 11px 16px; font-weight: 600">{{r.range}}</td></tr></sc-for></tbody>
+</table>
+</sc-for>
+</div>
+</details>
+</div>
+</section>
+
+<section class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #f3f1ea; align-items: center">
+<img src="./assets/58ad0afff97bf2c9c611387cf4f7ca90.jpg" alt="Roofer installing a metal roof panel" style="width: 100%; height: 100%; min-height: 460px; object-fit: cover; display: block">
+<div style="padding: 64px 56px; display: flex; flex-direction: column; gap: 16px; max-width: 640px; box-sizing: border-box">
+<h2 class="h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; color: #343434">How Roof Material And Size Affect Your Cost</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #4a4a4a">The material you choose and the size of your roof are the biggest factors in your total cost. Asphalt shingles are a budget-friendly, durable option and the most popular roofing material in the U.S. A premium material like metal costs more upfront in exchange for a longer lifespan and better heat reflection. And the larger your roof’s surface area, the more material and labor it takes.</p>
+<h3 style="margin: 8px 0 0; font-size: 20px; font-weight: 800; color: #343434">Average Roof Replacement Costs In Houston By Roof Material</h3>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{matCost}}" as="m" hint-placeholder-count="2"><div style="position: relative; border-radius: 6px; overflow: hidden; min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #ffffff; background: #2a2a2a url({{m.img}}) center/cover"><div style="position: absolute; inset: 0; background: rgba(18,18,18,.62)"></div><b style="position: relative; font-size: 18px">{{m.name}}</b><span style="position: relative; font-weight: 700; font-size: 16px; color: #e3d26a">{{m.range}}</span></div></sc-for>
+</div>
+</div>
+</section>
+
+<section id="sqft" style="padding: 88px 24px">
+<div class="g2" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 class="h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; color: #343434">Average Roof Replacement Costs By Square Footage</h2>
+<table style="width: 100%; max-width: 460px; border-collapse: collapse; background: #f7f5ee; border-radius: 6px; overflow: hidden; font-size: 15px">
+<thead><tr style="background: #262626; color: #ffffff"><th scope="col" style="text-align: left; padding: 14px 18px">Roof Square Footage</th><th scope="col" style="text-align: left; padding: 14px 18px">Roof Cost</th></tr></thead>
+<tbody><sc-for list="{{sqftRows}}" as="r" hint-placeholder-count="11"><tr style="border-bottom: 1px solid #e6e3d6"><td style="padding: 10px 18px">{{r.a}}</td><td style="padding: 10px 18px; font-weight: 600">{{r.b}}</td></tr></sc-for></tbody>
+</table>
+</div>
+<img src="./assets/bb1b2b9dfc645f61ae6e17355bd83202.jpg" alt="Cutaway of roof layers: shingles, underlayment, decking and rafters" style="width: 100%; max-width: 560px; justify-self: center; display: block">
+</div>
+</section>
+
+<section id="history" style="padding: 24px 24px 88px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; align-items: center">
+<h2 style="margin: 0; font-size: 20px; font-weight: 800; color: #343434; text-align: center">Roof Material Costs: 1984–2026<br><span style="font-size: 15px; font-weight: 600; color: #4a4a4a">(Avg. Price / Sq. Ft. – USD)</span></h2>
+<div style="display: flex; gap: 20px; font-size: 14px; font-weight: 600"><span style="display: flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #343434"></span>Asphalt</span><span style="display: flex; align-items: center; gap: 6px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #b49609"></span>Metal</span></div>
+<div style="width: 100%; overflow-x: auto">
+<svg viewBox="0 0 1000 330" role="img" aria-label="Line chart: average roof material cost per square foot from 1984 to 2026. Asphalt rose from about $2.10 to $7.60; metal rose from about $4.30 to $15.15, with sharp spikes around 2008 to 2009 and 2021 to 2022." style="width: 100%; min-width: 760px; height: auto; display: block; font-family: Montserrat, sans-serif">
+<sc-for list="{{yTicks}}" as="t" hint-placeholder-count="9"><line x1="60" x2="985" y1="{{t.y}}" y2="{{t.y}}" stroke="#ece9df" stroke-width="1"></line><text x="50" y="{{t.ty}}" text-anchor="end" font-size="12" font-weight="700" fill="#343434">{{t.label}}</text></sc-for>
+<sc-for list="{{xTicks}}" as="t" hint-placeholder-count="6"><line x1="{{t.x}}" x2="{{t.x}}" y1="20" y2="290" stroke="#ece9df" stroke-width="1"></line><text x="{{t.x}}" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#343434">{{t.label}}</text></sc-for>
+<polyline points="{{asphaltPts}}" fill="none" stroke="#343434" stroke-width="2.5" stroke-linejoin="round"></polyline>
+<polyline points="{{metalPts}}" fill="none" stroke="#b49609" stroke-width="2.5" stroke-linejoin="round"></polyline>
+<sc-for list="{{asphaltDots}}" as="d" hint-placeholder-count="43"><circle cx="{{d.x}}" cy="{{d.y}}" r="3" fill="#343434"><title>{{d.tip}}</title></circle></sc-for>
+<sc-for list="{{metalDots}}" as="d" hint-placeholder-count="43"><circle cx="{{d.x}}" cy="{{d.y}}" r="3" fill="#b49609"><title>{{d.tip}}</title></circle></sc-for>
+</svg>
+</div>
+</div>
+</section>
+
+<section id="other" style="padding: 0 24px 72px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<h2 class="h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; color: #343434">Other Factors Impacting Roof Replacement Costs</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{other}}" as="o" hint-placeholder-count="2"><div style="background: #f7f5ee; border-radius: 8px; padding: 28px; display: flex; gap: 22px; align-items: center"><img src="{{o.icon}}" alt="" style="width: 76px; height: 60px; object-fit: contain; flex: 0 0 auto"><div style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 18px; color: #343434">{{o.t}}</b><span style="font-size: 15px; line-height: 1.65; color: #4a4a4a">{{o.d}}</span></div></div></sc-for>
+</div>
+<div id="insurance" style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px">
+<h2 style="margin: 0; font-size: 26px; font-weight: 800; color: #343434">Will Insurance Cover My Roof Replacement?</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">In many cases, insurance will cover a roof replacement if the damage is caused by events outside your control, like hail, high winds, hurricanes or falling trees, all common in Houston. Coverage varies widely by policy, including your wind and hail deductible, so review your coverage details. Damage from general wear and tear or an aging roof typically isn’t covered.</p>
+</div>
+</div>
+</section>
+
+<section class="g3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 340px; background: #1f1f1f">
+<div style="min-height: 340px; background: #2a2a2a url(./assets/cdc279f80cb8e64e2931e66ed520ee8c.jpg) center/cover no-repeat"></div>
+<div style="background: #262626; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px 24px; text-align: center"><h2 style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase">Ready To Get Started?</h2><span style="font-size: 16px; color: #e8e8e8">Get a free roofing estimate in Houston today!</span><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em; margin-top: 6px">Get A FREE Roofing Estimate</a></div>
+<div style="min-height: 340px; background: #2a2a2a url(./assets/50f3dbf1826796515c6b36c1f95c1f2f.jpg) center/cover no-repeat"></div>
+</section>
+
+<section id="faq" style="padding: 88px 24px; background: #f7f5ee">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="margin: 0 0 12px; font-family: Montserrat, sans-serif; font-size: 34px; font-weight: 800; text-transform: uppercase; color: #343434">Frequently Asked Questions</h2>
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="6">
+<details style="border: 1px solid #e6e3d6; border-radius: 6px; background: #ffffff">
+<summary class="fq" style="padding: 18px 20px; display: flex; gap: 14px; align-items: center; font-weight: 700; font-size: 16px"><span class="pm" style="color: #b49609; font-size: 22px; line-height: 1; transition: transform .2s">+</span>{{f.q}}</summary>
+<p style="margin: 0; padding: 0 20px 20px 56px; font-size: 15px; line-height: 1.7; color: #4a4a4a">{{f.a}}</p>
+</details>
+</sc-for>
+</div>
+</section>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6200}}'>
+class Component extends DCLogic {
+/* ==========================================================================
+   ROOF COST CALCULATOR: GOOGLE INTEGRATION GUIDE (for the dev team)
+   The ONLY functions that talk to outside services are the five "SERVICE"
+   methods below. Today they return simulated data. To go live, replace the
+   body of each one with the real API call; the screens, steps and pricing
+   math do not need to change.
+
+   1. svcSuggest(query)     -> Google Places API (New): Autocomplete
+                               returns [{ id, main, secondary }]
+   2. svcResolve(id)        -> Google Places API (New): Place Details
+                               (or Geocoding API)
+                               returns { formatted, street, city, state, zip, lat, lng }
+   3. svcMeasureRoof(place) -> Google Solar API: buildingInsights:findClosest
+                               area  = solarPotential.wholeRoofStats.areaMeters2 * 10.7639
+                               pitch = max of roofSegmentStats[].pitchDegrees
+                               returns { areaSqFt, pitchDeg, material } or null
+                               (material: Google does not return roof material;
+                                plug in an imagery/AI provider here if wanted)
+   4. svcSatelliteUrl(place)-> Google Maps Static API (maptype=satellite,
+                               zoom=20, center=lat,lng) or a Maps JavaScript
+                               API map placed in [data-integration=google-satellite-view]
+   5. svcSubmitLead(lead)   -> your CRM / form endpoint (lead includes the roof data)
+
+   Keep API keys on the server (call your own backend, which calls Google).
+   ========================================================================== */
+
+  // ---- PRICING (price per sq ft of roof; edit to match your estimator) ----
+  pricing() { return [
+    { name: 'Asphalt Shingles', low: 5.24, high: 9.97, img: './assets/c30e2b2ad658df3ed6a72590a294cdba.jpg' },
+    { name: 'Metal Roofing', low: 15.71, high: 29.91, img: './assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg' }
+  ]; }
+
+  // ---- SERVICE 1: address suggestions (simulated) ----
+  svcSuggest(q) {
+    const towns = [['Katy', '77449'], ['Houston', '77043'], ['Sugar Land', '77479'], ['Cypress', '77429'], ['Pearland', '77584']];
+    return Promise.resolve(towns.map(([city, zip], n) => ({ id: 'mock-' + n + '|' + q + '|' + city + '|' + zip, main: q, secondary: city + ', TX, USA' })));
+  }
+  // ---- SERVICE 2: full address details (simulated) ----
+  svcResolve(id) {
+    const [, street, city, zip] = id.split('|');
+    return new Promise(r => setTimeout(() => r({ formatted: street + ', ' + city + ', TX ' + zip, street, city, state: 'Texas', zip, lat: 29.78, lng: -95.72 }), 500));
+  }
+  // ---- SERVICE 3: roof measurement (simulated, stable per address) ----
+  svcMeasureRoof(place) {
+    let h = 0; for (const ch of place.formatted) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    return new Promise(r => setTimeout(() => r({ areaSqFt: 1600 + (h % 1600), pitchDeg: 18 + (h % 23), material: null }), 900));
+  }
+  // ---- SERVICE 4: satellite image (simulated with a drone photo) ----
+  svcSatelliteUrl(place) { return './assets/fb71d0ccfd95c12b3f825de79f061b27.jpg'; }
+  // ---- SERVICE 5: send the lead (simulated) ----
+  svcSubmitLead(lead) { return new Promise(r => setTimeout(() => r({ ok: true }), 600)); }
+
+  constructor(p) {
+    super(p);
+    this.state = { addr: '', sugs: [], loading: false, place: null, roof: null, step: 0, err: '', sending: false, f: { first: '', last: '', phone: '', email: '' } };
+    this.q = 0;
+  }
+  typeAddr(v) {
+    this.setState({ addr: v, err: '' });
+    const n = ++this.q;
+    if (v.trim().length < 3) { this.setState({ sugs: [] }); return; }
+    clearTimeout(this.t);
+    this.t = setTimeout(() => this.svcSuggest(v.trim()).then(list => { if (n === this.q) this.setState({ sugs: list }); }), 250);
+  }
+  async pick(g) {
+    this.setState({ sugs: [], addr: g.main + ', ' + g.secondary, loading: true, err: '' });
+    try {
+      const place = await this.svcResolve(g.id);
+      const roof = await this.svcMeasureRoof(place);
+      this.setState({ loading: false, place, roof, step: roof ? 1 : 5 });
+    } catch (e) {
+      this.setState({ loading: false, err: 'Sorry, we couldn’t look up that address. Please try again or request a free inspection.' });
+    }
+  }
+  async submit() {
+    const { place, roof, f } = this.state;
+    this.setState({ sending: true });
+    await this.svcSubmitLead({ ...f, ...place, roofAreaSqFt: roof && roof.areaSqFt, roofPitchDeg: roof && roof.pitchDeg, source: 'roof-cost-calculator' });
+    this.setState({ sending: false, step: 4 });
+  }
+  renderVals() {
+    const s = this.state, f = s.f;
+    const set = (k) => (e) => this.setState({ f: { ...this.state.f, [k]: e.target.value } });
+    const money = (v) => '$' + Math.round(v).toLocaleString('en-US');
+    const place = s.place || { formatted: '', street: '', city: '', state: '', zip: '' };
+    const roof = s.roof || { areaSqFt: 0, pitchDeg: 0 };
+    const years = Array.from({ length: 43 }, (_, n) => 1984 + n);
+    const asphalt = [2.1,2.15,2.05,1.95,2.0,2.0,2.02,2.02,1.98,2.0,1.95,2.05,2.05,2.02,2.02,2.0,2.1,2.2,2.25,2.3,2.35,2.6,2.9,3.0,3.6,4.5,4.55,4.7,4.65,4.8,4.7,4.7,4.65,4.65,4.9,5.1,5.2,5.8,6.9,7.1,7.35,7.45,7.6];
+    const metal = [4.3,4.35,4.2,4.0,4.05,4.05,4.05,4.1,4.05,4.05,4.0,4.15,4.15,4.1,4.1,4.1,4.3,4.4,4.55,4.7,4.75,5.35,5.85,6.0,7.4,9.1,9.15,9.45,9.3,9.65,9.4,9.4,9.35,9.3,9.85,10.25,10.5,11.65,13.75,14.25,14.7,14.95,15.15];
+    const X = (k) => 60 + k * (925 / 42), Y = (v) => 290 - v * (270 / 16);
+    const pts = (arr) => arr.map((v, k) => X(k).toFixed(1) + ',' + Y(v).toFixed(1)).join(' ');
+    const dots = (arr, nm) => arr.map((v, k) => ({ x: X(k).toFixed(1), y: Y(v).toFixed(1), tip: nm + ' ' + years[k] + ': $' + v.toFixed(2) + '/sq ft' }));
+    const chart = {
+      asphaltPts: pts(asphalt), metalPts: pts(metal), asphaltDots: dots(asphalt, 'Asphalt'), metalDots: dots(metal, 'Metal'),
+      yTicks: [0,2,4,6,8,10,12,14,16].map(v => ({ y: Y(v).toFixed(1), ty: (Y(v) + 4).toFixed(1), label: '$' + v })),
+      xTicks: [1984,1992,2001,2009,2018,2026].map(yr => ({ x: X(yr - 1984).toFixed(1), label: String(yr) }))
+    };
+    return {
+      addr: s.addr, sugs: s.sugs.map(g => ({ ...g, pick: () => this.pick(g) })), showSug: s.sugs.length > 0,
+      loading: s.loading, hasErr: !!s.err, err: s.err,
+      typeAddr: (e) => this.typeAddr(e.target.value),
+      place, satUrl: s.place ? this.svcSatelliteUrl(place) : '',
+      roof: { areaLabel: roof.areaSqFt.toLocaleString('en-US'), pitch: roof.pitchDeg },
+      quotes: this.pricing().map(m => ({ name: m.name, img: m.img, range: money(roof.areaSqFt * m.low) + ' – ' + money(roof.areaSqFt * m.high) })),
+      notes: 'Your roof is ' + roof.areaSqFt + ' sq. ft.\nYour roof’s steepest section is ' + roof.pitchDeg + ' degrees steep.',
+      modal: s.step > 0, s1: s.step === 1, s2: s.step === 2, s3: s.step === 3, s4: s.step === 4, s5: s.step === 5,
+      confirm: () => this.setState({ step: 2 }), toForm: () => this.setState({ step: 3 }),
+      back: () => this.setState({ step: Math.max(1, s.step - 1) }),
+      change: () => this.setState({ step: 0, addr: '', place: null, roof: null }),
+      closeModal: () => this.setState({ step: 0 }),
+      submit: () => this.submit(), submitLabel: s.sending ? 'Sending…' : 'Submit',
+      notReady: s.sending || !(f.first && f.last && f.phone && f.email),
+      fields: [
+        { label: 'First Name', name: 'firstName', value: f.first, set: set('first'), type: 'text' },
+        { label: 'Last Name', name: 'lastName', value: f.last, set: set('last'), type: 'text' },
+        { label: 'Phone', name: 'phone', value: f.phone, set: set('phone'), type: 'tel' },
+        { label: 'Email', name: 'email', value: f.email, set: set('email'), type: 'email' }
+      ],
+      factors: [
+        { t: 'Size of your roof', icon: './assets/169de49c7b9a9f207f8dc64a60b607eb.png' },
+        { t: 'Slope of your roof', icon: './assets/28dda9b1cffe8ee8220458fb1c3e48f0.png' },
+        { t: 'Time of year or season work is performed', icon: './assets/3f0ec9ee17164616f3dcc9e0167dec9f.png' },
+        { t: 'Type of roof', icon: './assets/76caef2463f6c503afb4bf4d3043706d.png' }
+      ],
+      cityCols: [
+        { rows: [
+          { city: 'Houston, TX', range: '$7,440 – $18,320' }, { city: 'Katy, TX', range: '$10,120 – $19,280' },
+          { city: 'Sugar Land, TX', range: '$10,055 – $19,157' }, { city: 'Pearland, TX', range: '$7,054 – $17,369' },
+          { city: 'Cypress, TX', range: '$9,958 – $18,973' }, { city: 'The Woodlands, TX', range: '$15,201 – $32,092' },
+          { city: 'Spring, TX', range: '$7,440 – $18,320' }, { city: 'Missouri City, TX', range: '$10,055 – $19,157' },
+          { city: 'Bellaire, TX', range: '$15,201 – $32,092' } ] },
+        { rows: [
+          { city: 'Tomball, TX', range: '$8,153 – $33,665' }, { city: 'Humble, TX', range: '$7,405 – $30,578' },
+          { city: 'Pasadena, TX', range: '$6,910 – $28,534' }, { city: 'Kingwood, TX', range: '$9,761 – $40,308' },
+          { city: 'Friendswood, TX', range: '$8,905 – $36,772' }, { city: 'League City, TX', range: '$8,014 – $33,092' },
+          { city: 'Richmond, TX', range: '$7,613 – $31,437' }, { city: 'Fulshear, TX', range: '$8,969 – $37,037' } ] }
+      ],
+      matCost: [
+        { name: 'Asphalt', range: '$7,849.20 – $19,327.60', img: './assets/c30e2b2ad658df3ed6a72590a294cdba.jpg' },
+        { name: 'Metal', range: '$23,547.60 – $57,982.80', img: './assets/6083c7f2d3bbc5c7a45dbf38210f85fb.jpg' }
+      ],
+      sqftRows: [['1,000 sq ft','$4,830 – $8,710'],['1,100 sq ft','$5,115 – $12,595'],['1,200 sq ft','$5,580 – $13,740'],['1,300 sq ft','$6,045 – $14,885'],['1,400 sq ft','$6,510 – $16,030'],['1,500 sq ft','$6,975 – $17,175'],['1,750 sq ft','$9,415 – $17,937'],['2,000 sq ft','$10,760 – $20,500'],['2,200 sq ft','$11,836 – $22,550'],['2,500 sq ft','$13,450 – $25,625'],['3,000 sq ft','$14,850 – $31,350']].map(([a, b]) => ({ a, b })),
+      ...chart,
+      other: [
+        { t: 'Roof Pitch', icon: './assets/241d32a2dce1b2931c7380cd3cef5029.png', d: 'Steeper roofs need more labor, safety equipment and time to install, which raises the cost. Low-pitch roofs are easier for crews to access and usually more affordable.' },
+        { t: 'Seasonal Demand', icon: './assets/3f0ec9ee17164616f3dcc9e0167dec9f.png', d: 'In Houston, demand spikes after spring storms and during hurricane season, which can drive up prices and wait times. Scheduling in the late fall or winter may help you secure lower rates.' }
+      ],
+      faqs: [
+        { q: 'How much does a new roof cost in Houston?', a: 'In Greater Houston, a full asphalt roof replacement typically costs between $7,850 and $19,300, though your cost can vary based on roof size, pitch, complexity, material and local conditions like wind and hail requirements.' },
+        { q: 'How much does it cost to replace a 2,000 sq ft roof in Houston?', a: 'A 2,000 sq ft roof typically costs about $10,760 – $20,500 to replace, depending on the material, roof pitch and how many layers need to be torn off.' },
+        { q: 'What time of year is the cheapest to replace a roof in Houston?', a: 'Late fall and winter are usually the best times to book, since demand is lower than in spring storm season and summer. Houston’s mild winters also make it a good time for installation.' },
+        { q: 'How accurate is the roof cost calculator?', a: 'The calculator gives you a reliable price range based on your roof’s measured size and pitch. For an exact price, we’ll inspect your roof and give you a free, detailed written estimate.' },
+        { q: 'Does homeowners insurance pay for a new roof in Houston?', a: 'Often, yes, if the damage was caused by a covered event like hail, wind or a fallen tree. Wear and tear isn’t usually covered. We document storm damage with photos to help with your claim.' },
+        { q: 'Can I finance my new roof?', a: 'Yes. We offer easy financing options with affordable monthly payments, so you can protect your home now and pay over time. Ask about financing during your free estimate.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

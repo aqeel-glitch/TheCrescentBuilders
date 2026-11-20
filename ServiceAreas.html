@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Service Areas</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.img-hero,.img-roof,.img-siding{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.15)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.town:hover{color:#e3d26a!important}
+@media (max-width:860px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))!important}.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section class="img-hero" style="position: relative">
+<div style="position: absolute; inset: 0; background: rgba(18,18,18,.74)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 56px; text-transform: uppercase; text-align: center">Our Service Areas In Greater Houston</h1>
+<div class="g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 24px">
+<sc-for list="{{towns}}" as="t" hint-placeholder-count="17"><a class="town" href="{{t.href}}" style="color: #ffffff; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 8px; padding: 6px 0">{{t.name}}<sc-if value="{{t.office}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9c75a" stroke-width="2" role="img" aria-label="Branch office"><path d="M4 21V5h10v16M14 9h6v12M7 9h4M7 13h4M7 17h4"></path></svg></sc-if></a></sc-for>
+</div>
+<span style="font-size: 13px; color: #cfcfcf; display: flex; align-items: center; gap: 8px; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d9c75a" stroke-width="2" aria-hidden="true"><path d="M4 21V5h10v16M14 9h6v12"></path></svg>Our Houston office — 1737 Stebbins Dr #230A, Houston, TX 77043</span>
+</div>
+</section>
+
+<section style="background: #b49609; color: #ffffff; padding: 22px 24px; text-align: center; font-size: 17px">Don't see your city? Don't worry — we serve most cities in Greater Houston. <a href="CustomerService.html" style="color: #ffffff; font-weight: 700">Contact us to confirm we serve near you</a></section>
+
+<section style="padding: 88px 24px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 38px; text-transform: uppercase; color: #343434">Comprehensive Exterior Remodeling Services In Greater Houston</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4a4a4a">From our Houston office, The Crescent Builders serves homeowners across the Greater Houston area — including Katy, Sugar Land, Pearland, Cypress, The Woodlands and surrounding communities — with roofing, siding, windows and gutters built for Gulf Coast weather. [Add more about why local homeowners choose you.]</p>
+</div>
+</section>
+
+<section style="padding: 80px 24px; background: #262626; color: #ffffff">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 38px; text-transform: uppercase">Google Reviews</h2>
+<div style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 6px">
+<sc-for list="{{reviews}}" as="r" hint-placeholder-count="4"><article style="flex: 0 0 340px; background: #ffffff; color: #2b2b2b; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><span style="color: #b49609; letter-spacing: 2px" aria-hidden="true">★★★★★</span><p style="margin: 0; font-size: 15px; line-height: 1.6">[Customer review]</p><b>{{r}}</b></article></sc-for>
+</div>
+</div>
+</section>
+
+<section class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 320px">
+<div class="img-hero"></div>
+<div style="background: #343434; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 48px 24px; text-align: center"><h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 34px; text-transform: uppercase">Get Your Free Estimate Today!</h2><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase">Get An Estimate</a></div>
+<div class="img-roof"></div>
+</section>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const towns = [['houston','Houston'],['katy','Katy'],['sugar-land','Sugar Land'],['pearland','Pearland'],['cypress','Cypress'],['spring','Spring'],['the-woodlands','The Woodlands'],['tomball','Tomball'],['missouri-city','Missouri City'],['richmond','Richmond'],['fulshear','Fulshear'],['humble','Humble'],['kingwood','Kingwood'],['league-city','League City'],['friendswood','Friendswood'],['bellaire','Bellaire'],['pasadena','Pasadena']].map(([slug, n]) => ({ name: n + ', TX', office: slug === 'houston', href: 'City-' + slug + '.html' }));
+    return { towns, reviews: ['[Customer Name]','[Customer Name]','[Customer Name]','[Customer Name]','[Customer Name]'] };
+  }
+}
+</script>
+</body>
+</html>

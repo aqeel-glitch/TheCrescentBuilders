@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Free Estimate</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.img-hero,.img-roof,.img-siding{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+a{color:#b49609}a:hover{color:#8c7406}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+input,select,textarea,button{font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid #b49609;outline-offset:1px}
+button:disabled{opacity:.45;cursor:not-allowed}
+@media (max-width:860px){.g2,.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:38px!important}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #f7f5ee">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<section style="position: relative; background: #2a2a2a url(./assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(18,18,18,.72)"></div>
+<div style="position: relative; max-width: 1000px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 18px; color: #ffffff; align-items: center; text-align: center">
+<h1 class="h1" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 52px; text-transform: uppercase; line-height: 1.1">Get A Free Inspection &amp; Estimate</h1>
+<span style="font-family: Montserrat, sans-serif; font-size: 20px; color: #d9c75a; text-transform: uppercase">Quotes For Roofing, Siding, Windows, And More In Greater Houston</span>
+<p style="margin: 0 auto; font-size: 18px; line-height: 1.6; color: #e8e8e8; max-width: 700px; text-align: center">Tell us a little about your project and a Crescent Builders specialist will contact you to schedule your free inspection and no-obligation estimate. Prefer to talk? Call our Houston team today.</p>
+<div style="position: relative">
+<button onClick="{{toggleCall}}" aria-expanded="{{callOpen}}" style="background: #b49609; color: #ffffff; border: 0; border-radius: 4px; padding: 14px 26px; font-weight: 700; cursor: pointer; text-transform: uppercase">Call Us ▾</button>
+<sc-if value="{{callOpen}}" hint-placeholder-val="{{false}}"><div style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 6px; background: #ffffff; border-radius: 6px; box-shadow: 0 10px 28px rgba(0,0,0,.25); min-width: 240px; padding: 8px 0; display: flex; flex-direction: column; z-index: 5; text-align: left"><sc-for list="{{offices}}" as="o" hint-placeholder-count="3"><a href="tel:+18327321212" style="color: #2b2b2b; text-decoration: none; padding: 10px 18px"><b>{{o}}</b> · (832) 732-1212</a></sc-for></div></sc-if>
+</div>
+</div>
+</section>
+
+<section style="padding: 64px 24px">
+<div style="max-width: 820px; margin: 0 auto; background: #ffffff; border-radius: 10px; box-shadow: 0 10px 34px rgba(0,0,0,.08); padding: 40px; border-top: 5px solid #b49609">
+<sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 30px 0">
+<span style="width: 68px; height: 68px; border-radius: 50%; background: #b49609; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 34px; text-transform: uppercase; color: #343434">Thanks, {{first}}!</h2>
+<p style="margin: 0; font-size: 17px; color: #4a4a4a">We received your request. A Crescent Builders specialist will call you shortly to schedule your free estimate.</p>
+<a href="index.html" style="font-weight: 700">Back to home</a>
+</div>
+</sc-if>
+<sc-if value="{{notDone}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 32px; text-transform: uppercase; color: #343434">Request Your Free Estimate</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">First Name <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input value="{{v.first}}" onInput="{{set.first}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Last Name <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input value="{{v.last}}" onInput="{{set.last}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Street Address <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input value="{{v.street}}" onInput="{{set.street}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+<sc-if value="{{showApt}}" hint-placeholder-val="{{false}}"><label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Apt, suite or other<input style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label></sc-if>
+<sc-if value="{{hideApt}}" hint-placeholder-val="{{true}}"><button onClick="{{addApt}}" style="align-self: flex-start; background: none; border: 0; color: #b49609; font-weight: 700; cursor: pointer; padding: 4px 0; margin-top: -8px">+ Add apt, suite or other</button></sc-if>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">City <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input value="{{v.city}}" onInput="{{set.city}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">State <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><select value="{{v.state}}" onChange="{{set.state}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px 8px; font-size: 16px; background: #ffffff"><option value="">Select Your State</option><option value="TX">Texas</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Zip Code <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input value="{{v.zip}}" onInput="{{set.zip}}" inputmode="numeric" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+</div>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Phone Number <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input type="tel" value="{{v.phone}}" onInput="{{set.phone}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Email Address <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required</span><input type="email" value="{{v.email}}" onInput="{{set.email}}" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px"></label>
+</div>
+<fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="font-weight: 600; font-size: 14px; padding: 0; margin-bottom: 10px">Project Type <span style="font-weight: 500; color: #8a2a12; font-size: 12px">Required · Select all that apply</span></legend>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{types}}" as="t" hint-placeholder-count="4"><button onClick="{{t.toggle}}" aria-pressed="{{t.on}}" style="display: flex; align-items: center; gap: 12px; padding: 18px; border-radius: 8px; border: 2px solid {{t.border}}; background: {{t.bg}}; cursor: pointer; font-weight: 700; font-size: 16px; text-align: left; color: #2b2b2b"><span style="width: 22px; height: 22px; border-radius: 4px; border: 2px solid #b49609; background: {{t.box}}; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 14px">{{t.mark}}</span>{{t.name}}</button></sc-for>
+</div>
+</fieldset>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">How Did You Hear About Us?<select style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px 8px; font-size: 16px; background: #ffffff"><option>Select an option</option><option>Google search</option><option>Social media</option><option>Friend or neighbor</option><option>Yard sign</option><option>Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px">Notes<textarea rows="4" placeholder="Is there anything you'd like to tell us about your project?" style="border: 1px solid #cfc9b3; border-radius: 4px; padding: 12px; font-size: 16px; resize: vertical"></textarea></label>
+<button onClick="{{submit}}" disabled="{{notReady}}" style="background: #b49609; color: #ffffff; border: 0; border-radius: 4px; padding: 18px; font-weight: 700; font-size: 17px; cursor: pointer; text-transform: uppercase; letter-spacing: .05em">Submit</button>
+<span style="font-size: 12px; color: #6b6b6b">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</span>
+</div>
+</sc-if>
+</div>
+</section>
+
+<section style="padding: 24px 24px 88px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; text-transform: uppercase; color: #343434; text-align: center">Our Office</h2>
+<div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #ffffff; border-radius: 8px; overflow: hidden; max-width: 1000px; width: 100%; margin: 0 auto"><div style="padding: 32px; display: flex; flex-direction: column; gap: 8px; justify-content: center"><b style="font-family: Montserrat, sans-serif; font-size: 24px; text-transform: uppercase">Houston Office</b><span style="font-size: 16px; color: #4a4a4a">1737 Stebbins Dr #230A, Houston, TX 77043</span><a href="tel:+18327321212" style="font-weight: 700; font-size: 18px">832-732-1212</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1737+Stebbins+Dr+%23230A+Houston+TX+77043" target="_blank" rel="noopener" class="btn" style="align-self: flex-start; margin-top: 10px; background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 4px; font-size: 14px">Get Directions</a></div><div style="position: relative; min-height: 380px; background: #e4e0d2"><iframe title="Map of The Crescent Builders Houston office, 1737 Stebbins Dr #230A, Houston, TX 77043" src="https://maps.google.com/maps?q=The%20Crescent%20Builders%2C%201737%20Stebbins%20Dr%20%23230A%2C%20Houston%2C%20TX%2077043&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="allowfullscreen" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0"></iframe></div></div>
+</div>
+</section>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2500}}'>
+class Component extends DCLogic {
+  constructor(p){ super(p); this.state = { v: { first: '', last: '', street: '', city: '', state: '', zip: '', phone: '', email: '' }, types: {}, apt: false, call: false, done: false }; }
+  renderVals() {
+    const s = this.state, v = s.v;
+    const set = {};
+    Object.keys(v).forEach(k => { set[k] = (e) => this.setState({ v: { ...this.state.v, [k]: e.target.value } }); });
+    const names = ['Roofing', 'Siding', 'Windows', 'Gutters'];
+    const anyType = names.some(n => s.types[n]);
+    const ready = Object.values(v).every(x => String(x).trim()) && anyType;
+    return {
+      v, set,
+      types: names.map(n => { const on = !!s.types[n]; return { name: n, on, mark: on ? '✓' : '', box: on ? '#b49609' : '#ffffff', bg: on ? '#f7f5ee' : '#ffffff', border: on ? '#b49609' : '#e0dbc8', toggle: () => this.setState({ types: { ...this.state.types, [n]: !on } }) }; }),
+      showApt: s.apt, hideApt: !s.apt, addApt: () => this.setState({ apt: true }),
+      callOpen: s.call, toggleCall: () => this.setState({ call: !s.call }),
+      offices: ['Houston Office'],
+      notReady: !ready, submit: () => this.setState({ done: true }),
+      done: s.done, notDone: !s.done, first: v.first
+    };
+  }
+}
+</script>
+</body>
+</html>

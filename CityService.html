@@ -1,0 +1,341 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – City Service Page</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#b49609}a:hover{color:#8c7406}
+.btn{transition:filter .2s}.btn:hover{filter:brightness(1.18)}
+.qcard{transition:border-color .2s,box-shadow .2s,transform .2s}.qcard:hover{border-color:#b49609!important;box-shadow:0 10px 26px rgba(0,0,0,.1);transform:translateY(-2px)}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.tc .tc-dark{opacity:0;transition:opacity .3s}.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s}.tc:hover .tc-desc,.tc:focus-visible .tc-desc{max-height:200px;opacity:1}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details[open] .pm{transform:rotate(45deg)}
+details[open] > summary.fq{color:#b49609}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc{max-height:200px;opacity:1}.tc .tc-dark{opacity:1}}
+@media (max-width:860px){.sty{flex-direction:column!important}.sty img{width:100%!important;height:200px!important}.g2,.g3,.g4,.g5{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
+/* card-motion: dark overlay fades in, title slides up, description rises in */
+.tc .tc-dark{opacity:0;transition:opacity .45s ease}
+.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
+.tc .tc-desc,.hc .hc-txt{display:block;max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height .55s cubic-bezier(.22,.61,.36,1),opacity .4s ease .1s,transform .55s cubic-bezier(.22,.61,.36,1) .05s}
+.tc:hover .tc-desc,.tc:focus-visible .tc-desc,.hc:hover .hc-txt,.hc:focus-visible .hc-txt{max-height:240px;opacity:1;transform:none}
+.hc .hc-ov{transition:background .45s ease!important}
+@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc,.hc .hc-txt{max-height:240px;opacity:1;transform:none}.tc .tc-dark{opacity:1}}
+.tcard{transition:background .2s,box-shadow .2s,transform .2s}.tcard:hover,.tcard:focus-visible{background:#faf6e4!important;box-shadow:0 10px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
+@media (max-width:860px){.tstrip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.cwrap{display:grid;grid-template-columns:280px minmax(0,1fr);align-items:start}
+.cside{position:sticky;top:0;align-self:start;background:#1f1f1f;color:#fff;min-height:100vh;box-sizing:border-box}
+.sbl{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;color:#e8e8e8;text-decoration:none;font-weight:700;font-size:15px;border-bottom:1px solid #2e2e2e;transition:background .2s,color .2s}
+.sbl:hover,.sbl:focus-visible,.sbl.on{background:#2b2b2b;color:#e3d26a}
+.sbs{display:block;padding:10px 22px 10px 38px;color:#cfcfcf;text-decoration:none;font-size:14px;font-weight:600;background:#262626;border-bottom:1px solid #2e2e2e}
+.sbs:hover,.sbs:focus-visible,.sbs.on{color:#e3d26a}
+.crumbs a{color:#8c7406;text-decoration:none;font-weight:600}.crumbs a:hover{text-decoration:underline}
+@media (max-width:960px){.cwrap{grid-template-columns:minmax(0,1fr)}.cside{position:static;min-height:0}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+<div class="cwrap">
+<aside class="cside" aria-label="{{c.name}} services">
+<div style="padding: 26px 22px; border-bottom: 1px solid #2e2e2e; display: flex; flex-direction: column; gap: 8px">
+<b style="font-size: 22px">{{c.name}}, TX</b>
+<span style="font-size: 13px; color: #cfcfcf; display: flex; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="#b49609" aria-hidden="true" style="flex: 0 0 auto; margin-top: 2px"><path d="M12 2C8 2 5 5 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"></path></svg>Serving {{c.name}} from our Houston office, 1737 Stebbins Dr #230A</span>
+<a href="tel:+18327321212" style="font-size: 14px; color: #ffffff; text-decoration: none; font-weight: 700; display: flex; gap: 8px; align-items: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="#b49609" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"></path></svg>832-732-1212</a>
+<span style="font-size: 13px; color: #e3d26a">★★★★★ <span style="color: #cfcfcf">4.9 (200+ Google reviews)</span></span>
+</div>
+<nav aria-label="{{c.name}} service pages">
+<a class="{{hubCls}}" href="City.html#{{c.slug}}"><span>{{c.name}} Home</span><span aria-hidden="true">›</span></a>
+<sc-for list="{{side}}" as="s" hint-placeholder-count="5">
+<a class="{{s.cls}}" href="{{s.href}}"><span>{{s.label}}</span><span aria-hidden="true">›</span></a>
+<sc-if value="{{s.open}}" hint-placeholder-val="{{false}}"><sc-for list="{{s.subs}}" as="x" hint-placeholder-count="3"><a class="{{x.cls}}" href="{{x.href}}">{{x.label}}</a></sc-for></sc-if>
+</sc-for>
+<a class="sbl" href="ServiceAreas.html"><span>All Service Areas</span><span aria-hidden="true">›</span></a>
+</nav>
+</aside>
+<main style="min-width: 0">
+<section style="position: relative; background: #2a2a2a url({{pg.banner}}) center/cover no-repeat">
+<div style="position: absolute; inset: 0; background: rgba(12,12,12,.7)"></div>
+<div style="position: relative; padding: 96px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; color: #ffffff">
+<h1 class="h1" style="margin: 0; font-size: 50px; font-weight: 800; text-transform: uppercase; line-height: 1.1">{{pg.h1}}</h1>
+<span style="font-size: 22px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #e3d26a">{{pg.kicker}}</span>
+<p style="margin: 0 auto; font-size: 18px; line-height: 1.65; max-width: 800px; color: #f2f2f2; text-align: center">{{pg.intro}}</p>
+<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 30px; border-radius: 4px">{{pg.cta}}</a>
+</div>
+</section>
+<div style="background: #f7f5ee; border-bottom: 1px solid #e6e3d6; padding: 12px 32px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; font-size: 13px">
+<nav class="crumbs" aria-label="Breadcrumb" style="display: flex; flex-wrap: wrap; gap: 6px; color: #6b6b6b"><sc-for list="{{crumbs}}" as="b" hint-placeholder-count="3"><a href="{{b.href}}">{{b.label}}</a><span aria-hidden="true">›</span></sc-for><span style="color: #343434; font-weight: 700">{{crumbHere}}</span></nav>
+<span style="color: #6b6b6b">Live URL: <code style="color: #343434; font-weight: 700">crescentbuilders.co{{seoPath}}</code></span>
+</div>
+<section style="background: #ffffff; padding: 36px 24px; border-bottom: 1px solid #e6e3d6">
+<div class="tstrip" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{proof}}" as="p" hint-placeholder-count="5">
+<a class="tcard" href="{{p.href}}" target="{{p.target}}" rel="noopener" aria-label="{{p.aria}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; padding: 22px 12px; border: 2px solid #b49609; border-radius: 10px; background: #ffffff; text-decoration: none; color: #2b2b2b; box-sizing: border-box">
+<img src="{{p.icon}}" alt="" style="width: 46px; height: 46px; object-fit: contain">
+<b style="font-family: Montserrat, sans-serif; font-size: 24px; color: #343434">{{p.big}}</b>
+<span style="font-size: 14px; color: #4a4a4a">{{p.small}}</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 80px 32px">
+<div class="g2" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 14px"><h2 class="h2" style="margin: 0; font-size: 32px; font-weight: 800; text-transform: uppercase; color: #343434">{{pg.whatH}}</h2><p style="margin: 0; font-size: 16px; line-height: 1.7; color: #4a4a4a">{{pg.whatP}}</p></div>
+<img src="{{pg.img}}" alt="{{pg.h1}} in {{c.name}}, TX" style="width: 100%; height: 360px; object-fit: cover; border-radius: 8px; display: block">
+</div>
+</section>
+
+<sc-if value="{{hasCards}}" hint-placeholder-val="{{true}}">
+<section style="padding: 0 32px 80px">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<h2 class="h2" style="margin: 0; font-size: 32px; font-weight: 800; text-transform: uppercase; color: #343434; text-align: center">{{cardsTitle}}</h2>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{cards}}" as="s" hint-placeholder-count="3">
+<a class="tc" href="{{s.href}}" style="position: relative; display: block; height: 320px; border-radius: 6px; overflow: hidden; color: #ffffff; text-decoration: none">
+<img src="{{s.img}}" alt="{{s.name}} in {{c.name}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.85) 100%)"></div>
+<div class="tc-dark" style="position: absolute; inset: 0; background: rgba(10,10,10,.84)"></div>
+<div style="position: absolute; left: 18px; right: 18px; bottom: 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px"><span style="font-size: 20px; font-weight: 600">{{s.name}} →</span><span class="tc-desc" style="font-size: 13px; line-height: 1.55; color: #f0f0f0">{{s.desc}}</span></div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+</sc-if>
+
+<section style="padding: 72px 32px; background: #f7f5ee">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px">
+<h2 class="h2" style="margin: 0 0 8px; font-size: 32px; font-weight: 800; text-transform: uppercase; color: #343434">{{pg.listH}}</h2>
+<sc-for list="{{pg.list}}" as="l" hint-placeholder-count="5"><div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 30px; height: 30px; border-radius: 50%; background: #b49609; color: #ffffff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center">{{l.n}}</span><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a4a4a"><b style="color: #2b2b2b">{{l.t}}:</b> {{l.d}}</p></div></sc-for>
+</div>
+</section>
+
+<section style="padding: 72px 32px; background: #262626; color: #ffffff">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 800; text-transform: uppercase">Why Choose The Crescent Builders In {{c.name}}?</h2>
+<sc-for list="{{why}}" as="w" hint-placeholder-count="4"><div style="display: flex; gap: 14px; align-items: center"><span style="flex: 0 0 32px; height: 32px; border-radius: 50%; border: 2px solid #e3d26a; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e3d26a" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span><span style="font-size: 16px; font-weight: 600">{{w}}</span></div></sc-for>
+</div>
+</section>
+
+<section style="padding: 72px 32px; background: #1f1f1f; color: #ffffff">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; align-items: center">
+<h2 style="margin: 0; font-size: 32px; font-weight: 800; text-transform: uppercase; text-align: center">{{reviewTitle}}</h2>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=The+Crescent+Builders+1737+Stebbins+Dr+Houston+TX" target="_blank" rel="noopener" style="color: #e3d26a; font-weight: 700">Read All Reviews</a>
+<div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%">
+<sc-for list="{{reviews}}" as="r" hint-placeholder-count="3"><div style="background: #ffffff; color: #343434; border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="color: #b49609; font-size: 16px">★★★★★</span><b>{{r.n}}</b><span style="font-size: 14px; line-height: 1.6; color: #4a4a4a">{{r.t}}</span></div></sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 80px 32px; background: #f7f5ee">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="margin: 0 0 12px; font-size: 30px; font-weight: 800; text-transform: uppercase; color: #343434">{{faqTitle}}</h2>
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+<details style="border: 1px solid #e6e3d6; border-radius: 6px; background: #ffffff">
+<summary class="fq" style="padding: 18px 20px; display: flex; gap: 14px; align-items: center; font-weight: 700; font-size: 16px"><span class="pm" style="color: #b49609; font-size: 22px; line-height: 1; transition: transform .2s">+</span>{{f.q}}</summary>
+<p style="margin: 0; padding: 0 20px 20px 56px; font-size: 15px; line-height: 1.7; color: #4a4a4a">{{f.a}}</p>
+</details>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 72px 32px; background: #262626; color: #ffffff">
+<div class="g2" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start"><h2 style="margin: 0; font-size: 32px; font-weight: 800; text-transform: uppercase">Ready To Get Started?</h2><span style="font-size: 16px; color: #e0e0e0">{{readyLine}}</span><a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em; font-size: 14px">{{pg.cta}}</a></div>
+<iframe title="Map of {{c.name}}, Texas service area" src="{{mapSrc}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 320px; border: 0; border-radius: 8px; display: block; background: #e4e0d2"></iframe>
+</div>
+</section>
+
+<section style="padding: 64px 32px">
+<div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px">
+<h2 class="h2" style="margin: 0 0 8px; font-size: 28px; font-weight: 800; text-transform: uppercase; color: #343434">{{knowTitle}}</h2>
+<sc-for list="{{know}}" as="s" hint-placeholder-count="6"><div style="display: flex; gap: 10px; font-size: 15px; line-height: 1.6"><span style="color: #b49609; font-weight: 800">•</span><span><b>{{s.k}}:</b> {{s.v}}</span></div></sc-for>
+</div>
+</section>
+
+<details style="background: #1d1d1d; color: #ffffff">
+<summary style="padding: 22px 32px; display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 800; text-transform: uppercase; border-left: 4px solid #b49609">{{nearTitle}}<span class="pm" style="font-size: 26px; color: #e3d26a; transition: transform .2s">+</span></summary>
+<div style="padding: 0 32px 26px; display: flex; flex-wrap: wrap; gap: 10px 26px"><sc-for list="{{nearby}}" as="t" hint-placeholder-count="8"><a href="{{t.href}}" style="color: #d6d6d6">{{t.name}}</a></sc-for></div>
+</details>
+</main>
+</div>
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"city":{"editor":"select","options":["houston","katy","sugar-land","pearland","cypress","spring","the-woodlands","tomball","missouri-city","richmond","fulshear","humble","kingwood","league-city","friendswood","bellaire","pasadena"],"default":"katy","section":"Service Area"},"service":{"editor":"select","options":["roofing","siding","windows","gutters","doors"],"default":"roofing","section":"Service Area"},"subservice":{"editor":"select","options":["","repair","replacement","inspections"],"default":"inspections","section":"Service Area"},"$preview":{"width":1440,"height":4600}}'>
+class Component extends DCLogic {
+  /* =====================================================================
+     SERVICE AREA DATA (single source of truth for every city page)
+     Live-site URL pattern (local SEO):
+       /tx/{city}                         e.g. /tx/katy
+       /tx/{city}/{service}               e.g. /tx/katy/roofing
+       /tx/{city}/{service}/{subservice}  e.g. /tx/katy/roofing/inspections
+     To add a city: add one entry to cities(). Every hub and service page
+     for that city is generated from this entry.
+     ===================================================================== */
+  cities() { return [
+    { slug: 'houston', name: 'Houston', county: 'Harris County', banner: './assets/fb71d0ccfd95c12b3f825de79f061b27.jpg', roof: '$7,440 – $18,320', hoas: ['Memorial', 'The Heights', 'Meyerland', 'Spring Branch', 'Westchase'], note: 'Many Houston neighborhoods have deed restrictions that cover roof materials, colors and exterior changes.' },
+    { slug: 'katy', name: 'Katy', county: 'Fort Bend, Harris & Waller Counties', banner: './assets/c0637a1574fc7cde862a601331a177e6.jpg', roof: '$10,120 – $19,280', hoas: ['Cinco Ranch', 'Cross Creek Ranch', 'Elyson', 'Grand Lakes', 'Firethorne'], note: 'Most Katy master-planned communities require HOA architectural approval before a new roof, siding or window color change.' },
+    { slug: 'sugar-land', name: 'Sugar Land', county: 'Fort Bend County', banner: './assets/90861f66e2bc88885539c9f79851f623.jpg', roof: '$10,055 – $19,157', hoas: ['First Colony', 'Riverstone', 'Telfair', 'Greatwood', 'Avalon'], note: 'Sugar Land communities like First Colony and Riverstone have design guidelines for roofing and exterior materials.' },
+    { slug: 'pearland', name: 'Pearland', county: 'Brazoria & Harris Counties', banner: './assets/ab6361268ba8f1e8e7eb0ab98dd8e831.jpg', roof: '$7,054 – $17,369', hoas: ['Shadow Creek Ranch', 'Silverlake', 'Southern Trails', 'Green Tee Terrace'], note: 'Pearland HOAs often specify approved shingle colors and require approval before work begins.' },
+    { slug: 'cypress', name: 'Cypress', county: 'Harris County', banner: './assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg', roof: '$9,958 – $18,973', hoas: ['Bridgeland', 'Towne Lake', 'Fairfield', 'Coles Crossing', 'Blackhorse Ranch'], note: 'Cypress master-planned communities typically review roof and exterior changes through an architectural committee.' },
+    { slug: 'spring', name: 'Spring', county: 'Harris & Montgomery Counties', banner: './assets/f5a79bd0200644079da12da535e1835d.jpg', roof: '$7,440 – $18,320', hoas: ['Gleannloch Farms', 'Spring Creek Oaks', 'Northgate Forest', 'Augusta Pines'], note: 'Several Spring neighborhoods have HOA rules for roof materials, colors and siding.' },
+    { slug: 'the-woodlands', name: 'The Woodlands', county: 'Montgomery County', banner: './assets/aa3706c85629c42196987a8559334356.jpg', roof: '$15,201 – $32,092', hoas: ['Sterling Ridge', 'Creekside Park', 'Alden Bridge', 'Cochran’s Crossing', 'Panther Creek'], note: 'The Woodlands Township requires covenant review for most exterior changes, including roof color and material.' },
+    { slug: 'tomball', name: 'Tomball', county: 'Harris County', banner: './assets/175c5abfbc0ca6718c24bb41cdd87475.jpg', roof: '$8,153 – $33,665', hoas: ['Northpointe', 'Wildwood at Northpointe', 'Lakewood Forest'], note: 'Some Tomball communities have HOA guidelines for exterior materials and colors.' },
+    { slug: 'missouri-city', name: 'Missouri City', county: 'Fort Bend County', banner: './assets/ffa362c8c26329b8043624e3b3cb078d.jpg', roof: '$10,055 – $19,157', hoas: ['Sienna', 'Quail Valley', 'Lake Olympia', 'Riverstone'], note: 'Sienna and other Missouri City communities review roofing and exterior changes before approval.' },
+    { slug: 'richmond', name: 'Richmond', county: 'Fort Bend County', banner: './assets/c0637a1574fc7cde862a601331a177e6.jpg', roof: '$7,613 – $31,437', hoas: ['Pecan Grove', 'Harvest Green', 'Veranda', 'Long Meadow Farms'], note: 'Richmond-area HOAs often specify approved roof styles and colors.' },
+    { slug: 'fulshear', name: 'Fulshear', county: 'Fort Bend County', banner: './assets/90861f66e2bc88885539c9f79851f623.jpg', roof: '$8,969 – $37,037', hoas: ['Cross Creek Ranch', 'Fulbrook on Fulshear Creek', 'Jordan Ranch', 'Weston Lakes'], note: 'Fulshear master-planned communities require HOA approval for exterior updates.' },
+    { slug: 'humble', name: 'Humble', county: 'Harris County', banner: './assets/ab6361268ba8f1e8e7eb0ab98dd8e831.jpg', roof: '$7,405 – $30,578', hoas: ['Eagle Springs', 'Atascocita Shores', 'Walden on Lake Houston'], note: 'Many Humble and Atascocita neighborhoods have HOA exterior guidelines.' },
+    { slug: 'kingwood', name: 'Kingwood', county: 'Harris & Montgomery Counties', banner: './assets/fb71d0ccfd95c12b3f825de79f061b27.jpg', roof: '$9,761 – $40,308', hoas: ['Kingwood Service Association villages', 'Elm Grove', 'Kings Forest', 'Bear Branch'], note: 'Kingwood villages require architectural approval for roofing and exterior changes.' },
+    { slug: 'league-city', name: 'League City', county: 'Galveston County', banner: './assets/8a64027d8f4f6e9adb38811f9a478b5f.jpg', roof: '$8,014 – $33,092', hoas: ['South Shore Harbour', 'Victory Lakes', 'Tuscan Lakes', 'Westover Park'], note: 'League City is close to the coast, so wind-rated roofing and HOA approval are both common considerations.' },
+    { slug: 'friendswood', name: 'Friendswood', county: 'Galveston & Harris Counties', banner: './assets/f5a79bd0200644079da12da535e1835d.jpg', roof: '$8,905 – $36,772', hoas: ['West Ranch', 'Wedgewood Village', 'Forest Bend'], note: 'Friendswood communities like West Ranch have guidelines for roofing and exterior updates.' },
+    { slug: 'bellaire', name: 'Bellaire', county: 'Harris County', banner: './assets/aa3706c85629c42196987a8559334356.jpg', roof: '$15,201 – $32,092', hoas: ['Bellaire neighborhoods with deed restrictions'], note: 'Bellaire homes often have deed restrictions, and the City of Bellaire issues building permits for exterior work.' },
+    { slug: 'pasadena', name: 'Pasadena', county: 'Harris County', banner: './assets/175c5abfbc0ca6718c24bb41cdd87475.jpg', roof: '$6,910 – $28,534', hoas: ['Golfcrest', 'Red Bluff Terrace', 'Parkview'], note: 'Some Pasadena neighborhoods have deed restrictions for exterior changes.' }
+  ]; }
+  services() { return [
+    { slug: 'roofing', name: 'Roofing', sub: [ { slug: 'repair', name: 'Roof Repair' }, { slug: 'replacement', name: 'Roof Replacement' }, { slug: 'inspections', name: 'Roof Inspections' } ] },
+    { slug: 'siding', name: 'Siding', sub: [ { slug: 'inspections', name: 'Siding Inspections' } ] },
+    { slug: 'windows', name: 'Windows', sub: [ { slug: 'inspections', name: 'Window Inspections' } ] },
+    { slug: 'gutters', name: 'Gutters', sub: [] },
+    { slug: 'doors', name: 'Doors', sub: [] }
+  ]; }
+  readHash() {
+    try { const h = (window.location.hash || '').slice(1); return h ? h.split('--') : []; } catch (e) { return []; }
+  }
+  componentDidMount() {
+    this.onHash = () => this.setState({ hashTick: Date.now() });
+    try { window.addEventListener('hashchange', this.onHash); } catch (e) {}
+  }
+  componentWillUnmount() { try { window.removeEventListener('hashchange', this.onHash); } catch (e) {} }
+  sidebar(city, activeSvc, activeSub) {
+    return this.services().map(s => ({
+      label: s.name, href: 'CityService.html#' + city.slug + '--' + s.slug,
+      cls: (s.slug === activeSvc && !activeSub) ? 'sbl on' : 'sbl',
+      open: s.slug === activeSvc && s.sub.length > 0,
+      subs: s.sub.map(x => ({ label: x.name, href: 'CityService.html#' + city.slug + '--' + s.slug + '--' + x.slug, cls: (s.slug === activeSvc && x.slug === activeSub) ? 'sbs on' : 'sbs' }))
+    }));
+  }
+
+  /* Page copy per service / sub-service. {city} is replaced with the city name. */
+  content() { return {
+    'roofing': { h1: '{city}, TX', kicker: 'Roofing Contractor', cta: 'Free Roofing Estimate', tab: 'INSTANT ROOF ESTIMATE', banner: '', img: './assets/7ae8d85b216be415bc86e9a64724b220.jpg',
+      intro: 'Protect and upgrade your {city} home with expert roof repair, replacement and inspections from a trusted local team. We install durable, wind-rated roofing built for Houston-area storms. Schedule your free roofing estimate today!',
+      whatH: 'Trusted Roofing Contractor In {city}', whatP: '{city} homeowners count on The Crescent Builders for honest roof assessments and quality workmanship. Whether you need a quick leak repair or a complete GAF or Owens Corning roof replacement, our crew handles every step and backs the work with our 50-year workmanship warranty.',
+      listH: 'Our Roofing Process In {city}', list: [['Free Inspection','We inspect your roof, document problems with photos and explain what we find.'],['Clear Estimate','You get a detailed written quote with material options and pricing.'],['Scheduling','We plan installation around the weather and your schedule.'],['Installation','Our crew protects your property and installs your roof to manufacturer standards.'],['Clean-Up & Final Walkthrough','We clean up thoroughly and walk the project with you before we call it done.']] },
+    'roofing/repair': { h1: 'Roof Repair', kicker: 'In {city}', cta: 'Schedule Your Roof Repair', tab: 'INSTANT ROOF ESTIMATE', img: './assets/fa712de2f8387c2aa0c703e84eab950d.jpg',
+      intro: 'Leaks, storm damage, missing shingles or failed flashing? Our team finds the source fast and repairs your {city} roof the right way, so a small problem never turns into a costly one. Get your free roof repair quote today!',
+      whatH: 'Roof Repair In {city}', whatP: 'From hail and wind damage after a Gulf Coast storm to worn flashing and small leaks, we repair roofs across {city} quickly and match your existing shingles as closely as possible.',
+      listH: 'Common Roof Repairs In {city}', list: [['Storm Damage','Hail, wind and fallen limbs can crack or tear off shingles.'],['Roof Leaks','We trace leaks to the source, not just the stain on your ceiling.'],['Flashing Repair','Failed flashing around chimneys, vents and walls is a top cause of leaks.'],['Missing Or Curling Shingles','We replace damaged shingles to restore protection.'],['Emergency Tarping','We secure your roof fast after severe weather.']] },
+    'roofing/replacement': { h1: 'Roof Replacement', kicker: 'In {city}', cta: 'Get A Roof Replacement Quote', tab: 'INSTANT ROOF ESTIMATE', img: './assets/7ae8d85b216be415bc86e9a64724b220.jpg',
+      intro: 'When repairs no longer make sense, we install a complete new roof system on your {city} home, from tear-off and decking repair to new shingles, ventilation and flashing. Get your free roof replacement quote today!',
+      whatH: 'Roof Replacement In {city}', whatP: 'We replace asphalt, metal, clay tile and flat roofs across {city}, using GAF and Owens Corning systems installed to manufacturer standards and backed by our 50-year workmanship warranty.',
+      listH: 'Signs You Need A New Roof In {city}', list: [['Age','Most asphalt roofs in the Houston climate last 15–25 years.'],['Widespread Damage','Storm damage across large areas is often better replaced than patched.'],['Repeated Leaks','Ongoing leaks can mean the roof system is failing.'],['Granule Loss & Curling','Worn shingles no longer protect your home well.'],['Sagging Or Soft Decking','Structural issues should be addressed right away.']] },
+    'roofing/inspections': { h1: 'Roof Inspections', kicker: 'In {city}', cta: 'Schedule Your Roof Inspection', tab: 'INSTANT ROOF ESTIMATE', img: './assets/49f74e80616fbac8943aacf0b7c9de46.jpg',
+      intro: '{city}’s heat, humidity and storms can wear down a roof faster than you think. Our free roof inspections catch damage early so you can make informed repair or replacement decisions. Schedule your free roof inspection today!',
+      whatH: 'What Is A Roof Inspection?', whatP: 'A roof inspection is a detailed check of your roof’s shingles, flashing, gutters, ventilation and decking. We document everything with photos and give {city} homeowners a clear, honest report with recommended next steps.',
+      listH: 'Our Roof Inspection Checklist', list: [['Shingle & Surface Condition','Cracks, curling, granule loss and hail or wind damage.'],['Flashing & Seal Integrity','Chimneys, vents, skylights and wall transitions.'],['Gutter & Drainage Performance','Proper flow away from your roof and foundation.'],['Attic Ventilation & Insulation','Heat and moisture buildup that shortens roof life.'],['Structural Stability & Moisture','Soft spots, rot and signs of leaks.']] },
+    'siding': { h1: '{city}, TX', kicker: 'Siding Contractor', cta: 'Free Siding Estimate', tab: 'INSTANT SIDING ESTIMATE', img: './assets/f5a79bd0200644079da12da535e1835d.jpg',
+      intro: 'Upgrade your {city} home with durable vinyl, fiber cement or composite siding installed to handle heat, humidity and storms, while boosting curb appeal and energy efficiency. Get your free siding estimate today!',
+      whatH: 'Siding Replacement And Installation In {city}', whatP: 'The Crescent Builders installs and repairs siding across {city} using products from trusted brands like LP SmartSide, James Hardie, Everlast and Norandex, with careful attention to trim, flashing and moisture protection.',
+      listH: 'Our Siding Process In {city}', list: [['Free Inspection','We check your siding for damage, moisture and pest issues.'],['Material Selection','Compare vinyl, fiber cement and composite options and colors.'],['Removal & Prep','We remove old siding and inspect the wall underneath.'],['Installation','New siding is installed with proper flashing and trim details.'],['Final Walkthrough','We clean up and review the finished project with you.']] },
+    'siding/inspections': { h1: 'Siding Inspections', kicker: 'In {city}', cta: 'Schedule Your Siding Inspection', tab: 'INSTANT SIDING ESTIMATE', img: './assets/525c011736557d98ee3c25f7e30bafb4.jpg',
+      intro: 'Spot storm damage, moisture, loose panels and failing sealant before they turn into costly repairs. Our team inspects your {city} home’s siding and gives you clear, honest advice. Schedule your free siding inspection today!',
+      whatH: 'What Is A Siding Inspection?', whatP: 'A siding inspection is a professional check of your panels, trim, seams, attachment points and sealant. In {city}’s humid climate, small gaps can let moisture behind siding, so catching them early matters.',
+      listH: 'What We Look For', list: [['Panel & Surface Condition','Cracks, holes, warping and fading.'],['Attachment & Alignment','Loose or buckling panels.'],['Trim, Seams & Transitions','Gaps where water can get in.'],['Moisture Warning Signs','Staining, swelling, mold and rot.'],['Openings & Sealant','Caulk and flashing around windows and doors.']] },
+    'windows': { h1: '{city}, TX', kicker: 'Replacement Window Installers', cta: 'Get A Window Estimate', tab: 'INSTANT WINDOW ESTIMATE', img: './assets/8f0c045c80b7be5bf146398da75e791a.jpg',
+      intro: 'We install energy-efficient replacement windows in {city} homes, built to keep out Houston-area heat and storms while improving comfort, curb appeal and noise reduction. Request your free window estimate today!',
+      whatH: 'Window Replacement In {city}', whatP: 'From double-hung and casement to picture and sliding windows, The Crescent Builders helps {city} homeowners choose and install windows that lower cooling bills and look great.',
+      listH: 'Our Window Replacement Process', list: [['Free Consultation','We measure your windows and discuss styles and materials.'],['Custom Order','Windows are ordered to fit your openings precisely.'],['Professional Installation','Old windows are removed and new ones sealed and insulated.'],['Trim & Finishing','Interior and exterior trim is finished for a clean look.'],['Final Walkthrough','We check operation and clean up.']] },
+    'windows/inspections': { h1: 'Window Inspections', kicker: 'In {city}', cta: 'Schedule Your Window Inspection', tab: 'INSTANT WINDOW ESTIMATE', img: './assets/1c02b427ae5230024f1021611c75483f.jpg',
+      intro: 'Drafts, fogging, sticking sashes or moisture? Our team evaluates your {city} home’s windows and the openings around them, then explains what we find in plain language. Schedule your free window inspection today!',
+      whatH: 'What Is A Window Inspection?', whatP: 'We review each window’s frame, sill, glass, seals, hardware and exterior sealing to find issues that affect comfort, energy efficiency and weather resistance in {city} homes.',
+      listH: 'What We Look For', list: [['Frames & Sills','Cracks, rot and gaps.'],['Glass & Seals','Fogging between panes and cracked glass.'],['Operation & Hardware','Sticking sashes and broken locks.'],['Weatherstripping','Worn seals that cause drafts.'],['Water Intrusion','Stains and failed flashing around the window.']] },
+    'gutters': { h1: '{city}, TX', kicker: 'Gutter Contractors', cta: 'Get A Gutter Quote', tab: 'INSTANT ROOF ESTIMATE', img: './assets/c737c8d96779fe186e1b3446077ab42f.jpg',
+      intro: '{city} downpours can damage foundations, flood landscaping and rot fascia fast. Our team installs and repairs seamless gutter systems built to handle Gulf Coast rain. Get your free gutter quote today!',
+      whatH: 'Seamless Gutters In {city}', whatP: 'We install seamless, half-round and K-style gutters and gutter guards in aluminum, copper, vinyl and galvanized steel, sized for your {city} home’s roof and rainfall.',
+      listH: 'Our Gutter Services', list: [['New Gutter Installation','Seamless gutters custom-formed on site.'],['Gutter Replacement','Remove failing gutters and install a new system.'],['Gutter Guards','Keep leaves and debris out.'],['Downspout Upgrades','Move water safely away from your foundation.'],['Tune-Ups','Cleaning, realignment and sealing.']] },
+    'doors': { h1: '{city}, TX', kicker: 'Door Replacement Company', cta: 'Get A Door Estimate', tab: 'INSTANT ROOF ESTIMATE', img: './assets/7ed1075538b44ba1f75110ac95b690cb.jpg',
+      intro: 'Upgrade your {city} home’s entryways with professionally installed doors that improve energy efficiency, security and curb appeal while standing up to Houston-area heat and storms. Schedule your free estimate today!',
+      whatH: 'Door Installation In {city}', whatP: 'The Crescent Builders installs entry, patio and storm doors across {city}, with weather-tight installation and finishes that match your home’s style.',
+      listH: 'Types Of Doors We Install', list: [['Entry Doors','Wood-look, fiberglass and steel front doors.'],['Patio Doors','Sliding, French and hinged doors.'],['Storm Doors','Extra protection and ventilation.'],['Hardware & Locks','Upgraded security hardware.'],['Trim & Weatherproofing','Sealed for comfort and efficiency.']] }
+  }; }
+  renderVals() {
+    const cities = this.cities(), svcs = this.services();
+    const h = this.readHash();
+    const c = cities.find(x => x.slug === (h[0] || this.props.city || 'katy')) || cities[1];
+    const svc = svcs.find(x => x.slug === (h.length ? h[1] : (this.props.service || 'roofing'))) || svcs[0];
+    const subSlug = h.length ? (h[2] || '') : (this.props.subservice ?? 'inspections');
+    const sub = svc.sub.find(x => x.slug === subSlug) || null;
+    const key = svc.slug + (sub ? '/' + sub.slug : '');
+    const R = (t) => t.replace(/\{city\}/g, c.name);
+    const raw = this.content()[key] || this.content()[svc.slug];
+    const pg = { ...raw, h1: R(raw.h1), kicker: R(raw.kicker), intro: R(raw.intro), whatH: R(raw.whatH), whatP: R(raw.whatP), listH: R(raw.listH), banner: c.banner, list: raw.list.map((l, n) => ({ n: n + 1, t: l[0], d: R(l[1]) })) };
+    const label = sub ? sub.name : svc.name;
+    const cardImgs = { repair: './assets/fa712de2f8387c2aa0c703e84eab950d.jpg', replacement: './assets/7ae8d85b216be415bc86e9a64724b220.jpg', inspections: './assets/49f74e80616fbac8943aacf0b7c9de46.jpg' };
+    const cards = sub ? [] : svc.sub.map(x => ({ name: x.name, img: (svc.slug === 'roofing' ? cardImgs[x.slug] : (this.content()[svc.slug + '/' + x.slug] || {}).img) || pg.img, desc: R('Professional ' + x.name.toLowerCase() + ' for {city} homes.'), href: 'CityService.html#' + c.slug + '--' + svc.slug + '--' + x.slug }));
+    const crumbs = [ { label: 'Home', href: 'index.html' }, { label: 'Service Areas', href: 'ServiceAreas.html' }, { label: c.name + ', TX', href: 'City.html#' + c.slug } ];
+    if (sub) crumbs.push({ label: svc.name, href: 'CityService.html#' + c.slug + '--' + svc.slug });
+    const proof = [
+        { big: '300+', small: 'Completed Projects', icon: './assets/ded7473930cdf93834e00dd87335a6a0.png', href: 'Gallery.html', target: '_self', aria: 'View our project gallery' },
+        { big: '4.9 ★', small: '200+ Google Reviews', icon: './assets/25eddfac849015bff4066f26d8f3b1f5.png', href: 'https://www.google.com/maps/search/?api=1&query=The+Crescent+Builders+1737+Stebbins+Dr+Houston+TX', target: '_blank', aria: 'Read our Google reviews' },
+        { big: '50-YEAR', small: 'Workmanship Warranty', icon: './assets/fada4cb5dc5e9dbe79158d555a09dc4d.png', href: 'Warranty.html', target: '_self', aria: 'View our 50-year warranty' },
+        { big: 'LICENSED', small: 'Bonded & Insured', icon: './assets/20c37188bc3b4485a43236743ffa28b7.png', href: 'Licensing.html', target: '_self', aria: 'View our licenses and certifications' },
+        { big: 'SINCE 2025', small: 'Serving Greater Houston', icon: './assets/1f5a80d3f40d767e3f7ad10c3c3b883a.png', href: 'ServiceAreas.html', target: '_self', aria: 'View our service areas' }
+    ];
+
+    return {
+      proof, c, pg, tab: raw.tab, hubCls: 'sbl', side: this.sidebar(c, svc.slug, sub ? sub.slug : ''),
+      seoPath: '/tx/' + c.slug + '/' + svc.slug + (sub ? '/' + sub.slug : ''), crumbs, crumbHere: sub ? sub.name : svc.name,
+      hasCards: cards.length > 0, cards, cardsTitle: 'Local ' + svc.name + ' Services In ' + c.name + ', TX',
+      why: ['Free, no-pressure inspections and written estimates', 'Local Houston team serving ' + c.name + ' and nearby communities', 'Quality materials from trusted manufacturers', '50-year workmanship warranty and easy financing'],
+      reviewTitle: 'Trusted By ' + c.name + ' Homeowners',
+      reviews: [1, 2, 3].map(n => ({ n: '[Customer Name ' + n + ']', t: '[Real Google review from a ' + c.name + ' customer about ' + label.toLowerCase() + '.]' })),
+      faqTitle: 'Frequently Asked Questions About ' + label + ' In ' + c.name,
+      faqs: [
+        { q: 'What does ' + ({ 'roofing': 'a new roof', 'roofing/repair': 'roof repair', 'roofing/replacement': 'a roof replacement', 'roofing/inspections': 'a roof inspection', 'siding': 'new siding', 'siding/inspections': 'a siding inspection', 'windows': 'window replacement', 'windows/inspections': 'a window inspection', 'gutters': 'new gutters', 'doors': 'a new door' }[key] || label.toLowerCase()) + ' cost in ' + c.name + '?', a: /inspections$/.test(key) ? 'Inspections in ' + c.name + ' are free, and include photos and a written report. If repairs are needed, we’ll give you a free, detailed estimate.' : ( (svc.slug === 'roofing' && (!sub || sub.slug === 'replacement') ? 'A full roof replacement on an average-sized ' + c.name + ' home typically costs ' + c.roof + '. ' : '') + 'Your exact price depends on your home’s size, materials and the scope of work. We provide free, detailed written estimates.') },
+        { q: 'Do you serve all of ' + c.name + '?', a: 'Yes. We serve ' + c.name + ' and surrounding communities from our Houston office at 1737 Stebbins Dr, including neighborhoods like ' + c.hoas.slice(0, 2).join(' and ') + '.' },
+        { q: 'Do I need HOA approval in ' + c.name + '?', a: c.note + ' We can help prepare your HOA submittal.' },
+        { q: 'Is your work covered by a warranty?', a: 'Yes. Our work is backed by our 50-year workmanship warranty, and most materials also include a manufacturer warranty.' }
+      ],
+      readyLine: 'Schedule your free ' + label.toLowerCase() + ' estimate in ' + c.name + ' today!',
+      mapSrc: 'https://maps.google.com/maps?q=' + encodeURIComponent(c.name + ', TX') + '&z=12&output=embed',
+      knowTitle: 'What To Know About Our ' + c.name + ' ' + svc.name + ' Services',
+      know: [
+        { k: 'Services', v: [svc.name].concat(svc.sub.map(x => x.name)).join(', ') },
+        { k: 'Service Area', v: c.name + ', TX (' + c.county + ') and nearby communities' },
+        { k: 'Warranty', v: '50-year workmanship warranty' },
+        { k: 'Free Quotes', v: 'Call 832-732-1212 or request a free estimate online' },
+        { k: 'Financing', v: 'Easy financing options available' },
+        { k: 'Reputation', v: '4.9-star Google rating from 200+ reviews' }
+      ],
+      nearTitle: label + ' Near ' + c.name,
+      nearby: cities.filter(x => x.slug !== c.slug).map(x => ({ name: label + ' in ' + x.name, href: 'CityService.html#' + x.slug + '--' + svc.slug + (sub ? '--' + sub.slug : '') }))
+    };
+  }
+}
+</script>
+</body>
+</html>

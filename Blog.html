@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crescent Builders – Blog</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+
+
+
+
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.soc{transition:transform .2s,filter .2s}.soc:hover,.soc:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+<style>body{margin:0}.wa{transition:transform .2s,filter .2s}.wa:hover,.wa:focus-visible{transform:scale(1.07);filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.img-hero,.img-roof,.img-siding{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+a{color:#b49609}a:hover{color:#8c7406}
+.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+button{font:inherit}
+@media (max-width:860px){.g2,.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}}
+</style>
+</helmet>
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
+<dc-import name="Header" hint-size="100%,214px"></dc-import>
+
+
+<sc-if value="{{isIndex}}" hint-placeholder-val="{{true}}">
+<section class="img-hero" style="position: relative">
+<div style="position: absolute; inset: 0; background: rgba(18,18,18,.7)"></div>
+<div style="position: relative; padding: 88px 24px; text-align: center; color: #ffffff"><h1 class="h1" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 56px; text-transform: uppercase">Crescent Builders Blog</h1></div>
+</section>
+
+<nav aria-label="Blog pages" style="display: flex; justify-content: center; gap: 8px; padding: 28px 24px; flex-wrap: wrap">
+<button onClick="{{prevPage}}" aria-label="Previous page" style="width: 44px; height: 44px; border: 1px solid #e0dbc8; background: #ffffff; border-radius: 4px; cursor: pointer">‹</button>
+<sc-for list="{{pageBtns}}" as="p" hint-placeholder-count="4"><button onClick="{{p.go}}" style="width: 44px; height: 44px; border: 1px solid {{p.border}}; background: {{p.bg}}; color: {{p.fg}}; border-radius: 4px; cursor: pointer; font-weight: 700">{{p.n}}</button></sc-for>
+<button onClick="{{nextPage}}" aria-label="Next page" style="width: 44px; height: 44px; border: 1px solid #e0dbc8; background: #ffffff; border-radius: 4px; cursor: pointer">›</button>
+</nav>
+
+<section style="padding: 0 24px 40px">
+<div class="g2" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{featured}}" as="b" hint-placeholder-count="2">
+<button class="card ph" onClick="{{b.open}}" style="position: relative; height: 380px; border: 0; border-radius: 8px; overflow: hidden; cursor: pointer; text-align: left; color: #ffffff; padding: 0">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.85) 100%)"></div>
+<div style="position: absolute; left: 28px; right: 28px; bottom: 26px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; color: #e3d26a">[Date] · By Crescent Builders</span><b style="font-family: Montserrat, sans-serif; font-size: 28px; text-transform: uppercase; line-height: 1.15">{{b.title}}</b><span style="font-size: 15px; color: #e0e0e0">[Short excerpt of the article.]</span><span style="font-weight: 700; color: #e3d26a">Read More →</span></div>
+</button>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 0 24px 40px">
+<div class="g3" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{posts}}" as="b" hint-placeholder-count="6">
+<button class="card" onClick="{{b.open}}" style="background: #ffffff; border: 1px solid #e6e3d6; border-radius: 8px; overflow: hidden; cursor: pointer; text-align: left; padding: 0; display: flex; flex-direction: column; color: #2b2b2b">
+<div class="ph" style="height: 200px; width: 100%"></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; color: #6b6b6b">[Date] · By Crescent Builders</span><b style="font-size: 19px; line-height: 1.3">{{b.title}}</b><span style="font-size: 15px; color: #4a4a4a; line-height: 1.5">[Short snippet of the article.]</span><span style="font-weight: 700; color: #b49609">Read More →</span></div>
+</button>
+</sc-for>
+</div>
+</section>
+
+<nav aria-label="Blog pages" style="display: flex; justify-content: center; gap: 8px; padding: 12px 24px 72px; flex-wrap: wrap">
+<button onClick="{{prevPage}}" aria-label="Previous page" style="width: 44px; height: 44px; border: 1px solid #e0dbc8; background: #ffffff; border-radius: 4px; cursor: pointer">‹</button>
+<sc-for list="{{pageBtns}}" as="p" hint-placeholder-count="4"><button onClick="{{p.go}}" style="width: 44px; height: 44px; border: 1px solid {{p.border}}; background: {{p.bg}}; color: {{p.fg}}; border-radius: 4px; cursor: pointer; font-weight: 700">{{p.n}}</button></sc-for>
+<button onClick="{{nextPage}}" aria-label="Next page" style="width: 44px; height: 44px; border: 1px solid #e0dbc8; background: #ffffff; border-radius: 4px; cursor: pointer">›</button>
+</nav>
+</sc-if>
+
+<sc-if value="{{isPost}}" hint-placeholder-val="{{false}}">
+<article>
+<header class="g2" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<button onClick="{{backToIndex}}" style="align-self: flex-start; background: none; border: 0; color: #b49609; font-weight: 700; cursor: pointer; padding: 6px 0">‹ All Blogs</button>
+<h1 class="h1" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 48px; text-transform: uppercase; line-height: 1.1; color: #343434">{{postTitle}}</h1>
+<span style="font-size: 14px; color: #6b6b6b">[Date] · By Crescent Builders</span>
+<div style="display: flex; gap: 10px"><sc-for list="{{shares}}" as="s" hint-placeholder-count="3"><a href="https://crescentbuilders.co" aria-label="Share on {{s}}" style="width: 44px; height: 44px; border-radius: 50%; background: #343434; color: #ffffff; text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700">{{s}}</a></sc-for></div>
+</div>
+<div class="img-hero" style="height: 340px; border-radius: 8px"></div>
+</header>
+<div style="max-width: 760px; margin: 0 auto; padding: 0 24px 88px; display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.75; color: #3a3a3a">
+<p style="margin: 0">[Article introduction.]</p>
+<h2 style="margin: 12px 0 0; font-family: Montserrat, sans-serif; font-size: 32px; text-transform: uppercase; color: #343434">[Subheading]</h2>
+<p style="margin: 0">[Article body with an inline link to a service page, e.g. <a href="RoofRepair.html">roof repair</a>.]</p>
+<div class="img-roof" style="height: 320px; border-radius: 8px"></div>
+<h3 style="margin: 12px 0 0; font-size: 22px; color: #343434">[Tips list heading]</h3>
+<ul style="margin: 0; padding-left: 24px"><li>[Tip one]</li><li>[Tip two]</li><li>[Tip three]</li></ul>
+</div>
+</article>
+</sc-if>
+
+
+</div>
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  constructor(p){ super(p); this.state = { page: 1, post: null }; }
+  renderVals() {
+    const s = this.state, total = 4;
+    const pics = ['./assets/949575762f20984659a55282bc272ea7.png','./assets/1a2138f0fa79d3d6fb6f0bd15bd5d22d.png','./assets/1b74be77d8088bd013774026c9514514.png','./assets/825d9f9595297a8e192ecfb2e229ddd4.png','./assets/123ac75e7421d1d8b9f3266b3cc30230.png','./assets/3aaaf9ecf6192c963b3d9ad5c6c8e2a4.png','./assets/f27752cb28e99db946903c606e68e2dc.png','./assets/a3009abc37d78c3a16b082a0a297fa44.png'];
+    const mk = (n) => ({ img: pics[n % pics.length], title: '[Blog Post Title ' + ((s.page - 1) * 8 + n) + ']', open: () => this.setState({ post: '[Blog Post Title ' + ((s.page - 1) * 8 + n) + ']' }) });
+    return {
+      isIndex: !s.post, isPost: !!s.post, postTitle: s.post,
+      backToIndex: () => this.setState({ post: null }),
+      featured: [mk(1), mk(2)],
+      posts: [3,4,5,6,7,8].map(mk),
+      pageBtns: Array.from({ length: total }, (_, k) => { const on = k + 1 === s.page; return { n: k + 1, bg: on ? '#b49609' : '#ffffff', fg: on ? '#ffffff' : '#2b2b2b', border: on ? '#b49609' : '#e0dbc8', go: () => this.setState({ page: k + 1 }) }; }),
+      prevPage: () => this.setState({ page: Math.max(1, s.page - 1) }),
+      nextPage: () => this.setState({ page: Math.min(total, s.page + 1) }),
+      shares: ['FB', 'X', 'IN']
+    };
+  }
+}
+</script>
+</body>
+</html>
