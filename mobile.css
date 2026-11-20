@@ -2,14 +2,10 @@
    THE CRESCENT BUILDERS - MOBILE ONLY RESPONSIVE LAYOUT
    ========================================================= */
 
-/* Desktop par Hamburger Button Hide Rakhein */
 #cb-mobile-toggle {
   display: none;
 }
 
-/* =========================================================
-   SIRF MOBILE & TABLET VIEW (Screen 992px ya choti)
-   ========================================================= */
 @media (max-width: 992px) {
 
   * {
@@ -26,8 +22,21 @@
     height: auto !important;
   }
 
-  /* 1. Top Strip: Reviews + Customer Service + Phone Number (Teeno Ek Line Mein) */
-  header > div:first-child > div {
+  /* 1. Header & Footer DONO Logos ko Mobile par Chota Karein */
+  img[alt*="Crescent"],
+  a[href*="index"] img,
+  a[href*="Main"] img {
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+  }
+
+  /* 2. Top Bar: Gallery Hide + Reviews, Customer Service & Phone Show */
+  header a[href*="Gallery"] {
+    display: none !important;
+  }
+
+  header > div:first-of-type > div {
     justify-content: space-between !important;
     align-items: center !important;
     flex-wrap: nowrap !important;
@@ -36,19 +45,15 @@
     font-size: 11px !important;
   }
 
-  /* Gallery ko mobile top bar se hide karein (woh Menu mein maujood rahega) */
-  header > div:first-child a[href="Gallery.html"] {
-    display: none !important;
-  }
-
-  header > div:first-child a[href*="://google.com"],
-  header > div:first-child a[href="CustomerService.html"] {
+  header a[href*="://google.com"],
+  header a[href*="CustomerService"] {
     display: flex !important;
     padding: 4px 0 !important;
     white-space: nowrap !important;
+    font-size: 11px !important;
   }
 
-  header > div:first-child a[href^="tel:"] {
+  header a[href^="tel:"] {
     padding: 6px 10px !important;
     min-width: auto !important;
     font-size: 12px !important;
@@ -56,7 +61,7 @@
     white-space: nowrap !important;
   }
 
-  /* 2. Slim Mobile Header + Logo Left + Hamburger Right */
+  /* 3. Slim Mobile Header + Hamburger Button */
   header nav {
     flex-wrap: wrap !important;
     justify-content: space-between !important;
@@ -65,18 +70,6 @@
     gap: 10px !important;
   }
 
-  header nav > a:first-child img {
-    height: 46px !important;
-    width: auto !important;
-  }
-
-  /* Footer Logo Size Control on Mobile */
-  footer img[src*="assets/"] {
-    height: 56px !important;
-    width: auto !important;
-  }
-
-  /* Hamburger Button (☰) Style */
   #cb-mobile-toggle {
     display: flex !important;
     align-items: center;
@@ -92,7 +85,6 @@
     gap: 6px;
   }
 
-  /* Navigation Links Container (Default Hidden on Mobile) */
   header nav > div {
     display: none !important;
     flex-direction: column !important;
@@ -105,7 +97,6 @@
     gap: 0 !important;
   }
 
-  /* Jab Hamburger Click Ho Toh Menu Khule */
   header nav.cb-menu-open > div {
     display: flex !important;
   }
@@ -120,7 +111,6 @@
     text-align: left !important;
   }
 
-  /* Mobile Dropdown Sub-items */
   header nav > div > div > div {
     position: static !important;
     box-shadow: none !important;
@@ -129,8 +119,7 @@
     width: 100% !important;
   }
 
-  /* FREE Quote Button Full Width on Mobile */
-  header nav > a[href="Estimate.html"] {
+  header nav > a[href*="Estimate"] {
     width: 100% !important;
     min-width: unset !important;
     padding: 12px 0 !important;
@@ -138,24 +127,21 @@
     margin-top: 4px !important;
   }
 
-  /* Location & Storm Notice Bar Compact */
-  header > div:nth-child(3) > div,
-  header > div:nth-child(4) {
+  header > div:nth-of-type(3) > div,
+  header > div:nth-of-type(4) {
     font-size: 12px !important;
     padding: 6px 14px !important;
     line-height: 1.4 !important;
   }
 
-  /* 3. All Multi-Column Grids -> 1-Column Vertical Stack */
+  /* 4. Grids & Sections -> 1-Column Vertical Stack */
   [style*="display: grid"],
   [style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
-  /* 4. Wide Flex Containers -> Clean Vertical Stack */
   section > div,
-  footer > div > div,
   [style*="max-width: 1240px"],
   [style*="max-width: 1200px"] {
     padding-left: 16px !important;
@@ -178,7 +164,7 @@
     line-height: 1.35 !important;
   }
 
-  /* 6. Forms, Inputs & Calculators Touch-Friendly */
+  /* 6. Forms & Inputs */
   input, select, textarea {
     width: 100% !important;
     font-size: 16px !important;
@@ -190,7 +176,6 @@
     width: 100% !important;
   }
 
-  /* 7. WhatsApp Floating Button Adjustment */
   a.wa {
     width: 52px !important;
     height: 52px !important;
