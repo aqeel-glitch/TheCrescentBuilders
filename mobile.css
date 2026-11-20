@@ -1,6 +1,5 @@
 /* =========================================================
    THE CRESCENT BUILDERS - MOBILE ONLY RESPONSIVE LAYOUT
-   (Desktop layout ko bilkul touch nahi karega)
    ========================================================= */
 
 /* Desktop par Hamburger Button Hide Rakhein */
@@ -27,23 +26,34 @@
     height: auto !important;
   }
 
-  /* 1. Top Strip (Sirf Clickable Phone Number + Quick Link) */
+  /* 1. Top Strip: Reviews + Customer Service + Phone Number (Teeno Ek Line Mein) */
   header > div:first-child > div {
     justify-content: space-between !important;
-    padding: 6px 16px !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    padding: 6px 12px !important;
     gap: 8px !important;
-    font-size: 12px !important;
+    font-size: 11px !important;
   }
 
-  header > div:first-child a[href="CustomerService.html"] {
+  /* Gallery ko mobile top bar se hide karein (woh Menu mein maujood rahega) */
+  header > div:first-child a[href="Gallery.html"] {
     display: none !important;
   }
 
+  header > div:first-child a[href*="://google.com"],
+  header > div:first-child a[href="CustomerService.html"] {
+    display: flex !important;
+    padding: 4px 0 !important;
+    white-space: nowrap !important;
+  }
+
   header > div:first-child a[href^="tel:"] {
-    padding: 6px 14px !important;
+    padding: 6px 10px !important;
     min-width: auto !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     border-radius: 4px !important;
+    white-space: nowrap !important;
   }
 
   /* 2. Slim Mobile Header + Logo Left + Hamburger Right */
@@ -57,6 +67,12 @@
 
   header nav > a:first-child img {
     height: 46px !important;
+    width: auto !important;
+  }
+
+  /* Footer Logo Size Control on Mobile */
+  footer img[src*="assets/"] {
+    height: 56px !important;
     width: auto !important;
   }
 
