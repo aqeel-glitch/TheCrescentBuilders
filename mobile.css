@@ -1,20 +1,7 @@
 /* =========================================================
-   THE CRESCENT BUILDERS - COMPLETE MOBILE & TABLET LAYOUT
+   THE CRESCENT BUILDERS - MOBILE ONLY RESPONSIVE LAYOUT
+   (Desktop layout ko bilkul touch nahi karega)
    ========================================================= */
-
-* {
-  box-sizing: border-box !important;
-}
-
-html, body {
-  max-width: 100vw !important;
-  overflow-x: hidden !important;
-}
-
-img, video, iframe {
-  max-width: 100% !important;
-  height: auto !important;
-}
 
 /* Desktop par Hamburger Button Hide Rakhein */
 #cb-mobile-toggle {
@@ -22,9 +9,23 @@ img, video, iframe {
 }
 
 /* =========================================================
-   MOBILE & TABLET VIEW (Screen 992px ya choti)
+   SIRF MOBILE & TABLET VIEW (Screen 992px ya choti)
    ========================================================= */
 @media (max-width: 992px) {
+
+  * {
+    box-sizing: border-box !important;
+  }
+
+  html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  img, video, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 
   /* 1. Top Strip (Sirf Clickable Phone Number + Quick Link) */
   header > div:first-child > div {
@@ -56,6 +57,7 @@ img, video, iframe {
 
   header nav > a:first-child img {
     height: 46px !important;
+    width: auto !important;
   }
 
   /* Hamburger Button (☰) Style */
@@ -111,7 +113,7 @@ img, video, iframe {
     width: 100% !important;
   }
 
-  /* FREE Quote Button Full Width inside Open Menu or Compact */
+  /* FREE Quote Button Full Width on Mobile */
   header nav > a[href="Estimate.html"] {
     width: 100% !important;
     min-width: unset !important;
@@ -163,7 +165,7 @@ img, video, iframe {
   /* 6. Forms, Inputs & Calculators Touch-Friendly */
   input, select, textarea {
     width: 100% !important;
-    font-size: 16px !important; /* Prevents iPhone auto-zoom */
+    font-size: 16px !important;
   }
 
   table {
