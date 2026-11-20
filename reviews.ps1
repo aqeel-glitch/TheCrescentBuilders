@@ -1,22 +1,18 @@
-$elfsightScript = '<script src="https://elfsightcdn.com/platform.js" async></script>'
 $elfsightDiv = '<div class="elfsight-app-cb0c1266-21c7-44e5-8f4e-859ddbeea578" data-elfsight-app-lazy></div>'
 
 Get-ChildItem *.html | Where-Object { $_.Name -notin @("Header.dc.html", "Footer.dc.html") } | ForEach-Object {
     $c = [System.IO.File]::ReadAllText($_.FullName, [System.Text.Encoding]::UTF8)
 
-    # 1. Head mein Elfsight script add karein
-    if ($c -notmatch 'elfsightcdn\.com/platform\.js') {
-        $c = $c -replace '</head>', "$elfsightScript`n</head>"
-    }
+    if ($c -match '\{\{r\.name\}\}') {
+        # 1. Purana 3-column dummy review grid ko Elfsight widget se replace karein
+        $c = $c -replace '(?s)<div style="display:\s*grid;\s*grid-template-columns:\s*repeat\([23],\s*minmax\(0,\s*1fr\)\);\s*gap:\s*20px">\s*<sc-for[^>]*>.*?</sc-for>\s*</div>', $elfsightDiv
 
-    # 2. Dummy reviews grid/pagination ko Elfsight widget se replace karein
-    if ($c -notmatch 'elfsight-app-cb0c1266-21c7-44e5-8f4e-859ddbeea578') {
-        # Jahan sc-for reviews loop hai uski jagah Elfsight widget lagayein
-        $c = $c -replace '(?s)<sc-for list="\{\{rev(?:iews|Page|List)[^"]*\}\}"[^>]*>.*?</sc-for>', $elfsightDiv
-        # Pagination ("Showing 1 of 2") ko clean karein
-        $c = $c -replace '(?s)<div[^>]*>Showing \{\{[^}]+\}\} of \{\{[^}]+\}\}</div>', ''
-    }
+        # 2. Purane < > slider buttons aur "Showing 1 of 2" ko clean karein
+        $c = $c -replace '(?s)<button[^>]*aria-label="Previous[^"]*"[^>]*>.*?</button>', ''
+        $c = $c -replace '(?s)<button[^>]*aria-label="Next[^"]*"[^>]*>.*?</button>', ''
+        $c = $c -replace '(?s)<div[^>]*>\s*<span[^>]*>Showing \{\{page\}\} of \{\{pages\}\}</span>\s*</div>', ''
 
-    [System.IO.File]::WriteAllText($_.FullName, $c, [System.Text.Encoding]::UTF8)
+        [System.IO.File]::WriteAllText($_.FullName, $c, [System.Text.Encoding]::UTF8)
+    }
 }
-Write-Host "DONE! Elfsight Live Google Reviews sab pages par lag gaye hain." -ForegroundColor Green
+Write-Host "DONE! Dummy reviews hat kar live Elfsight widget lag gaya hai." -ForegroundColor Green
