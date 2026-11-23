@@ -181,3 +181,14 @@
     height: 52px !important;
   }
 }
+  /* Fix CEO Portrait Size & White Space on Mobile */
+  img[alt*="Wali"] {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: auto !important;
+    min-height: 360px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
