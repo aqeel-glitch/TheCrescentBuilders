@@ -30,11 +30,29 @@ window.addEventListener('load', function () {
   setTimeout(initCrescentMobileMenu, 300);
   setTimeout(initCrescentMobileMenu, 1000);
 });
-/* Force Favicon on All Pages (Prevents Runtime Overwrite) */
+/* Force Circular Favicon on All Pages */
 window.addEventListener('load', function () {
-  document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
-  const link = document.createElement('link');
-  link.rel = 'icon';
-  link.href = './assets/favicon.png?v=3';
-  document.head.appendChild(link);
+  const img = new Image();
+  img.src = './assets/favicon.png?v=4';
+  img.onload = function () {
+    const size = 64;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.clip();
+    ctx.drawImage(img, 0, 0, size, size);
+
+    document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = canvas.toDataURL('image/png');
+    document.head.appendChild(link);
+  };
 });
+
