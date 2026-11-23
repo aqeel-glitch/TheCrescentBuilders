@@ -30,3 +30,11 @@ window.addEventListener('load', function () {
   setTimeout(initCrescentMobileMenu, 300);
   setTimeout(initCrescentMobileMenu, 1000);
 });
+/* Force Favicon on All Pages (Prevents Runtime Overwrite) */
+window.addEventListener('load', function () {
+  document.querySelectorAll('link[rel*="icon"]').forEach(el => el.remove());
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.href = './assets/favicon.png?v=3';
+  document.head.appendChild(link);
+});
