@@ -118,8 +118,8 @@ class Component extends DCLogic {
 <script src="./mobile.js"></script>
 <script src="./reviews-widget.js"></script>
 
-<style>chat-widget:not(.josh-open){opacity:0!important;pointer-events:none!important;}</style>
-<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4"></script>
-<script>document.addEventListener('click',function(e){if(e.target&&e.target.textContent.trim().toUpperCase().includes('START LIVE CHAT')){e.preventDefault();var w=document.querySelector('chat-widget');if(w){w.classList.add('josh-open');if(w.shadowRoot){var b=w.shadowRoot.querySelector('button');if(b)b.click();}}}});</script>
+<style>chat-widget:not(.josh-open){opacity:0!important;pointer-events:none!important;position:fixed!important;z-index:999999!important;}chat-widget.josh-open{opacity:1!important;pointer-events:auto!important;z-index:999999!important;}</style>
+<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4" data-load-strategy="immediate"></script>
+<script>function openJosh(){var w=document.querySelector('chat-widget');if(w){w.classList.add('josh-open');if(w.shadowRoot){var b=w.shadowRoot.querySelector('button,[role=button],.lc_text-widget--btn');if(b){b.click();return true;}}}return false;}document.addEventListener('click',function(e){var el=e.target&&e.target.closest('a,button,span,div');if(el&&el.textContent&&el.textContent.trim().toUpperCase()==='START LIVE CHAT'){e.preventDefault();e.stopPropagation();if(!openJosh()){var t=setInterval(function(){if(openJosh())clearInterval(t);},200);setTimeout(function(){clearInterval(t);},4000);}}},true);</script>
 </body>
 </html>
