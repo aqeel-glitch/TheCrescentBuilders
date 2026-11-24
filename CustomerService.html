@@ -119,31 +119,33 @@ class Component extends DCLogic {
 <script src="./reviews-widget.js"></script>
 
 <style>
-chat-widget:not(.josh-active) { display: none !important; }
-chat-widget.josh-active { display: block !important; position: fixed !important; bottom: 90px !important; right: 20px !important; z-index: 999999 !important; }
+chat-widget:not(.josh-active) { position: fixed !important; bottom: 95px !important; right: 20px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; overflow: hidden !important; }
+chat-widget.josh-active { position: fixed !important; bottom: 95px !important; right: 20px !important; width: auto !important; height: auto !important; opacity: 1 !important; pointer-events: auto !important; z-index: 999999 !important; }
 </style>
-<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4"></script>
+<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4" data-load-strategy="immediate"></script>
 <script>
-document.addEventListener('click', function(e) {
-  var btn = e.target && e.target.closest('a, button, div, span');
-  if (btn && btn.textContent && btn.textContent.trim().toUpperCase() === 'START LIVE CHAT') {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    var w = document.querySelector('chat-widget');
-    if (w) {
-      w.classList.add('josh-active');
-      setTimeout(function() {
-        if (window.leadConnector && window.leadConnector.chatWidget && window.leadConnector.chatWidget.openWidget) {
-          window.leadConnector.chatWidget.openWidget();
-        }
-        if (w.shadowRoot) {
-          var innerBtn = w.shadowRoot.querySelector('button, [role="button"], .lc_text-widget--btn');
-          if (innerBtn) innerBtn.click();
-        }
-      }, 300);
-    }
-  }
-}, true);
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelectorAll('a, button').forEach(function(el) {
+      if (el.textContent && el.textContent.trim().toUpperCase().includes('START LIVE CHAT')) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          var w = document.querySelector('chat-widget');
+          if (w) {
+            w.classList.add('josh-active');
+            if (window.leadConnector && window.leadConnector.chatWidget && window.leadConnector.chatWidget.openWidget) {
+              window.leadConnector.chatWidget.openWidget();
+            } else if (w.shadowRoot) {
+              var b = w.shadowRoot.querySelector('button, [role="button"], .lc_text-widget--btn, div');
+              if (b) b.click();
+            }
+          }
+        });
+      }
+    });
+  }, 800);
+});
 </script>
 </body>
 </html>
