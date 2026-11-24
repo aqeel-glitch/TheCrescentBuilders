@@ -18,22 +18,7 @@ body{margin:0}
 a{color:#b49609}a:hover{color:#8c7406}
 .btn{transition:filter .2s}.btn:hover{filter:brightness(1.18)}
 .qcard{transition:border-color .2s,box-shadow .2s,transform .2s}.qcard:hover{border-color:#b49609!important;box-shadow:0 10px 26px rgba(0,0,0,.1);transform:translateY(-2px)}
-.ph{background-color:#3d3d3d;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
-.tc .tc-dark{opacity:0;transition:opacity .3s}.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
-.tc .tc-desc{max-height:0;opacity:0;overflow:hidden;transition:max-height .35s ease,opacity .3s}.tc:hover .tc-desc,.tc:focus-visible .tc-desc{max-height:200px;opacity:1}
-summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
-details[open] .pm{transform:rotate(45deg)}
-details[open] > summary.fq{color:#b49609}
-@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc{max-height:200px;opacity:1}.tc .tc-dark{opacity:1}}
-@media (max-width:860px){.sty{flex-direction:column!important}.sty img{width:100%!important;height:200px!important}.g2,.g3,.g4,.g5{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
-.tc .tc-dark{opacity:0;transition:opacity .45s ease}
-.tc:hover .tc-dark,.tc:focus-visible .tc-dark{opacity:1}
-.tc .tc-desc,.hc .hc-txt{display:block;max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height .55s cubic-bezier(.22,.61,.36,1),opacity .4s ease .1s,transform .55s cubic-bezier(.22,.61,.36,1) .05s}
-.tc:hover .tc-desc,.tc:focus-visible .tc-desc,.hc:hover .hc-txt,.hc:focus-visible .hc-txt{max-height:240px;opacity:1;transform:none}
-.hc .hc-ov{transition:background .45s ease!important}
-@media (hover:none) and (pointer:coarse) and (max-width:860px){.tc .tc-desc,.hc .hc-txt{max-height:240px;opacity:1;transform:none}.tc .tc-dark{opacity:1}}
-.tcard{transition:background .2s,box-shadow .2s,transform .2s}.tcard:hover,.tcard:focus-visible{background:#faf6e4!important;box-shadow:0 10px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
-@media (max-width:860px){.tstrip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:860px){.g2,.g3{grid-template-columns:minmax(0,1fr)!important}.h1{font-size:40px!important}.h2{font-size:30px!important}}
 </style>
 </helmet>
 <div style="font-family: Montserrat, system-ui, sans-serif; color: #2b2b2b; background: #ffffff">
@@ -53,12 +38,22 @@ details[open] > summary.fq{color:#b49609}
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <h2 class="h2" style="margin: 0; font-size: 38px; font-weight: 800; text-transform: uppercase; color: #343434; text-align: center">Certified, Bonded &amp; Insured</h2>
 <div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
-<sc-for list="{{lbi}}" as="x" hint-placeholder-count="3">
+
 <div style="background: #ffffff; border: 2px solid #b49609; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<b style="font-size: 20px; color: #343434; text-transform: uppercase">{{x.t}}</b>
-<span style="font-size: 15px; line-height: 1.65; color: #4a4a4a">{{x.d}}</span>
+<b style="font-size: 20px; color: #343434; text-transform: uppercase">Certified</b>
+<span style="font-size: 15px; line-height: 1.65; color: #4a4a4a">Our team is certified by leading manufacturers and follows local building codes and permit requirements across Greater Houston.</span>
 </div>
-</sc-for>
+
+<div style="background: #ffffff; border: 2px solid #b49609; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<b style="font-size: 20px; color: #343434; text-transform: uppercase">Bonded</b>
+<span style="font-size: 15px; line-height: 1.65; color: #4a4a4a">Our bond gives you financial protection if a project isn’t completed as agreed.</span>
+</div>
+
+<div style="background: #ffffff; border: 2px solid #b49609; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<b style="font-size: 20px; color: #343434; text-transform: uppercase">Insured</b>
+<span style="font-size: 15px; line-height: 1.65; color: #4a4a4a">We carry general liability and workers’ compensation coverage, so you’re protected if anything goes wrong on your property.</span>
+</div>
+
 </div>
 </div>
 </section>
@@ -70,40 +65,29 @@ details[open] > summary.fq{color:#b49609}
 <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #4a4a4a; max-width: 820px">These credentials mean our work meets manufacturer installation standards, our business practices are held accountable, and you get stronger warranty protection.</p>
 </div>
 <div class="g2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
-<sc-for list="{{certs}}" as="c" hint-placeholder-count="5">
-<a class="qcard" href="{{c.href}}" target="{{c.target}}" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
-<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="{{c.src}}" alt="{{c.name}}" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
-<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">{{c.name}}</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">{{c.d}}</span></span>
+
+<a class="qcard" href="https://gaf.com" target="_blank" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
+<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="./assets/601d7ba661396d371b304d16dd9e78ea.png" alt="GAF Certified Contractor" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">GAF Certified Contractor</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">We’re GAF certified, trained to install GAF roofing systems to the manufacturer’s standards, which gives you access to stronger GAF warranty options.</span></span>
 </a>
-</sc-for>
-</div>
-</div>
-</section>
 
-<section style="padding: 72px 24px; background: #262626; color: #ffffff; text-align: center">
-<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; align-items: center">
-<h2 style="margin: 0; font-size: 34px; font-weight: 800; text-transform: uppercase">Work With A Qualified Houston Contractor</h2>
-<span style="font-size: 16px; color: #e8e8e8">Get a free, no-obligation estimate from our licensed and certified team.</span>
-<a class="btn" href="Estimate.html" style="background: #b49609; color: #ffffff; text-decoration: none; font-weight: 700; padding: 15px 28px; border-radius: 4px; text-transform: uppercase; letter-spacing: .05em">Get A Free Estimate</a>
-</div>
-</section>
+<a class="qcard" href="https://owenscorning.com" target="_blank" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
+<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="./assets/f431c123f0238fa5382dc20dceace406.png" alt="Owens Corning Preferred Contractor" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">Owens Corning Preferred Contractor</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">As an Owens Corning preferred contractor, we meet Owens Corning’s standards for installation quality and customer service, with access to enhanced warranties.</span></span>
+</a>
 
-<dc-import name="Footer" hint-size="100%,560px"></dc-import>
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      lbi: [
-        { t: 'Certified', d: 'Our team is certified by leading manufacturers and follows local building codes and permit requirements across Greater Houston.' },
-        { t: 'Bonded', d: 'Our bond gives you financial protection if a project isn’t completed as agreed.' },
-        { t: 'Insured', d: 'We carry general liability and workers’ compensation coverage, so you’re protected if anything goes wrong on your property.' }
-      ],
-      certs: [
-        { name: 'GAF Certified Contractor', src: './assets/601d7ba661396d371b304d16dd9e78ea.png', href: 'https://gaf.com', target: '_blank', d: 'We’re GAF certified, trained to install GAF roofing systems to the manufacturer’s standards, which gives you access to stronger GAF warranty options.' },
-        { name: 'Owens Corning Preferred Contractor', src: './assets/f431c123f0238fa5382dc20dceace406.png', href: 'https://owenscorning.com', target: '_blank', d: 'As an Owens Corning preferred contractor, we meet Owens Corning’s standards for installation quality and customer service, with access to enhanced warranties.' },
-        { name: 'BBB Accredited Business', src: './assets/2f11b7c9bf4739420f8d1f853083c940.png', href: 'https://bbb.org', target: '_blank', d: 'We’re accredited by the Better Business Bureau and committed to honest, transparent business and resolving any concern quickly.' },
-        { name: 'RCAT Member', src: './assets/4de54e804d29cdd20b33e4262a72d36c.png', href: 'https://rcat.net', target: '_blank', d: 'We’re a member of the Roofing Contractors Association of Texas, which promotes professional standards, ongoing training and ethical roofing across Texas.' },
-        { name: 'LP SmartSide Siding', src: './assets/lpsmartside.png', href: 'https://lpcorp.com', target: '_blank', d: 'We install LP SmartSide engineered wood siding and trim, built to resist moisture, rot and termites in Houston’s humid climate.' },
-        { name: 'Norandex Exterior Products', src: './assets/norandex.png', href: 'https://norandex.com', target: '_blank', d: 'We install Norandex siding and windows, durable exterior products available in a wide range of styles and colors.' },
+<a class="qcard" href="https://bbb.org" target="_blank" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
+<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="./assets/2f11b7c9bf4739420f8d1f853083c940.png" alt="BBB Accredited Business" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">BBB Accredited Business</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">We’re accredited by the Better Business Bureau and committed to honest, transparent business and resolving any concern quickly.</span></span>
+</a>
+
+<a class="qcard" href="https://rcat.net" target="_blank" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
+<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="./assets/4de54e804d29cdd20b33e4262a72d36c.png" alt="RCAT Member" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">RCAT Member</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">We’re a member of the Roofing Contractors Association of Texas, which promotes professional standards, ongoing training and ethical roofing across Texas.</span></span>
+</a>
+
+<a class="qcard" href="https://lpcorp.com" target="_blank" rel="noopener" style="display: flex; gap: 24px; align-items: center; background: #ffffff; border: 1px solid #e0dbc8; border-radius: 10px; padding: 24px; text-decoration: none; color: #2b2b2b">
+<span style="flex: 0 0 130px; height: 130px; border: 1px solid #e6e3d6; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 14px; box-sizing: border-box"><img src="./assets/lpsmartside.png" alt="LP SmartSide Siding" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 8px"><b style="font-size: 19px; color: #343434">LP SmartSide Siding</b><span style="font-size: 15px; line-height: 1.6; color: #4a4a4a">We install LP SmartSide engineered wood siding and trim, built to resist moisture, rot and termites in Houston’s humid climate.</span></span>
+</a>
+
