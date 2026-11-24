@@ -77,7 +77,7 @@ class Component extends DCLogic {
     const defs = [
       { id: 'other', label: 'Other Services', items: [{ label: 'Gutters', href: 'Gutters.html' }, { label: 'Doors', href: 'Doors.html' }] },
       { id: 'pricing', label: 'Pricing', items: [{ label: 'Roof Cost Calculator', href: 'Calculator.html' }, { label: 'Siding Cost Calculator', href: 'Calculator.html' }, { label: 'Window Cost Calculator', href: 'Calculator.html' }, { label: 'Financing', href: 'Financing.html' }] },
-      { id: 'about', label: 'About', items: [{ label: 'Our Company', href: 'index.html' }, { label: 'Service Areas', href: 'ServiceAreas.html' }, { label: 'Warranty', href: 'Warranty.html' }, { label: 'Blog', href: 'Blog.html' }] }
+      { id: 'about', label: 'About', items: [{ label: 'Our Company', href: 'index.html' }, { label: 'Service Areas', href: 'ServiceAreas.html' }, { label: 'Warranty', href: 'Warranty.html' }, { label: 'Certifications', href: 'Licensing.html' }, { label: 'Blog', href: 'Blog.html' }] }
     ];
     const BRAND = '#b49609', INK = '#2b2b2b', hov = this.state.hov;
     const hv = (key) => ({ color: hov === key ? BRAND : INK, enter: () => this.setState({ hov: key }), leave: () => this.setState({ hov: null }) });
@@ -104,3 +104,4 @@ class Component extends DCLogic {
 <script src="./reviews-widget.js"></script>
 </body>
 </html>
+
