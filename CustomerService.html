@@ -118,8 +118,32 @@ class Component extends DCLogic {
 <script src="./mobile.js"></script>
 <script src="./reviews-widget.js"></script>
 
-<style>chat-widget:not(.josh-open){opacity:0!important;pointer-events:none!important;position:fixed!important;z-index:999999!important;}chat-widget.josh-open{opacity:1!important;pointer-events:auto!important;z-index:999999!important;}</style>
-<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4" data-load-strategy="immediate"></script>
-<script>function openJosh(){var w=document.querySelector('chat-widget');if(w){w.classList.add('josh-open');if(w.shadowRoot){var b=w.shadowRoot.querySelector('button,[role=button],.lc_text-widget--btn');if(b){b.click();return true;}}}return false;}document.addEventListener('click',function(e){var el=e.target&&e.target.closest('a,button,span,div');if(el&&el.textContent&&el.textContent.trim().toUpperCase()==='START LIVE CHAT'){e.preventDefault();e.stopPropagation();if(!openJosh()){var t=setInterval(function(){if(openJosh())clearInterval(t);},200);setTimeout(function(){clearInterval(t);},4000);}}},true);</script>
+<style>
+chat-widget:not(.josh-active) { display: none !important; }
+chat-widget.josh-active { display: block !important; position: fixed !important; bottom: 90px !important; right: 20px !important; z-index: 999999 !important; }
+</style>
+<script src="https://leadconnectorhq.com" data-resources-url="https://leadconnectorhq.com" data-widget-id="6b05c4dfd31a8be2be0dc2d4"></script>
+<script>
+document.addEventListener('click', function(e) {
+  var btn = e.target && e.target.closest('a, button, div, span');
+  if (btn && btn.textContent && btn.textContent.trim().toUpperCase() === 'START LIVE CHAT') {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var w = document.querySelector('chat-widget');
+    if (w) {
+      w.classList.add('josh-active');
+      setTimeout(function() {
+        if (window.leadConnector && window.leadConnector.chatWidget && window.leadConnector.chatWidget.openWidget) {
+          window.leadConnector.chatWidget.openWidget();
+        }
+        if (w.shadowRoot) {
+          var innerBtn = w.shadowRoot.querySelector('button, [role="button"], .lc_text-widget--btn');
+          if (innerBtn) innerBtn.click();
+        }
+      }, 300);
+    }
+  }
+}, true);
+</script>
 </body>
 </html>
