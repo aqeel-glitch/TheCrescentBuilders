@@ -86,4 +86,28 @@ window.addEventListener('load', function () {
     setTimeout(initScrollReveal, 250);
   }
 })();
+/* Fix double-tap issue on mobile dropdown categories */
+(function () {
+  document.addEventListener('touchstart', function (e) {
+    var link = e.target.closest('nav a, header a, .cb-drawer a, [data-dropdown] > a');
+    if (!link) return;
+
+    var parent = link.parentElement;
+    var submenu = parent ? parent.querySelector('ul, div[style*="position: absolute"], .dropdown-menu') : null;
+
+    if (submenu && window.innerWidth <= 960) {
+      var isOpen = submenu.style.display === 'block' || submenu.classList.contains('open');
+      if (!isOpen) {
+        e.preventDefault();
+        // Close other open submenus first
+        document.querySelectorAll('.cb-sub-open').forEach(function (el) {
+          el.style.display = '';
+          el.classList.remove('cb-sub-open', 'open');
+        });
+        submenu.style.display = 'block';
+        submenu.classList.add('cb-sub-open', 'open');
+      }
+    }
+  }, { passive: false });
+})();
 
