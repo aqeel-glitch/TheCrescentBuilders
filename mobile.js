@@ -161,59 +161,34 @@ window.addEventListener('load', function () {
   }
 })();
 
-/* Direct DCLogic State Hook: Sends Form Submissions Straight to GoHighLevel Webhook */
-(function () {
+/* Direct GoHighLevel Webhook Sender (CORS-safe form-urlencoded) */
+window.sendToGHL = function (state) {
   var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
-
-  function hookDCLogic() {
-    if (!window.DCLogic || window.DCLogic.prototype._ghlHooked) return;
-    window.DCLogic.prototype._ghlHooked = true;
-
-    var origSetState = window.DCLogic.prototype.setState;
-    window.DCLogic.prototype.setState = function (patch) {
-      var prevState = this.state || {};
-      var res = origSetState.apply(this, arguments);
-
-      if (patch && patch.done === true && !prevState.done && prevState.v) {
-        var v = prevState.v;
-        var selectedTypes = [];
-        if (prevState.types) {
-          Object.keys(prevState.types).forEach(function (k) {
-            if (prevState.types[k]) selectedTypes.push(k);
-          });
-        }
-
-        var payload = {
-          first_name: (v.first || '').trim(),
-          last_name: (v.last || '').trim(),
-          street_address: (v.street || '').trim(),
-          city: (v.city || '').trim(),
-          state: (v.state || '').trim(),
-          zip_code: (v.zip || '').trim(),
-          phone_number: (v.phone || '').trim(),
-          email_address: (v.email || '').trim(),
-          project_type: selectedTypes.join(', '),
-          how_did_you_hear_about_us: (v.hear || v.source || v.referral || '').trim(),
-          notes: (v.notes || v.message || v.details || '').trim(),
-          source_page: window.location.pathname.split('/').pop() || 'index.html',
-          page_url: window.location.href,
-          submitted_at: new Date().toISOString()
-        };
-
-        fetch(GHL_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-          keepalive: true
-        }).catch(function () {});
-      }
-
-      return res;
-    };
+  var v = (state && state.v) ? state.v : {};
+  var selectedTypes = [];
+  if (state && state.types) {
+    Object.keys(state.types).forEach(function (k) {
+      if (state.types[k]) selectedTypes.push(k);
+    });
   }
 
-  hookDCLogic();
-  document.addEventListener('DOMContentLoaded', hookDCLogic);
-  window.addEventListener('load', hookDCLogic);
-  setTimeout(hookDCLogic, 300);
-})();
+  var params = new URLSearchParams();
+  params.append('first_name', (v.first || '').trim());
+  params.append('last_name', (v.last || '').trim());
+  params.append('street_address', (v.street || '').trim());
+  params.append('city', (v.city || '').trim());
+  params.append('state', (v.state || '').trim());
+  params.append('zip_code', (v.zip || '').trim());
+  params.append('phone_number', (v.phone || '').trim());
+  params.append('email_address', (v.email || '').trim());
+  params.append('project_type', selectedTypes.join(', '));
+  params.append('how_did_you_hear_about_us', (v.hear || v.source || '').trim());
+  params.append('notes', (v.notes || v.message || '').trim());
+  params.append('source_page', window.location.pathname.split('/').pop() || 'Estimate.html');
+
+  fetch(GHL_WEBHOOK_URL, {
+    method: 'POST',
+    body: params,
+    keepalive: true
+  }).catch(function () {});
+};

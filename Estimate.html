@@ -126,7 +126,7 @@ class Component extends DCLogic {
       showApt: s.apt, hideApt: !s.apt, addApt: () => this.setState({ apt: true }),
       callOpen: s.call, toggleCall: () => this.setState({ call: !s.call }),
       offices: ['Houston Office'],
-      notReady: !ready, submit: () => this.setState({ done: true }),
+      notReady: !ready, submit: () => (window.sendToGHL && window.sendToGHL(this.state), this.setState({ done: true })),
       done: s.done, notDone: !s.done, first: v.first
     };
   }
