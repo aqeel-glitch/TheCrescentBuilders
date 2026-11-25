@@ -164,78 +164,72 @@ window.addEventListener('load', function () {
 /* Send All Website Form Submissions Directly to GoHighLevel Webhook */
 (function () {
   var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
+  var liveData = {};
+  var ghlSentLock = false;
 
-  function getFieldLabel(el, idx) {
+  function getFieldKey(el, idx) {
     var label = el.closest('label');
     if (label) {
       var clone = label.cloneNode(true);
       clone.querySelectorAll('input, select, textarea, span').forEach(function (n) { n.remove(); });
       var txt = clone.textContent.trim();
-      if (txt) return txt;
+      if (txt) {
+        return txt.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+      }
     }
-    return el.name || el.id || el.placeholder || ('field_' + idx);
+    var fallback = el.name || el.id || el.placeholder || ('field_' + idx);
+    return fallback.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   }
 
-  function sendFormToGHL(container) {
-    if (!container || container.dataset.ghlSent === '1') return;
-    container.dataset.ghlSent = '1';
-    setTimeout(function () { container.dataset.ghlSent = ''; }, 3000);
-
-    var payload = {
-      source_page: window.location.pathname.split('/').pop() || 'index.html',
-      page_url: window.location.href,
-      submitted_at: new Date().toISOString()
-    };
-
-    var checkedItems = [];
-    var fields = container.querySelectorAll('input, select, textarea');
-
-    fields.forEach(function (el, idx) {
+  function snapshotAllFields() {
+    document.querySelectorAll('input, select, textarea').forEach(function (el, idx) {
       if (el.type === 'submit' || el.type === 'button' || el.type === 'hidden') return;
-
-      if (el.type === 'checkbox' || el.type === 'radio') {
-        if (el.checked) {
-          var cbLabel = el.closest('label') ? el.closest('label').textContent.trim() : el.value;
-          if (cbLabel) checkedItems.push(cbLabel);
-        }
-        return;
-      }
-
-      var rawKey = getFieldLabel(el, idx);
-      var key = rawKey.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
-      if (key && el.value.trim()) {
-        payload[key] = el.value.trim();
+      var key = getFieldKey(el, idx);
+      if (key && el.value && el.value.trim()) {
+        liveData[key] = el.value.trim();
       }
     });
 
-    if (checkedItems.length) {
-      payload.project_type = checkedItems.join(', ');
+    var pressed = [];
+    document.querySelectorAll('button[aria-pressed="true"]').forEach(function (b) {
+      var label = b.textContent.replace(/[✓✔]/g, '').trim();
+      if (label) pressed.push(label);
+    });
+    if (pressed.length) {
+      liveData.project_type = pressed.join(', ');
     }
-
-    if (!payload.phone_number && !payload.email_address && !payload.first_name) return;
-
-    fetch(GHL_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      keepalive: true
-    }).catch(function () {});
   }
 
-  document.addEventListener('submit', function (e) {
-    var form = e.target.closest('form');
-    if (form) sendFormToGHL(form);
-  }, true);
+  document.addEventListener('input', snapshotAllFields, true);
+  document.addEventListener('change', snapshotAllFields, true);
 
   document.addEventListener('click', function (e) {
+    setTimeout(snapshotAllFields, 20);
+
     var btn = e.target.closest('button, input[type="submit"]');
     if (!btn) return;
-    var text = (btn.textContent || btn.value || '').toLowerCase();
-    if (/submit|request|send|estimate|quote|schedule|book/.test(text)) {
-      var container = btn.closest('form') || btn.closest('section') || document.body;
-      if (container && container.querySelector('input')) {
-        sendFormToGHL(container);
-      }
+    var text = (btn.textContent || btn.value || '').trim().toLowerCase();
+
+    if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
+      snapshotAllFields();
+      if (ghlSentLock) return;
+      if (!liveData.phone_number && !liveData.email_address && !liveData.first_name) return;
+
+      ghlSentLock = true;
+      setTimeout(function () { ghlSentLock = false; }, 4000);
+
+      var payload = Object.assign({
+        source_page: window.location.pathname.split('/').pop() || 'index.html',
+        page_url: window.location.href,
+        submitted_at: new Date().toISOString()
+      }, liveData);
+
+      fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(function () {});
     }
   }, true);
 })();
