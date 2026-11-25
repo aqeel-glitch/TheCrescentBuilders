@@ -55,4 +55,35 @@ window.addEventListener('load', function () {
     document.head.appendChild(link);
   };
 });
+/* Smooth Scroll Reveal across all sections and cards */
+(function () {
+  function initScrollReveal() {
+    var targets = document.querySelectorAll('section, .qcard, .tcard');
+    if (!targets.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cb-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    targets.forEach(function (el, index) {
+      // Keep the top hero banner visible immediately on load
+      if (index === 0 && el.tagName === 'SECTION') return;
+      el.classList.add('cb-reveal');
+      observer.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(initScrollReveal, 250);
+    });
+  } else {
+    setTimeout(initScrollReveal, 250);
+  }
+})();
 
