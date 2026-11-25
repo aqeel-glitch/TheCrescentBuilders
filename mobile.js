@@ -163,19 +163,31 @@ window.addEventListener('load', function () {
 
 /* Send All Website Form Submissions Directly to GoHighLevel Webhook */
 (function () {
-  var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/iDCmatHxAlcIpgxivE9r/webhook-trigger/0a540169-cab2-4f7d-9e28-cbf49ef4f482';
+  var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
   var liveData = {};
   var ghlSentLock = false;
 
-  function queryAllDeep(selector, root) {
-    root = root || document;
-    var results = Array.from(root.querySelectorAll(selector));
-    root.querySelectorAll('*').forEach(function (el) {
-      if (el.shadowRoot) {
-        results = results.concat(queryAllDeep(selector, el.shadowRoot));
-      }
-    });
-    return results;
+  var ORDER_KEYS = [
+    'first_name',
+    'last_name',
+    'street_address',
+    'city',
+    'state',
+    'zip_code',
+    'phone_number',
+    'email_address',
+    'how_did_you_hear_about_us',
+    'notes'
+  ];
+
+  function cleanLabelText(raw) {
+    return (raw || '')
+      .replace(/required/gi, '')
+      .replace(/\*/g, '')
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_|_$/g, '');
   }
 
   function getFieldKey(el, idx) {
@@ -183,26 +195,37 @@ window.addEventListener('load', function () {
     if (label) {
       var clone = label.cloneNode(true);
       clone.querySelectorAll('input, select, textarea, span, div, small').forEach(function (n) { n.remove(); });
-      var txt = clone.textContent.trim();
-      if (txt) {
-        return txt.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
-      }
+      var key = cleanLabelText(clone.textContent);
+      if (key) return key;
     }
-    var fallback = el.name || el.id || el.placeholder || ('field_' + idx);
-    return fallback.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    if (el.previousElementSibling) {
+      var sibKey = cleanLabelText(el.previousElementSibling.textContent);
+      if (sibKey) return sibKey;
+    }
+    if (el.parentElement && el.parentElement.previousElementSibling) {
+      var parentSibKey = cleanLabelText(el.parentElement.previousElementSibling.textContent);
+      if (parentSibKey) return parentSibKey;
+    }
+    return ORDER_KEYS[idx] || ('field_' + idx);
   }
 
   function snapshotAllFields() {
-    queryAllDeep('input, select, textarea').forEach(function (el, idx) {
-      if (el.type === 'submit' || el.type === 'button' || el.type === 'hidden') return;
+    var fields = Array.from(document.querySelectorAll('input, select, textarea')).filter(function (el) {
+      return el.type !== 'submit' && el.type !== 'button' && el.type !== 'hidden';
+    });
+
+    fields.forEach(function (el, idx) {
+      var val = (el.value || '').trim();
+      if (!val) return;
       var key = getFieldKey(el, idx);
-      if (key && el.value && el.value.trim()) {
-        liveData[key] = el.value.trim();
+      liveData[key] = val;
+      if (ORDER_KEYS[idx] && !liveData[ORDER_KEYS[idx]]) {
+        liveData[ORDER_KEYS[idx]] = val;
       }
     });
 
     var pressed = [];
-    queryAllDeep('button[aria-pressed="true"]').forEach(function (b) {
+    document.querySelectorAll('button[aria-pressed="true"]').forEach(function (b) {
       var label = b.textContent.replace(/[✓✔]/g, '').trim();
       if (label) pressed.push(label);
     });
@@ -214,10 +237,10 @@ window.addEventListener('load', function () {
   function fireToGHL() {
     snapshotAllFields();
     if (ghlSentLock) return;
-    if (!liveData.phone_number && !liveData.email_address && !liveData.first_name) return;
+    if (Object.keys(liveData).length === 0) return;
 
     ghlSentLock = true;
-    setTimeout(function () { ghlSentLock = false; }, 4000);
+    setTimeout(function () { ghlSentLock = false; }, 3500);
 
     var payload = Object.assign({
       source_page: window.location.pathname.split('/').pop() || 'index.html',
@@ -236,17 +259,12 @@ window.addEventListener('load', function () {
   document.addEventListener('input', snapshotAllFields, true);
   document.addEventListener('change', snapshotAllFields, true);
 
-  document.addEventListener('pointerdown', function (e) {
-    var path = e.composedPath ? e.composedPath() : [e.target];
-    for (var i = 0; i < path.length; i++) {
-      var node = path[i];
-      if (node && node.tagName && (node.tagName === 'BUTTON' || node.type === 'submit')) {
-        var text = (node.textContent || node.value || '').trim().toLowerCase();
-        if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
-          fireToGHL();
-          break;
-        }
-      }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('button, input[type="submit"]');
+    if (!btn) return;
+    var text = (btn.textContent || btn.value || '').trim().toLowerCase();
+    if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
+      fireToGHL();
     }
   }, true);
 })();
