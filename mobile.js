@@ -86,26 +86,20 @@ window.addEventListener('load', function () {
   }
 })();
 
-/* Single-tap mobile dropdown fix without touching Header.dc.html */
-(function () {
-  var ignoreNextClick = false;
+/* Single-tap mobile dropdown toggle via CSS class */
+document.addEventListener('click', function (e) {
+  if (window.innerWidth > 992) return;
+  var btn = e.target.closest('header nav button[aria-expanded]');
+  if (!btn) return;
 
-  document.addEventListener('pointerdown', function (e) {
-    if (e.pointerType !== 'touch' || window.innerWidth > 992) return;
-    var btn = e.target.closest('header nav button[aria-expanded]');
-    if (!btn) return;
+  var wrapper = btn.parentElement;
+  if (!wrapper) return;
 
-    ignoreNextClick = true;
-    setTimeout(function () { ignoreNextClick = false; }, 450);
-    btn.click();
-  }, true);
-
-  document.addEventListener('click', function (e) {
-    if (!ignoreNextClick) return;
-    var btn = e.target.closest('header nav button[aria-expanded]');
-    if (!btn) return;
-
-    e.preventDefault();
-    e.stopImmediatePropagation();
-  }, true);
-})();
+  var wasOpen = wrapper.classList.contains('cb-sub-open');
+  document.querySelectorAll('header nav .cb-sub-open').forEach(function (el) {
+    el.classList.remove('cb-sub-open');
+  });
+  if (!wasOpen) {
+    wrapper.classList.add('cb-sub-open');
+  }
+}, true);
