@@ -16,7 +16,6 @@ function initCrescentMobileMenu() {
       : '☰ <span style="font-size:13px;font-weight:600;">MENU</span>';
   });
 
-  // Logo ke bilkul baad Hamburger button lagayein
   const logoLink = nav.querySelector('a');
   if (logoLink && logoLink.nextSibling) {
     nav.insertBefore(btn, logoLink.nextSibling);
@@ -25,11 +24,11 @@ function initCrescentMobileMenu() {
   }
 }
 
-// Claude runtime ke render hone ke baad menu activate karein
 window.addEventListener('load', function () {
   setTimeout(initCrescentMobileMenu, 300);
   setTimeout(initCrescentMobileMenu, 1000);
 });
+
 /* Force Circular Favicon on All Pages */
 window.addEventListener('load', function () {
   const img = new Image();
@@ -55,6 +54,7 @@ window.addEventListener('load', function () {
     document.head.appendChild(link);
   };
 });
+
 /* Smooth Scroll Reveal across all sections and cards */
 (function () {
   function initScrollReveal() {
@@ -71,7 +71,6 @@ window.addEventListener('load', function () {
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
     targets.forEach(function (el, index) {
-      // Keep the top hero banner visible immediately on load
       if (index === 0 && el.tagName === 'SECTION') return;
       el.classList.add('cb-reveal');
       observer.observe(el);
@@ -86,27 +85,27 @@ window.addEventListener('load', function () {
     setTimeout(initScrollReveal, 250);
   }
 })();
-/* Fix double-tap issue on mobile dropdown categories */
+
+/* Single-tap mobile dropdown fix without touching Header.dc.html */
 (function () {
-  document.addEventListener('touchstart', function (e) {
-    var link = e.target.closest('nav a, header a, .cb-drawer a, [data-dropdown] > a');
-    if (!link) return;
+  var ignoreNextClick = false;
 
-    var parent = link.parentElement;
-    var submenu = parent ? parent.querySelector('ul, div[style*="position: absolute"], .dropdown-menu') : null;
+  document.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'touch' || window.innerWidth > 992) return;
+    var btn = e.target.closest('header nav button[aria-expanded]');
+    if (!btn) return;
 
-    if (submenu && window.innerWidth <= 960) {
-      var isOpen = submenu.style.display === 'block' || submenu.classList.contains('open');
-      if (!isOpen) {
-        e.preventDefault();
-        // Close other open submenus first
-        document.querySelectorAll('.cb-sub-open').forEach(function (el) {
-          el.style.display = '';
-          el.classList.remove('cb-sub-open', 'open');
-        });
-        submenu.style.display = 'block';
-        submenu.classList.add('cb-sub-open', 'open');
-      }
-    }
-  }, { passive: false });
+    ignoreNextClick = true;
+    setTimeout(function () { ignoreNextClick = false; }, 450);
+    btn.click();
+  }, true);
+
+  document.addEventListener('click', function (e) {
+    if (!ignoreNextClick) return;
+    var btn = e.target.closest('header nav button[aria-expanded]');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }, true);
 })();
