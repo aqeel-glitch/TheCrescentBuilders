@@ -1,4 +1,4 @@
-/* Automatic Mobile Hamburger Menu & Single-Tap Accordion Injector */
+﻿/* Automatic Mobile Hamburger Menu & Single-Tap Accordion Injector */
 function initCrescentMobileMenu() {
   const nav = document.querySelector('header nav');
   if (!nav || document.getElementById('cb-mobile-toggle')) return;
@@ -163,7 +163,7 @@ window.addEventListener('load', function () {
 
 /* Send All Website Form Submissions Directly to GoHighLevel Webhook */
 (function () {
-  var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/iDCmatHxAlcIpgxivE9r/webhook-trigger/cd3f3c4a-f5b4-41ca-9b68-30fc8234ead9';
+  var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/iDCmatHxAlcIpgxivE9r/webhook-trigger/0a540169-cab2-4f7d-9e28-cbf49ef4f482';
   var liveData = {};
   var ghlSentLock = false;
 
