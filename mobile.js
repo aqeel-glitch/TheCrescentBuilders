@@ -87,10 +87,22 @@ function initCrescentMobileMenu() {
   });
 }
 
-window.addEventListener('load', function () {
+/* Watch DOM continuously until Header renders on any page speed */
+(function () {
+  var observer = new MutationObserver(function () {
+    initCrescentMobileMenu();
+  });
+  if (document.body) {
+    observer.observe(document.body, { childList: true, subtree: true });
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  }
+  window.addEventListener('load', initCrescentMobileMenu);
   setTimeout(initCrescentMobileMenu, 300);
-  setTimeout(initCrescentMobileMenu, 1000);
-});
+  setTimeout(initCrescentMobileMenu, 1200);
+})();
 
 /* Force Circular Favicon on All Pages */
 window.addEventListener('load', function () {
@@ -147,4 +159,83 @@ window.addEventListener('load', function () {
   } else {
     setTimeout(initScrollReveal, 250);
   }
+})();
+
+/* Send All Website Form Submissions Directly to GoHighLevel Webhook */
+(function () {
+  var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
+
+  function getFieldLabel(el, idx) {
+    var label = el.closest('label');
+    if (label) {
+      var clone = label.cloneNode(true);
+      clone.querySelectorAll('input, select, textarea, span').forEach(function (n) { n.remove(); });
+      var txt = clone.textContent.trim();
+      if (txt) return txt;
+    }
+    return el.name || el.id || el.placeholder || ('field_' + idx);
+  }
+
+  function sendFormToGHL(container) {
+    if (!container || container.dataset.ghlSent === '1') return;
+    container.dataset.ghlSent = '1';
+    setTimeout(function () { container.dataset.ghlSent = ''; }, 3000);
+
+    var payload = {
+      source_page: window.location.pathname.split('/').pop() || 'index.html',
+      page_url: window.location.href,
+      submitted_at: new Date().toISOString()
+    };
+
+    var checkedItems = [];
+    var fields = container.querySelectorAll('input, select, textarea');
+
+    fields.forEach(function (el, idx) {
+      if (el.type === 'submit' || el.type === 'button' || el.type === 'hidden') return;
+
+      if (el.type === 'checkbox' || el.type === 'radio') {
+        if (el.checked) {
+          var cbLabel = el.closest('label') ? el.closest('label').textContent.trim() : el.value;
+          if (cbLabel) checkedItems.push(cbLabel);
+        }
+        return;
+      }
+
+      var rawKey = getFieldLabel(el, idx);
+      var key = rawKey.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+      if (key && el.value.trim()) {
+        payload[key] = el.value.trim();
+      }
+    });
+
+    if (checkedItems.length) {
+      payload.project_type = checkedItems.join(', ');
+    }
+
+    if (!payload.phone_number && !payload.email_address && !payload.first_name) return;
+
+    fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(function () {});
+  }
+
+  document.addEventListener('submit', function (e) {
+    var form = e.target.closest('form');
+    if (form) sendFormToGHL(form);
+  }, true);
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('button, input[type="submit"]');
+    if (!btn) return;
+    var text = (btn.textContent || btn.value || '').toLowerCase();
+    if (/submit|request|send|estimate|quote|schedule|book/.test(text)) {
+      var container = btn.closest('form') || btn.closest('section') || document.body;
+      if (container && container.querySelector('input')) {
+        sendFormToGHL(container);
+      }
+    }
+  }, true);
 })();
