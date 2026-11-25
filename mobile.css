@@ -219,3 +219,20 @@ html {
     transition: none;
   }
 }
+/* Native Mobile Accordion Visibility */
+.cb-mobile-acc-btn,
+.cb-mobile-acc-panel {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .cb-desktop-only-btn {
+    display: none !important;
+  }
+  .cb-mobile-acc-btn {
+    display: flex !important;
+  }
+  .cb-mobile-acc-panel.cb-open {
+    display: block !important;
+  }
+}
