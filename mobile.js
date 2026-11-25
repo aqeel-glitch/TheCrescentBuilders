@@ -161,110 +161,59 @@ window.addEventListener('load', function () {
   }
 })();
 
-/* Send All Website Form Submissions Directly to GoHighLevel Webhook */
+/* Direct DCLogic State Hook: Sends Form Submissions Straight to GoHighLevel Webhook */
 (function () {
   var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
-  var liveData = {};
-  var ghlSentLock = false;
 
-  var ORDER_KEYS = [
-    'first_name',
-    'last_name',
-    'street_address',
-    'city',
-    'state',
-    'zip_code',
-    'phone_number',
-    'email_address',
-    'how_did_you_hear_about_us',
-    'notes'
-  ];
+  function hookDCLogic() {
+    if (!window.DCLogic || window.DCLogic.prototype._ghlHooked) return;
+    window.DCLogic.prototype._ghlHooked = true;
 
-  function cleanLabelText(raw) {
-    return (raw || '')
-      .replace(/required/gi, '')
-      .replace(/\*/g, '')
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '_')
-      .replace(/^_|_$/g, '');
-  }
+    var origSetState = window.DCLogic.prototype.setState;
+    window.DCLogic.prototype.setState = function (patch) {
+      var prevState = this.state || {};
+      var res = origSetState.apply(this, arguments);
 
-  function getFieldKey(el, idx) {
-    var label = el.closest ? el.closest('label') : null;
-    if (label) {
-      var clone = label.cloneNode(true);
-      clone.querySelectorAll('input, select, textarea, span, div, small').forEach(function (n) { n.remove(); });
-      var key = cleanLabelText(clone.textContent);
-      if (key) return key;
-    }
-    if (el.previousElementSibling) {
-      var sibKey = cleanLabelText(el.previousElementSibling.textContent);
-      if (sibKey) return sibKey;
-    }
-    if (el.parentElement && el.parentElement.previousElementSibling) {
-      var parentSibKey = cleanLabelText(el.parentElement.previousElementSibling.textContent);
-      if (parentSibKey) return parentSibKey;
-    }
-    return ORDER_KEYS[idx] || ('field_' + idx);
-  }
+      if (patch && patch.done === true && !prevState.done && prevState.v) {
+        var v = prevState.v;
+        var selectedTypes = [];
+        if (prevState.types) {
+          Object.keys(prevState.types).forEach(function (k) {
+            if (prevState.types[k]) selectedTypes.push(k);
+          });
+        }
 
-  function snapshotAllFields() {
-    var fields = Array.from(document.querySelectorAll('input, select, textarea')).filter(function (el) {
-      return el.type !== 'submit' && el.type !== 'button' && el.type !== 'hidden';
-    });
+        var payload = {
+          first_name: (v.first || '').trim(),
+          last_name: (v.last || '').trim(),
+          street_address: (v.street || '').trim(),
+          city: (v.city || '').trim(),
+          state: (v.state || '').trim(),
+          zip_code: (v.zip || '').trim(),
+          phone_number: (v.phone || '').trim(),
+          email_address: (v.email || '').trim(),
+          project_type: selectedTypes.join(', '),
+          how_did_you_hear_about_us: (v.hear || v.source || v.referral || '').trim(),
+          notes: (v.notes || v.message || v.details || '').trim(),
+          source_page: window.location.pathname.split('/').pop() || 'index.html',
+          page_url: window.location.href,
+          submitted_at: new Date().toISOString()
+        };
 
-    fields.forEach(function (el, idx) {
-      var val = (el.value || '').trim();
-      if (!val) return;
-      var key = getFieldKey(el, idx);
-      liveData[key] = val;
-      if (ORDER_KEYS[idx] && !liveData[ORDER_KEYS[idx]]) {
-        liveData[ORDER_KEYS[idx]] = val;
+        fetch(GHL_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          keepalive: true
+        }).catch(function () {});
       }
-    });
 
-    var pressed = [];
-    document.querySelectorAll('button[aria-pressed="true"]').forEach(function (b) {
-      var label = b.textContent.replace(/[✓✔]/g, '').trim();
-      if (label) pressed.push(label);
-    });
-    if (pressed.length) {
-      liveData.project_type = pressed.join(', ');
-    }
+      return res;
+    };
   }
 
-  function fireToGHL() {
-    snapshotAllFields();
-    if (ghlSentLock) return;
-    if (Object.keys(liveData).length === 0) return;
-
-    ghlSentLock = true;
-    setTimeout(function () { ghlSentLock = false; }, 3500);
-
-    var payload = Object.assign({
-      source_page: window.location.pathname.split('/').pop() || 'index.html',
-      page_url: window.location.href,
-      submitted_at: new Date().toISOString()
-    }, liveData);
-
-    fetch(GHL_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      keepalive: true
-    }).catch(function () {});
-  }
-
-  document.addEventListener('input', snapshotAllFields, true);
-  document.addEventListener('change', snapshotAllFields, true);
-
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('button, input[type="submit"]');
-    if (!btn) return;
-    var text = (btn.textContent || btn.value || '').trim().toLowerCase();
-    if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
-      fireToGHL();
-    }
-  }, true);
+  hookDCLogic();
+  document.addEventListener('DOMContentLoaded', hookDCLogic);
+  window.addEventListener('load', hookDCLogic);
+  setTimeout(hookDCLogic, 300);
 })();
