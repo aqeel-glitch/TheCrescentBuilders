@@ -86,20 +86,15 @@ window.addEventListener('load', function () {
   }
 })();
 
-/* Single-tap mobile dropdown toggle via CSS class */
+/* Single-tap mobile dropdown fix: re-open if React's mouseenter+click double-toggled it closed */
 document.addEventListener('click', function (e) {
-  if (window.innerWidth > 992) return;
+  if (window.innerWidth > 992 || !e.isTrusted) return;
   var btn = e.target.closest('header nav button[aria-expanded]');
   if (!btn) return;
 
-  var wrapper = btn.parentElement;
-  if (!wrapper) return;
-
-  var wasOpen = wrapper.classList.contains('cb-sub-open');
-  document.querySelectorAll('header nav .cb-sub-open').forEach(function (el) {
-    el.classList.remove('cb-sub-open');
-  });
-  if (!wasOpen) {
-    wrapper.classList.add('cb-sub-open');
-  }
-}, true);
+  setTimeout(function () {
+    if (btn.getAttribute('aria-expanded') === 'false') {
+      btn.click();
+    }
+  }, 30);
+}, false);

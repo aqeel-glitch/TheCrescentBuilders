@@ -181,17 +181,19 @@
     height: 52px !important;
   }
 }
-  /* Fix CEO Portrait Size & White Space on Mobile */
-  img[alt*="Wali"] {
-    width: 100% !important;
-    max-width: 340px !important;
-    height: auto !important;
-    min-height: 360px !important;
-    object-fit: cover !important;
-    object-position: top center !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
+
+/* Fix CEO Portrait Size & White Space on Mobile */
+img[alt*="Wali"] {
+  width: 100% !important;
+  max-width: 340px !important;
+  height: auto !important;
+  min-height: 360px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
 /* Smooth Scroll & Reveal Animations */
 html {
   scroll-behavior: smooth;
@@ -215,14 +217,5 @@ html {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-}
-/* Mobile Single-Tap Accordion Fix */
-@media (max-width: 992px) {
-  header nav > div > div > div[style*="position: absolute"] {
-    display: none !important;
-  }
-  header nav > div > div.cb-sub-open > div[style*="position: absolute"] {
-    display: flex !important;
   }
 }
