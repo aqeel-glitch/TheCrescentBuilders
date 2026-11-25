@@ -163,12 +163,23 @@ window.addEventListener('load', function () {
 
 /* Send All Website Form Submissions Directly to GoHighLevel Webhook */
 (function () {
-  var GHL_WEBHOOK_URL = 'https://leadconnectorhq.com';
+  var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/iDCmatHxAlcIpgxivE9r/webhook-trigger/cd3f3c4a-f5b4-41ca-9b68-30fc8234ead9';
   var liveData = {};
   var ghlSentLock = false;
 
+  function queryAllDeep(selector, root) {
+    root = root || document;
+    var results = Array.from(root.querySelectorAll(selector));
+    root.querySelectorAll('*').forEach(function (el) {
+      if (el.shadowRoot) {
+        results = results.concat(queryAllDeep(selector, el.shadowRoot));
+      }
+    });
+    return results;
+  }
+
   function getFieldKey(el, idx) {
-    var label = el.closest('label');
+    var label = el.closest ? el.closest('label') : null;
     if (label) {
       var clone = label.cloneNode(true);
       clone.querySelectorAll('input, select, textarea, span').forEach(function (n) { n.remove(); });
@@ -182,7 +193,7 @@ window.addEventListener('load', function () {
   }
 
   function snapshotAllFields() {
-    document.querySelectorAll('input, select, textarea').forEach(function (el, idx) {
+    queryAllDeep('input, select, textarea').forEach(function (el, idx) {
       if (el.type === 'submit' || el.type === 'button' || el.type === 'hidden') return;
       var key = getFieldKey(el, idx);
       if (key && el.value && el.value.trim()) {
@@ -191,7 +202,7 @@ window.addEventListener('load', function () {
     });
 
     var pressed = [];
-    document.querySelectorAll('button[aria-pressed="true"]').forEach(function (b) {
+    queryAllDeep('button[aria-pressed="true"]').forEach(function (b) {
       var label = b.textContent.replace(/[✓✔]/g, '').trim();
       if (label) pressed.push(label);
     });
@@ -200,36 +211,42 @@ window.addEventListener('load', function () {
     }
   }
 
+  function fireToGHL() {
+    snapshotAllFields();
+    if (ghlSentLock) return;
+    if (!liveData.phone_number && !liveData.email_address && !liveData.first_name) return;
+
+    ghlSentLock = true;
+    setTimeout(function () { ghlSentLock = false; }, 4000);
+
+    var payload = Object.assign({
+      source_page: window.location.pathname.split('/').pop() || 'index.html',
+      page_url: window.location.href,
+      submitted_at: new Date().toISOString()
+    }, liveData);
+
+    fetch(GHL_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(function () {});
+  }
+
   document.addEventListener('input', snapshotAllFields, true);
   document.addEventListener('change', snapshotAllFields, true);
 
-  document.addEventListener('click', function (e) {
-    setTimeout(snapshotAllFields, 20);
-
-    var btn = e.target.closest('button, input[type="submit"]');
-    if (!btn) return;
-    var text = (btn.textContent || btn.value || '').trim().toLowerCase();
-
-    if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
-      snapshotAllFields();
-      if (ghlSentLock) return;
-      if (!liveData.phone_number && !liveData.email_address && !liveData.first_name) return;
-
-      ghlSentLock = true;
-      setTimeout(function () { ghlSentLock = false; }, 4000);
-
-      var payload = Object.assign({
-        source_page: window.location.pathname.split('/').pop() || 'index.html',
-        page_url: window.location.href,
-        submitted_at: new Date().toISOString()
-      }, liveData);
-
-      fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        keepalive: true
-      }).catch(function () {});
+  document.addEventListener('pointerdown', function (e) {
+    var path = e.composedPath ? e.composedPath() : [e.target];
+    for (var i = 0; i < path.length; i++) {
+      var node = path[i];
+      if (node && node.tagName && (node.tagName === 'BUTTON' || node.type === 'submit')) {
+        var text = (node.textContent || node.value || '').trim().toLowerCase();
+        if (/^(submit|request|send|get estimate|get free estimate|schedule|book)/.test(text)) {
+          fireToGHL();
+          break;
+        }
+      }
     }
   }, true);
 })();
