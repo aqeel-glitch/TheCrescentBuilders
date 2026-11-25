@@ -182,7 +182,7 @@ window.addEventListener('load', function () {
     var label = el.closest ? el.closest('label') : null;
     if (label) {
       var clone = label.cloneNode(true);
-      clone.querySelectorAll('input, select, textarea, span').forEach(function (n) { n.remove(); });
+      clone.querySelectorAll('input, select, textarea, span, div, small').forEach(function (n) { n.remove(); });
       var txt = clone.textContent.trim();
       if (txt) {
         return txt.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
