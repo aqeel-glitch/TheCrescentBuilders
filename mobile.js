@@ -23,7 +23,7 @@ function initCrescentMobileMenu() {
     nav.appendChild(btn);
   }
 
-  /* Build native 1-tap mobile accordions for dropdown menus */
+  /* Build native 1-tap open/close mobile accordions */
   const subMenus = {
     'Other Services': [
       { label: 'Gutters', href: 'Gutters.html' },
@@ -65,7 +65,9 @@ function initCrescentMobileMenu() {
       panel.appendChild(a);
     });
 
-    mobileBtn.addEventListener('click', function () {
+    mobileBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       const isOpen = panel.classList.contains('cb-open');
       nav.querySelectorAll('.cb-mobile-acc-panel.cb-open').forEach(function (p) {
         p.classList.remove('cb-open');
